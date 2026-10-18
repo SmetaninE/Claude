@@ -1,0 +1,851 @@
+{
+ "type": "Новость компании",
+ "intent": "Информационный интент: узнать о событии/решении компании (партнёрство, конкурс, запуск сервиса, график работы). У крупных игроков (Детский мир, Яндекс Маркет, Ozon) новости живут на корпоративном/партнёрском поддомене в формате пресс-релиза для СМИ и партнёров; у магазинов-оптовиков — в разделе /news/ основного сайта, часто с коммерческой привязкой (каталог, как заказать).",
+ "urls": [
+  {
+   "domain": "ozon.ru",
+   "url": "https://corp.ozon.ru/ru/sth/ozon-rasshiryaet-finansovuyu-podderzhku-dlya-punktov-vydachi-ab678825",
+   "status": "недоступна",
+   "reason": "Аналог есть на корп. поддомене corp.ozon.ru, но curl 307 (антибот), Playwright 403 «Упс…»; WebFetch не резолвит хост",
+   "html": null
+  },
+  {
+   "domain": "wildberries.ru",
+   "url": "https://www.wildberries.ru/presscenter/articles",
+   "status": "недоступна",
+   "reason": "Пресс-центр есть (/presscenter/articles), но curl и Playwright получают 498 (антибот); отдельную новость получить не удалось",
+   "html": null
+  },
+  {
+   "domain": "market.yandex.ru",
+   "url": "https://partner.market.yandex.ru/chtojournal/kak-nachat-prodavat-na-markete-kurs/",
+   "status": "ok",
+   "reason": "Официальный партнёрский поддомен partner.market.yandex.ru, журнал «Что на счёт», рубрика «Новости» (новость о запуске курса с Модульбанком); market.yandex.ru сам отдаёт капчу",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/news/market.yandex.ru.html"
+  },
+  {
+   "domain": "detmir.ru",
+   "url": "https://corp.detmir.ru/press-centre/news/detskij-mir-podderzhit-luchshie-detskie-brendy-konkursa-znaj-nashih/",
+   "status": "ok",
+   "reason": "Пресс-релиз на корпоративном поддомене corp.detmir.ru (пресс-центр); тема близка — поддержка лучших детских брендов",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/news/detmir.ru.html"
+  },
+  {
+   "domain": "aliexpress.ru",
+   "url": "https://press.aliexpress.ru/page23508111.html",
+   "status": "недоступна",
+   "reason": "Бывший пресс-центр press.aliexpress.ru теперь редиректит на главную aliexpress.ru, а она отдаёт капчу «Пройдите проверку» (Playwright); действующую новость найти нельзя",
+   "html": null
+  },
+  {
+   "domain": "boobl-goom.ru",
+   "url": null,
+   "status": "нет аналога",
+   "reason": "Раздела новостей нет (/news/, /about/news/ — 404, в sitemap нет); есть только блог /about/articles/ и акции /actions/",
+   "html": null
+  },
+  {
+   "domain": "igroray.ru",
+   "url": null,
+   "status": "нет аналога",
+   "reason": "Раздел /news/ — новости игровой индустрии (видеоигры), не новости компании; в разделе настольных игр/LEGO новостей нет",
+   "html": null
+  },
+  {
+   "domain": "ural.toys",
+   "url": null,
+   "status": "нет аналога",
+   "reason": "Раздела новостей нет (/news/, /novosti/, /blog/ — 404; в sitemap только каталог и бренды)",
+   "html": null
+  },
+  {
+   "domain": "markertoys.ru",
+   "url": "https://www.markertoys.ru/news/budushchee-inzhenernogo-obrazovaniya-robototekhnika/",
+   "status": "ok",
+   "reason": "Новость компании в /news/ (партнёрство со Школой робототехники + каталог наборов)",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/news/markertoys.ru.html"
+  },
+  {
+   "domain": "megamarket.ru",
+   "url": "https://megamarket.ru/news/",
+   "status": "недоступна",
+   "reason": "Антибот servicepipe (JS-challenge) для curl, Playwright — 403; наличие отдельных новостей подтвердить не удалось",
+   "html": null
+  },
+  {
+   "domain": "toys-land.ru",
+   "url": "https://www.toys-land.ru/news/870/2026-06-17/",
+   "status": "ok",
+   "reason": "Новость в /news/ («Наш график работы»); единственная актуальная новость раздела, очень короткая",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/news/toys-land.ru.html"
+  }
+ ],
+ "sima": {
+  "url": "https://www.sima-land.ru/o-kompanii/novosti-kompanii/7375/",
+  "status": "недоступна",
+  "reason": "TLS reset: Playwright net::ERR_CONNECTION_RESET"
+ },
+ "factors": [
+  {
+   "name": "Title = заголовок новости",
+   "description": "<title> содержит текст заголовка новости (уникален для каждой новости)",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "<title> содержит текст H1",
+   "note": "D,M — с суффиксом бренда/сайта; Y,T — только заголовок"
+  },
+  {
+   "name": "Бренд в Title",
+   "description": "В <title> добавлен суффикс с названием компании/сайта",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "markertoys.ru": "+"
+   },
+   "detect": "<title> содержит название компании после разделителя (-, –, |)",
+   "note": "D: «- Детский мир - Корпоративный сайт»; M: «– интернет-магазин Маркер Игрушка»"
+  },
+  {
+   "name": "Meta description",
+   "description": "Заполнен meta description",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "market.yandex.ru": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "meta[name=description][content] непустой",
+   "note": "Y — уникальный лид; M — шаблон «Интернет-магазин …: <заголовок>»; T — дублирует title; у D отсутствует (есть только og:description)"
+  },
+  {
+   "name": "Meta keywords",
+   "description": "Заполнен meta keywords",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "toys-land.ru": "+"
+   },
+   "detect": "meta[name=keywords]",
+   "note": "T дублирует заголовок"
+  },
+  {
+   "name": "H1 = заголовок новости",
+   "description": "Единственный H1 с заголовком новости",
+   "group": "Техническое",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "ровно один <h1>, текст = заголовок новости",
+   "note": ""
+  },
+  {
+   "name": "H2-подзаголовки в тексте",
+   "description": "Текст новости разбит на смысловые H2",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "market.yandex.ru": "+"
+   },
+   "detect": "<h2> внутри тела статьи (main/article)",
+   "note": "M использует жирный подзаголовок без тега h2"
+  },
+  {
+   "name": "Canonical",
+   "description": "Указан rel=canonical на саму новость",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "link[rel=canonical][href] = URL страницы",
+   "note": ""
+  },
+  {
+   "name": "Meta robots",
+   "description": "Явный meta robots (index/follow, max-image-preview)",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "markertoys.ru": "+"
+   },
+   "detect": "meta[name=robots]",
+   "note": "D,Y — max-image-preview:large (для Дзен/Новостей/Discover); M — index, follow"
+  },
+  {
+   "name": "Open Graph article",
+   "description": "og:title/description/image/url, og:type=article",
+   "group": "Техническое",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "meta[property^=og:], og:type=article, og:image",
+   "note": "Y дополнительно og:image:alt, og:updated_time"
+  },
+  {
+   "name": "article:published_time / modified_time",
+   "description": "Мета с датой публикации и изменения",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "meta[property=article:published_time], article:modified_time",
+   "note": "Y также article:section, article:publisher"
+  },
+  {
+   "name": "Twitter Card",
+   "description": "Мета twitter:*",
+   "group": "Техническое",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "meta[name^=twitter:]",
+   "note": ""
+  },
+  {
+   "name": "Breadcrumbs (HTML)",
+   "description": "Видимые хлебные крошки Главная → Новости → Новость",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "market.yandex.ru": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "[class*=breadcrumb], nav[aria-label=Breadcrumb]",
+   "note": "Y — без последнего элемента; у D крошек нет, есть только ссылка «Назад в Пресс-релизы»"
+  },
+  {
+   "name": "BreadcrumbList JSON-LD",
+   "description": "Разметка хлебных крошек в JSON-LD",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "markertoys.ru": "+"
+   },
+   "detect": "script[type=application/ld+json] с @type BreadcrumbList",
+   "note": "D — в Yoast @graph"
+  },
+  {
+   "name": "BreadcrumbList microdata",
+   "description": "Хлебные крошки размечены itemprop/itemtype",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "market.yandex.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "[itemtype*=BreadcrumbList], itemprop=itemListElement",
+   "note": ""
+  },
+  {
+   "name": "Article/NewsArticle JSON-LD",
+   "description": "Разметка статьи: headline, datePublished, dateModified, image, publisher, articleSection",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "market.yandex.ru": "+"
+   },
+   "detect": "JSON-LD @type Article|NewsArticle|BlogPosting",
+   "note": "Только Y (Article); D — WebPage без Article"
+  },
+  {
+   "name": "WebPage JSON-LD + primaryImageOfPage",
+   "description": "Разметка WebPage с главным изображением, датами и автором",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "JSON-LD @type WebPage (+ImageObject primaryimage)",
+   "note": "Yoast SEO граф: WebPage, ImageObject, Person, ReadAction"
+  },
+  {
+   "name": "WebSite + SearchAction JSON-LD",
+   "description": "Разметка сайта с поиском (sitelinks searchbox)",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "JSON-LD @type WebSite с potentialAction SearchAction",
+   "note": ""
+  },
+  {
+   "name": "Organization разметка",
+   "description": "Organization с контактами/адресом/sameAs",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "market.yandex.ru": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "JSON-LD или microdata @type Organization (+ContactPoint/PostalAddress)",
+   "note": "Y — JSON-LD с sameAs, ContactPoint, PostalAddress; M,T — microdata в футере"
+  },
+  {
+   "name": "Машиночитаемая дата <time datetime>",
+   "description": "Дата публикации в теге time с ISO-атрибутом",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "market.yandex.ru": "+"
+   },
+   "detect": "<time datetime=…> рядом с H1",
+   "note": "D,M,T — дата обычным текстом"
+  },
+  {
+   "name": "ЧПУ-URL новости",
+   "description": "Человекопонятный slug в URL новости",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "markertoys.ru": "+"
+   },
+   "detect": "URL вида /news/<slug-транслит>/",
+   "note": "T — /news/<id>/<дата>/; у D и Y раздел на поддомене corp./partner."
+  },
+  {
+   "name": "RSS-лента",
+   "description": "Ссылка на RSS/Atom-фид новостей",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "link[type=application/rss+xml]",
+   "note": "WordPress-фид на corp.detmir.ru"
+  },
+  {
+   "name": "Адаптивность (meta viewport)",
+   "description": "Страница адаптирована под мобильные",
+   "group": "Техническое",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "meta[name=viewport]",
+   "note": ""
+  },
+  {
+   "name": "Языковая версия (EN)",
+   "description": "Ссылка на английскую версию пресс-центра",
+   "group": "Техническое",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "ссылка «English version» / href=/en",
+   "note": "hreflang не используется"
+  },
+  {
+   "name": "Видимая дата публикации",
+   "description": "Дата новости рядом с заголовком",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "текст даты (дд.мм.гггг / «8 октября 2026») возле H1",
+   "note": "D — в дейтлайне первой строки; T — над H1"
+  },
+  {
+   "name": "Дейтлайн пресс-релиза (дата, город)",
+   "description": "Первая строка «8 октября 2026 года, Москва, Россия —»",
+   "group": "Контент",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "первый абзац начинается с даты и города",
+   "note": "Классический формат пресс-релиза"
+  },
+  {
+   "name": "Лид/анонс под заголовком",
+   "description": "Короткий вводный абзац, выделенный стилем",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "выделенный (em/strong/отдельный блок) первый абзац после H1",
+   "note": "D — курсивом в тексте; Y — подзаголовок в header статьи (= description)"
+  },
+  {
+   "name": "Цитата представителя компании",
+   "description": "Прямая речь спикера с ФИО и должностью",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "текст в кавычках «…» + «— отметил/сказал» + ФИО (strong)",
+   "note": ""
+  },
+  {
+   "name": "Конкретные цифры и факты",
+   "description": "Количественные данные в тексте (число заявок, участников, регионов)",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "числа с единицами в теле новости",
+   "note": "D — 540 заявок, ТОП-100, 21 500 заявок, 89 субъектов"
+  },
+  {
+   "name": "Бойлерплейт «о компании»",
+   "description": "Финальный абзац о компании/её системной деятельности",
+   "group": "Контент",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "последний абзац начинается с названия компании и описывает её деятельность",
+   "note": ""
+  },
+  {
+   "name": "Главное изображение новости",
+   "description": "Обложка/фото новости в HTML",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "markertoys.ru": "+",
+    "detmir.ru": "?",
+    "market.yandex.ru": "?"
+   },
+   "detect": "img в начале статьи (hero) с alt",
+   "note": "M — img 940x350 с alt=title, ссылка на полный размер; D,Y — изображение только в og:image/JSON-LD, в HTML не выводится"
+  },
+  {
+   "name": "Подпись/авторство фото",
+   "description": "Указан источник фото («Фото: пресс-служба …»)",
+   "group": "Контент",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "?"
+   },
+   "detect": "figcaption / caption в JSON-LD ImageObject",
+   "note": "D — только в JSON-LD caption"
+  },
+  {
+   "name": "Списки в тексте",
+   "description": "Маркированные списки (ul/ol) в теле новости",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "market.yandex.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "<ul>/<ol> внутри тела новости",
+   "note": "Y — перечень тем курса; T — график работы"
+  },
+  {
+   "name": "Время чтения",
+   "description": "Оценка «~2 мин» рядом с датой",
+   "group": "Контент",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+"
+   },
+   "detect": "текст «~N мин» рядом с датой",
+   "note": ""
+  },
+  {
+   "name": "Рубрика/тег новости",
+   "description": "Принадлежность к рубрике («Новости», «Важное на Маркете»)",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "market.yandex.ru": "+"
+   },
+   "detect": "articleSection в JSON-LD / ссылка на /category/ или /tag/",
+   "note": ""
+  },
+  {
+   "name": "Прикреплённый файл для скачивания",
+   "description": "Ссылка на PDF/документ (каталог, презентация)",
+   "group": "Контент",
+   "impact": "Продукт",
+   "marks": {
+    "markertoys.ru": "+"
+   },
+   "detect": "a[href$=.pdf] в теле новости",
+   "note": "M — PDF-каталог товаров"
+  },
+  {
+   "name": "Ссылки из текста на каталог/разделы сайта",
+   "description": "Внутренние ссылки из тела новости на товары/категории",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "markertoys.ru": "+"
+   },
+   "detect": "a[href^=/] внутри тела новости на каталог",
+   "note": "M — на /detsad/"
+  },
+  {
+   "name": "Внешние ссылки на партнёра",
+   "description": "Ссылки на сайт партнёра (с UTM)",
+   "group": "Контент",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+"
+   },
+   "detect": "a[href^=http] на чужой домен внутри тела новости",
+   "note": "Y — modulbank.ru с utm"
+  },
+  {
+   "name": "CTA целевого действия",
+   "description": "Кнопка/блок конверсии (стать продавцом, как заказать)",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+",
+    "markertoys.ru": "+"
+   },
+   "detect": "кнопка/блок «Стать продавцом», «Как сделать заказ?», форма регистрации",
+   "note": "Y — кнопка в шапке + iframe регистрации; M — раздел «Как сделать заказ?» в тексте"
+  },
+  {
+   "name": "Сквозное меню каталога",
+   "description": "Меню категорий товаров на странице новости",
+   "group": "Коммерция",
+   "impact": "Оба",
+   "marks": {
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "меню с ссылками на /catalog/…",
+   "note": ""
+  },
+  {
+   "name": "Корзина и личный кабинет",
+   "description": "Иконки корзины/ЛК в шапке",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "ссылки на /personal/cart/, /personal/",
+   "note": ""
+  },
+  {
+   "name": "Способы оплаты/доставки",
+   "description": "Логотипы платёжных систем/служб доставки",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "img платёжных систем (visa, mir…), служб доставки",
+   "note": "T — в сайдбаре; M — в футере"
+  },
+  {
+   "name": "Блок преимуществ компании в цифрах",
+   "description": "«30 000+ наименований», «1 000+ торговых марок» и т.п.",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "markertoys.ru": "+"
+   },
+   "detect": "блок .advantages с числами",
+   "note": ""
+  },
+  {
+   "name": "Ссылка на интернет-магазин с корп. сайта",
+   "description": "Переход из пресс-центра в основной магазин",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "ссылка на основной домен магазина в меню",
+   "note": "D — «Интернет-магазин» → www.detmir.ru"
+  },
+  {
+   "name": "Ссылка «Назад к списку новостей»",
+   "description": "Возврат к ленте новостей",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "ссылка «Все новости» / «Назад в Пресс-релизы» / «К списку новостей» на /news/",
+   "note": "Y — только через крошки/рубрику"
+  },
+  {
+   "name": "Блок последних/похожих новостей",
+   "description": "Список других новостей с датами",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "блок со списком ссылок на другие новости и датами",
+   "note": "D — сайдбар 4 пресс-релиза; Y — «Будет интересно» с картинками, датами, временем чтения; T — виджет «Новости» в сайдбаре"
+  },
+  {
+   "name": "Меню раздела «О компании/Пресс-центр»",
+   "description": "Навигация по корпоративным разделам",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "меню со ссылками О компании/История/Награды/Контакты/Новости",
+   "note": "D — полноценное меню пресс-центра; M — в футере «Компания»; T — подменю «О нас/Партнеры/Статьи/Новости»"
+  },
+  {
+   "name": "Рубрикатор новостей/журнала",
+   "description": "Навигация по рубрикам ленты",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "market.yandex.ru": "+"
+   },
+   "detect": "ссылки на /category/… в шапке",
+   "note": ""
+  },
+  {
+   "name": "Ссылки на B2B-разделы",
+   "description": "Поставщикам/партнёрам/продавцам, закупки, дилерство",
+   "group": "Навигация",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "ссылки «Поставщикам», «Партнеры», «Дилерство», «Оптовикам», ссылки для продавцов",
+   "note": ""
+  },
+  {
+   "name": "Кнопка «Наверх»",
+   "description": "Прокрутка к началу страницы",
+   "group": "UX",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+",
+    "markertoys.ru": "+"
+   },
+   "detect": "кнопка «Наверх»/#top/scrollToTop",
+   "note": ""
+  },
+  {
+   "name": "Индикатор прогресса чтения",
+   "description": "Полоса прогресса чтения статьи",
+   "group": "UX",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+"
+   },
+   "detect": "[aria-label*=Прогресс чтения]",
+   "note": ""
+  },
+  {
+   "name": "Медиабанк / айдентика для СМИ",
+   "description": "Раздел фото, логотипов, брендбука для журналистов",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "ссылки «Медиабанк», «Корпоративная айдентика»",
+   "note": ""
+  },
+  {
+   "name": "Контакты для СМИ",
+   "description": "Ссылка/блок с контактами пресс-службы",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "ссылка «Контакты для СМИ»/«Пресс-служба», e-mail пресс-службы",
+   "note": "D — плюс Telegram-канал пресс-службы"
+  },
+  {
+   "name": "Подписка на новости/пресс-релизы",
+   "description": "Форма или раздел подписки",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "markertoys.ru": "+"
+   },
+   "detect": "форма с input[type=email] «Подписаться» / ссылка «Подписка на пресс-релизы»",
+   "note": "D — отдельная страница + попап; M — форма в футере «Узнавайте о скидках первыми»"
+  },
+  {
+   "name": "Кнопки «Поделиться»",
+   "description": "Шеринг новости в соцсети/мессенджеры",
+   "group": "Интерактив",
+   "impact": "Оба",
+   "marks": {
+    "markertoys.ru": "+"
+   },
+   "detect": "блок .ya-share2 / «Поделиться»",
+   "note": ""
+  },
+  {
+   "name": "Ссылки на соцсети компании",
+   "description": "Иконки VK/Telegram/YouTube/OK",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "ссылки на vk.com, t.me, youtube, ok.ru",
+   "note": ""
+  },
+  {
+   "name": "Телефоны/контакты на странице",
+   "description": "Телефон, адрес, e-mail, режим работы",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "a[href^=tel:], адрес, mailto",
+   "note": "Y — только в JSON-LD Organization"
+  },
+  {
+   "name": "Обратная связь / заказ звонка",
+   "description": "Формы связи (заказать звонок, написать нам, опрос)",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "ссылки/формы «Заказать звонок», «Написать нам», «Заполнить форму»",
+   "note": "M — также «Написать директору»; Y — форма «стать героем» и опрос forms.yandex"
+  },
+  {
+   "name": "Ссылки на отзывы/гарантии/сертификаты",
+   "description": "Сигналы доверия в навигации",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "toys-land.ru": "+"
+   },
+   "detect": "ссылки «Отзывы», «Гарантии», «Сертификаты»",
+   "note": ""
+  },
+  {
+   "name": "Ссылки на мобильное приложение",
+   "description": "Бейджи App Store/Google Play/RuStore, QR",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+",
+    "markertoys.ru": "+"
+   },
+   "detect": "ссылки apps.apple.com, play.google.com, rustore.ru",
+   "note": ""
+  },
+  {
+   "name": "Выбор региона",
+   "description": "Переключатель города в шапке",
+   "group": "UX",
+   "impact": "Продукт",
+   "marks": {
+    "markertoys.ru": "+"
+   },
+   "detect": "кнопка выбора города (.location)",
+   "note": ""
+  },
+  {
+   "name": "Галерея фото со скачиванием",
+   "description": "Просмотр фото новости с кнопкой «Скачать фото»",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "?"
+   },
+   "detect": "попап галереи с «Скачать фото»",
+   "note": "D — шаблон галереи есть, в этой новости фото не выведены"
+  },
+  {
+   "name": "Рекламный слот",
+   "description": "Баннерная реклама на странице новости",
+   "group": "UX",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+"
+   },
+   "detect": "div[id^=adfox_]",
+   "note": ""
+  },
+  {
+   "name": "Cookie-уведомление",
+   "description": "Баннер согласия на cookie",
+   "group": "UX",
+   "impact": "Продукт",
+   "marks": {
+    "markertoys.ru": "+"
+   },
+   "detect": "блок с текстом «файлы cookie» и кнопкой «Принять»",
+   "note": ""
+  },
+  {
+   "name": "Политика персональных данных",
+   "description": "Ссылка на политику ПДн",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "ссылка на политику обработки персональных данных",
+   "note": ""
+  }
+ ]
+}

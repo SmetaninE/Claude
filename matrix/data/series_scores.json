@@ -1,0 +1,492 @@
+{
+ "Title с названием серии/бренда и коммерческим модификатором": {
+  "strength": 5,
+  "intent": 5,
+  "why": "Главный сигнал по запросам «<серия> купить».",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Meta description": {
+  "strength": 3,
+  "intent": 5,
+  "why": "Сниппет и CTR.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Динамические данные в meta description": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Цены и количество товаров в сниппете.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "H1 с названием серии/бренда": {
+  "strength": 4,
+  "intent": 5,
+  "why": "Явная тема страницы.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "H1 расширен типом товаров/интентом": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Добавляет тип товаров в H1 («развивающие игрушки») — шире семантика.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Геомодификатор в Title/H1": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Региональная привязка, для федерального сайта вторично.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Canonical": {
+  "strength": 4,
+  "intent": 5,
+  "why": "Защита от дублей пагинации и сортировки.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Meta robots index,follow": {
+  "strength": 1,
+  "intent": 3,
+  "why": "Значим при ошибочном noindex (у Маркета бренд-страница noindex).",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Open Graph разметка": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Шеринг.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Twitter Card": {
+  "strength": 1,
+  "intent": 1,
+  "why": "Неактуально в РФ.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "hreflang": {
+  "strength": 1,
+  "intent": 1,
+  "why": "Только мультирегиональным сайтам.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "ЧПУ-адрес серии/бренда": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Ключ в URL, понятность ссылки.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Breadcrumbs (HTML)": {
+  "strength": 4,
+  "intent": 5,
+  "why": "Иерархия и перелинковка.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "BreadcrumbList JSON-LD": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Крошки в сниппете.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "BreadcrumbList микроразметка": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Альтернатива JSON-LD.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Product/Offer разметка товаров листинга": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Слабо используется в листингах.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "ItemList разметка": {
+  "strength": 2,
+  "intent": 4,
+  "why": "Список товаров для поисковика.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "OfferCatalog / AggregateOffer серии": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Диапазон цен в сниппете, это дифференциатор.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "AggregateRating разметка": {
+  "strength": 3,
+  "intent": 3,
+  "why": "Звёзды в сниппете.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Organization разметка": {
+  "strength": 2,
+  "intent": 2,
+  "why": "Сквозная сущность компании.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "WebSite + SearchAction": {
+  "strength": 1,
+  "intent": 1,
+  "why": "Только для главной.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Alt у изображений товаров": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Поиск по картинкам.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Логотип серии/бренда": {
+  "strength": 2,
+  "intent": 4,
+  "why": "Узнаваемость и подтверждение «я на странице нужной серии».",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Вводное описание серии над листингом": {
+  "strength": 4,
+  "intent": 5,
+  "why": "Объясняет, что объединяет серию. Уникальный текст и релевантность, без него страница — дубль поиска.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "SEO-текст под листингом с H2": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Расширение семантики серии.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "История/факты о производителе": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Доверие к производителю и экспертность.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Счётчик товаров серии": {
+  "strength": 2,
+  "intent": 4,
+  "why": "Масштаб серии.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Минимальная цена серии в тексте": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Коммерческий сигнал «от N ₽».",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Блок отзывов о серии с агрегированным рейтингом": {
+  "strength": 4,
+  "intent": 4,
+  "why": "Социальное доказательство на уровне серии и уникальный UGC, это дифференциатор.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Блок новых поступлений": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Причина вернуться на страницу.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Блок статей/блога": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Экспертный контент о серии.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Блок горячих предложений с таймером": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Отвлекает от серии.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Фильтр/табы по категориям внутри серии": {
+  "strength": 4,
+  "intent": 5,
+  "why": "Серия «развивающие игрушки» широкая, без деления по типам выбор затруднён.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Фильтр по цене": {
+  "strength": 3,
+  "intent": 5,
+  "why": "Частый фильтр.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Фильтр по возрасту": {
+  "strength": 4,
+  "intent": 5,
+  "why": "Для развивающих игрушек возраст — главный критерий.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Фильтр по подсерии/линейке/лицензии": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Для брендов с линейками.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Фильтры по характеристикам": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Сужение выбора внутри серии.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Фильтр по наличию/способу и сроку получения": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Срочные покупки.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Фильтр по статусу товара (новинки/акции/хиты)": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Быстрый отбор выгодного.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Фильтр по стране производства": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Нишевый фильтр.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Фильтр по продавцу": {
+  "strength": 1,
+  "intent": 1,
+  "why": "Нужен только маркетплейсам.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Быстрые фильтры-чипы над листингом": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Быстрое сужение.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Сортировка листинга": {
+  "strength": 3,
+  "intent": 5,
+  "why": "Базовая работа со списком.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Выбор количества товаров на странице": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Мелкий UX, полезен оптовикам.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Переключатель вида листинга": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Мелкий UX.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Пагинация ссылками": {
+  "strength": 3,
+  "intent": 5,
+  "why": "Индексация всех товаров серии.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Кнопка «Показать ещё»": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Удобство на мобильных.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Выбор региона/города": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Цены и наличие зависят от региона.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Цена в карточке листинга": {
+  "strength": 4,
+  "intent": 5,
+  "why": "Коммерческий ответ.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Старая цена и % скидки": {
+  "strength": 3,
+  "intent": 3,
+  "why": "Мотивация выгодой.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Кнопка «В корзину» в листинге": {
+  "strength": 4,
+  "intent": 5,
+  "why": "Короткий путь к покупке.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Выбор количества в карточке листинга": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Оптовикам важно сразу задать количество.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Добавить в избранное": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Отложенный выбор.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Рейтинг и число отзывов в карточке": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Социальное доказательство.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Индикатор остатка": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Особенно важно для опта.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Сообщить о поступлении": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Сохранение спроса.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Бейджи товаров": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Подсветка хитов и новинок.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Цена при способе оплаты": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Усложняет восприятие.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Рассрочка/сплит в карточке": {
+  "strength": 1,
+  "intent": 1,
+  "why": "Для игрушек малоактуально.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Кешбэк/бонусы в карточке": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Лояльность.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Счётчик покупок": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Социальное доказательство.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Срок доставки в карточке": {
+  "strength": 3,
+  "intent": 3,
+  "why": "Подарок к дате.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Атрибуты товара в карточке": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Выбор без перехода в карточку.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Оптовые параметры в карточке": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Ключ для оптовой ЦА sima-land.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Цена по запросу/после авторизации": {
+  "strength": 2,
+  "intent": 2,
+  "why": "Барьер для розницы, у sima-land цены открыты.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Блок преимуществ магазина": {
+  "strength": 2,
+  "intent": 3,
+  "why": "УТП.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Виджет рейтинга магазина": {
+  "strength": 2,
+  "intent": 2,
+  "why": "Внешнее доверие.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Персональный менеджер": {
+  "strength": 2,
+  "intent": 2,
+  "why": "Нужен B2B-аудитории.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Форма вопроса/обратной связи на странице": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Канал связи.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Подписка на рассылку": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Сбор базы.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ }
+}

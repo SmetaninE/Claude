@@ -1,0 +1,492 @@
+{
+ "Title со словом «отзывы» и названием товара": {
+  "strength": 5,
+  "intent": 5,
+  "why": "Без «отзывы» в title страница не ранжируется по «<товар> отзывы» и дублирует карточку.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Количество отзывов в Title": {
+  "strength": 2,
+  "intent": 4,
+  "why": "Число отзывов в сниппете показывает объём и повышает CTR.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Год в Title": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Свежесть, но быстро устаревает.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Meta description про отзывы": {
+  "strength": 3,
+  "intent": 5,
+  "why": "Уникальный сниппет под отзывный запрос.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Рейтинг и число оценок/отзывов в description": {
+  "strength": 2,
+  "intent": 4,
+  "why": "Цифры в сниппете повышают CTR.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "H1 со словом «отзывы»": {
+  "strength": 4,
+  "intent": 5,
+  "why": "Явная тема страницы.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Canonical на саму страницу отзывов": {
+  "strength": 4,
+  "intent": 5,
+  "why": "Self-canonical нужен, чтобы отзывная страница ранжировалась отдельно.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Canonical на карточку товара": {
+  "strength": 1,
+  "intent": 1,
+  "why": "Обратная стратегия: страница отзывов не ранжируется сама, весь вес уходит карточке.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Страница открыта для индексации": {
+  "strength": 5,
+  "intent": 5,
+  "why": "Без индексации отдельный URL отзывов бессмыслен для SEO (у detmir — noindex).",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Open Graph теги": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Шеринг отзывов.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Twitter Card": {
+  "strength": 1,
+  "intent": 1,
+  "why": "Неактуально в РФ.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "hreflang": {
+  "strength": 1,
+  "intent": 1,
+  "why": "Только мультирегиональным сайтам.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Хлебные крошки (HTML)": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Навигация к категории и товару.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Последняя крошка «Отзывы»": {
+  "strength": 2,
+  "intent": 4,
+  "why": "Показывает страницу как отдельный уровень под товаром.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "BreadcrumbList JSON-LD": {
+  "strength": 2,
+  "intent": 4,
+  "why": "Крошки в сниппете.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Product JSON-LD": {
+  "strength": 3,
+  "intent": 5,
+  "why": "Сущность товара, к которой привязаны отзывы.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "AggregateRating в разметке": {
+  "strength": 5,
+  "intent": 5,
+  "why": "Звёзды в сниппете — главный CTR-фактор отзывной страницы.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Review в разметке (массив отзывов)": {
+  "strength": 3,
+  "intent": 5,
+  "why": "Отзывы в структурированных данных.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "positiveNotes/negativeNotes в Review": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Плюсы и минусы в сниппете Google.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Offer в разметке": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Цена в сниппете.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Organization/Store в разметке": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Сквозная сущность.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "WebSite + SearchAction": {
+  "strength": 1,
+  "intent": 1,
+  "why": "Только для главной.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Микроразметка microdata": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Альтернативный формат разметки.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Тексты отзывов в исходном HTML (SSR)": {
+  "strength": 5,
+  "intent": 5,
+  "why": "Отзывы и есть контент страницы. Без SSR индексировать нечего.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Название товара в шапке страницы отзывов": {
+  "strength": 3,
+  "intent": 5,
+  "why": "Контекст: о каком товаре отзывы.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Средний рейтинг": {
+  "strength": 4,
+  "intent": 5,
+  "why": "Быстрый ответ «хороший ли товар».",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Счётчик отзывов": {
+  "strength": 3,
+  "intent": 5,
+  "why": "Насколько можно доверять рейтингу.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Число оценок отдельно от отзывов": {
+  "strength": 1,
+  "intent": 3,
+  "why": "Уточняет базу рейтинга.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Гистограмма распределения по звёздам": {
+  "strength": 3,
+  "intent": 5,
+  "why": "Показывает долю негатива — важно для решения.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Оценка в каждом отзыве": {
+  "strength": 3,
+  "intent": 5,
+  "why": "Быстро просмотреть отзывы.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Имя автора отзыва": {
+  "strength": 2,
+  "intent": 4,
+  "why": "Достоверность отзыва.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Аватар автора": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Мелкий сигнал достоверности.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Дата отзыва": {
+  "strength": 3,
+  "intent": 5,
+  "why": "Актуальность отзыва и сигнал свежести.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Структура отзыва: достоинства/недостатки/комментарий": {
+  "strength": 4,
+  "intent": 5,
+  "why": "Быстрый поиск минусов — главная задача читателя отзывов.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Фото/видео в отзывах": {
+  "strength": 4,
+  "intent": 5,
+  "why": "Реальные фото покупателей сильнее всего убеждают, особенно для конструктора (сборка, детали).",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Галерея «Фото и видео покупателей»": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Быстрый доступ к медиа покупателей, это дифференциатор.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Оценки без текста в списке": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Слабый контент.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Сворачивание длинного отзыва («Читать полностью»)": {
+  "strength": 1,
+  "intent": 3,
+  "why": "Компактность страницы.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Отметка подтверждённого покупателя": {
+  "strength": 4,
+  "intent": 4,
+  "why": "Снимает подозрение в фейковых отзывах, это дифференциатор.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Ответы на отзывы (ветка)": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Ответ продавца на негатив снимает возражения.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Голосование «полезно» у отзыва": {
+  "strength": 2,
+  "intent": 4,
+  "why": "Поднимает полезные отзывы наверх.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Пожаловаться на отзыв": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Модерация.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Рейтинг магазина на внешних площадках": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Не по интенту.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Ссылка на отзывы о магазине": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Не по интенту.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Оценить магазин («Поблагодарить/Пожаловаться»)": {
+  "strength": 1,
+  "intent": 1,
+  "why": "Не по интенту.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Сортировка отзывов": {
+  "strength": 3,
+  "intent": 5,
+  "why": "Сначала негативные или новые — так читают отзывы.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Фильтр по количеству звёзд": {
+  "strength": 3,
+  "intent": 5,
+  "why": "Быстро найти минусы.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Фильтр «с фото и видео»": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Быстро найти реальные фото.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Переключатель «все варианты / этот вариант»": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Точность для модификаций.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Догрузка «Показать ещё»": {
+  "strength": 2,
+  "intent": 4,
+  "why": "Удобная подгрузка. Для SEO нужна и пагинация ссылками.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Кнопка «Оставить отзыв»": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Рост UGC.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Цена товара на странице отзывов": {
+  "strength": 3,
+  "intent": 4,
+  "why": "После чтения отзывов следующий вопрос — цена.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Старая цена и скидка": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Мотивация.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Кнопка «В корзину»": {
+  "strength": 4,
+  "intent": 4,
+  "why": "Конверсия прямо со страницы отзывов.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Купить в 1 клик": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Ускоряет покупку.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Бонусы/кешбэк за покупку": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Слабо.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Таймер акции": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Слабо.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Оплата частями (сплит)": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Слабо.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Избранное и сравнение": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Отложить решение.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Счётчик покупок": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Социальное доказательство.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Ссылка назад на карточку товара": {
+  "strength": 3,
+  "intent": 5,
+  "why": "Переход к описанию и характеристикам, перелинковка.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Вкладки разделов товара со счётчиками": {
+  "strength": 2,
+  "intent": 4,
+  "why": "Навигация между описанием, отзывами и вопросами.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Ссылка на категорию товара со счётчиком": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Выход к альтернативам.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Ссылка на бренд из отзыва": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Слабая перелинковка.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Ссылка на товар из отзыва": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Нужна только в агрегированных отзывах.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "SEO-перелинковка категорий и брендов": {
+  "strength": 2,
+  "intent": 2,
+  "why": "Сквозная перелинковка.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Рекомендации / «Вы интересовались»": {
+  "strength": 3,
+  "intent": 3,
+  "why": "Альтернативы при негативных отзывах.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Рекламные блоки": {
+  "strength": 0,
+  "intent": 1,
+  "why": "Отвлекают.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Sticky мини-карточка товара": {
+  "strength": 2,
+  "intent": 4,
+  "why": "Купить можно в любой момент чтения.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Промо мобильного приложения (QR)": {
+  "strength": 1,
+  "intent": 1,
+  "why": "Не по интенту.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ }
+}

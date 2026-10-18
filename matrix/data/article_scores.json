@@ -1,0 +1,492 @@
+{
+ "Title": {
+  "strength": 5,
+  "intent": 5,
+  "why": "Главный сигнал релевантности по запросу «что подарить ребёнку на Новый год».",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Год в Title/H1": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Сезонный запрос: год в заголовке повышает CTR и показывает свежесть подборки, это дифференциатор.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Meta description": {
+  "strength": 3,
+  "intent": 5,
+  "why": "Сниппет и CTR.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "H1": {
+  "strength": 4,
+  "intent": 5,
+  "why": "Тема статьи.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Иерархия подзаголовков H2/H3": {
+  "strength": 4,
+  "intent": 5,
+  "why": "Структура подборки (по возрастам/типам) и попадание в быстрые ответы.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Якоря на разделах": {
+  "strength": 2,
+  "intent": 4,
+  "why": "Ссылки на разделы в сниппете и работа оглавления.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Canonical": {
+  "strength": 3,
+  "intent": 5,
+  "why": "Защита от дублей (UTM из рассылок, дубли -1 в URL).",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Meta robots index,follow": {
+  "strength": 1,
+  "intent": 3,
+  "why": "Значим при ошибочном noindex.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Open Graph": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Статьи распространяются через соцсети и мессенджеры, превью обязательно.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "og:type=article": {
+  "strength": 1,
+  "intent": 3,
+  "why": "Уточнение типа для соцсетей.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Twitter Card": {
+  "strength": 1,
+  "intent": 1,
+  "why": "Неактуально в РФ.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Хлебные крошки (HTML)": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Навигация в журнал и перелинковка.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "BreadcrumbList JSON-LD": {
+  "strength": 2,
+  "intent": 4,
+  "why": "Крошки в сниппете.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "BreadcrumbList microdata": {
+  "strength": 2,
+  "intent": 4,
+  "why": "Альтернатива JSON-LD.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Article/BlogPosting JSON-LD": {
+  "strength": 4,
+  "intent": 5,
+  "why": "Даты, автор и издатель для поисковика, основа сниппета статьи.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Даты в разметке": {
+  "strength": 3,
+  "intent": 5,
+  "why": "Сигнал свежести для сезонного контента.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Автор-Person в разметке": {
+  "strength": 3,
+  "intent": 4,
+  "why": "E-E-A-T, привязка к автору.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Organization в разметке": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Издатель.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "WebSite + SearchAction": {
+  "strength": 1,
+  "intent": 1,
+  "why": "Только для главной.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Product/AggregateOffer/AggregateRating JSON-LD": {
+  "strength": 2,
+  "intent": 2,
+  "why": "Товарная разметка на статье — серая зона правил поисковиков.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Описательные alt у изображений": {
+  "strength": 2,
+  "intent": 4,
+  "why": "Трафик из поиска по картинкам на подарочные запросы.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Лид/вводный абзац": {
+  "strength": 3,
+  "intent": 5,
+  "why": "Сразу обещает ответ и формирует сниппет.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Обложка статьи": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Превью в выдаче, Дзене и соцсетях.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Разбивка по возрасту": {
+  "strength": 5,
+  "intent": 5,
+  "why": "Главный критерий подарка ребёнку. Закрывает хвосты «что подарить ребёнку 5/7/10 лет на НГ».",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Разбивка по полу": {
+  "strength": 3,
+  "intent": 5,
+  "why": "Хвосты «мальчику/девочке».",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Разбивка по типу подарка/интересам": {
+  "strength": 4,
+  "intent": 5,
+  "why": "Структура подборки по категориям.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Разбивка по бюджету": {
+  "strength": 4,
+  "intent": 4,
+  "why": "Важный фильтр выбора («до 1000 ₽»), есть только у одного конкурента — дифференциатор.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Блок «Как выбрать»": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Экспертность и ответ на «как выбрать подарок».",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Топ-N быстрых идей": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Ответ для торопящихся, кандидат в быстрый ответ поисковика.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Нетоварные идеи (впечатления, персонализация)": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Полнота ответа.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Что не дарить": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Закрывает сомнения и показывает экспертность.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "FAQ-блок": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Расширенный сниппет и полнота ответа.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Контекст праздника": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Вода для этого интента.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Заключение с призывом": {
+  "strength": 2,
+  "intent": 4,
+  "why": "Подводит к каталогу.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Подписи к фото товаров": {
+  "strength": 1,
+  "intent": 3,
+  "why": "Поясняют, что на фото.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Товарные карточки в тексте": {
+  "strength": 5,
+  "intent": 5,
+  "why": "Мост от идеи к покупке: главная коммерческая ценность статьи магазина.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Товарный блок после статьи": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Продолжение пути к покупке.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Цена в карточке": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Сразу показывает, укладывается ли идея в бюджет.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Кнопка «В корзину» из статьи": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Покупка без лишних шагов.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Старая цена/скидка": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Мотивация выгодой.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Рейтинг и отзывы товара": {
+  "strength": 3,
+  "intent": 3,
+  "why": "Подтверждает, что подарок понравится.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Счётчик покупок": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Социальное доказательство.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Наличие/остаток": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Перед праздником важно, успеет ли.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Срок доставки в карточке": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Успеет ли подарок к Новому году — ключевая боль сезона.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Избранное": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Отложить идеи на потом.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Рассрочка/Сплит": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Для детских подарков малозначимо.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Кешбэк, бонусы, промокоды": {
+  "strength": 2,
+  "intent": 2,
+  "why": "Дополнительная выгода.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Фильтры/сортировка товарного блока": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Удобно, если товаров много.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Ссылки на товары из текста": {
+  "strength": 4,
+  "intent": 5,
+  "why": "Перелинковка с информационной статьи на карточки и конверсия.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Ссылки на категории каталога": {
+  "strength": 4,
+  "intent": 5,
+  "why": "Передача веса в коммерческие разделы и переход к выбору.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Блок брендов статьи": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Слабая ценность.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "УТП магазина в статье": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Доверие перед покупкой.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Коммерческий текст об условиях покупки": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Отвечает на вопросы о доставке до праздника.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Рекламные баннеры с маркировкой": {
+  "strength": 1,
+  "intent": 1,
+  "why": "Отвлекают.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Дисклеймер о ценах": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Юридическая аккуратность.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Автор статьи": {
+  "strength": 3,
+  "intent": 4,
+  "why": "E-E-A-T, доверие к советам.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Био и страница автора": {
+  "strength": 3,
+  "intent": 3,
+  "why": "Экспертность (педагог, психолог).",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Видимая дата публикации/обновления": {
+  "strength": 3,
+  "intent": 5,
+  "why": "Актуальность сезонной подборки.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Время чтения": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Мелкий UX.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Счётчик просмотров": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Слабое социальное доказательство.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Оглавление": {
+  "strength": 3,
+  "intent": 5,
+  "why": "Навигация по длинной подборке, ссылки в сниппете.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Рубрикатор блога": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Навигация по журналу.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Теги статьи": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Перелинковка.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Похожие статьи": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Глубина просмотра и перелинковка.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Ссылка на список статей": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Навигация.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Бесконечная лента статей": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Удерживает, но размывает тему.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Поделиться": {
+  "strength": 2,
+  "intent": 4,
+  "why": "Родители пересылают идеи (согласовать подарок).",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Лайки/реакции": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Мелкая вовлечённость.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Подписка на статьи/рассылку": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Возврат аудитории.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Форма вопроса/обратного звонка": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Слабо связано с интентом статьи.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ }
+}

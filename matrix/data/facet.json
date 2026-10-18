@@ -1,0 +1,975 @@
+{
+ "type": "Фасетная (посадочная по фильтру) страница",
+ "intent": "Коммерческий транзакционный интент «купить настольные игры для детей от 6 лет»: пользователь выбирает игру по возрасту ребёнка и сравнивает цены/бренды. Аналоги — листинг категории настольных игр, суженный возрастным фасетом: у сильных игроков (detmir, boobl-goom, ozon, WB) это отдельная индексируемая посадочная с ЧПУ, своим title/H1 и перелинковкой на соседние возрасты; у остальных — GET/SEF-фильтр без собственной SEO-оптимизации.",
+ "urls": [
+  {
+   "domain": "ozon.ru",
+   "url": "https://www.ozon.ru/category/nastolnye-igry-dlya-detey-6-let/",
+   "status": "недоступна",
+   "reason": "аналог есть (ЧПУ-подборка в category), но curl → 307 на ?__rr, Playwright → «Похоже, нет соединения» (антибот)",
+   "html": null
+  },
+  {
+   "domain": "wildberries.ru",
+   "url": "https://www.wildberries.ru/catalog/tovary-dlya-zhivotnyh/igrushki/tags/nastolnye-igry-dlya-detey-6-let",
+   "status": "недоступна",
+   "reason": "тег-страница найдена в поиске; curl 498, Playwright → «Подозрительная активность»",
+   "html": null
+  },
+  {
+   "domain": "market.yandex.ru",
+   "url": "https://market.yandex.ru/catalog--nastolnye-igry-dlia-detei-6-let/59742/list?glfilter=10833151%3A6~6",
+   "status": "ok",
+   "reason": "только фильтр через GET-параметр glfilter (мин. возраст 6); curl → капча, скачано Playwright; title/H1 родительской категории",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/facet/market.yandex.ru.html"
+  },
+  {
+   "domain": "detmir.ru",
+   "url": "https://www.detmir.ru/catalog/index/name/boardgames_6yrs/",
+   "status": "ok",
+   "reason": "отдельная посадочная «Настольные игры для детей от 6 лет», 33 товара",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/facet/detmir.ru.html"
+  },
+  {
+   "domain": "aliexpress.ru",
+   "url": "https://aliexpress.ru/popular/настольные-игры-для-детей-6-лет",
+   "status": "недоступна",
+   "reason": "возможная popular-подборка; curl — пустой скелет, Playwright → капча «Пройдите проверку»; возрастной фасет не подтверждён",
+   "html": null
+  },
+  {
+   "domain": "boobl-goom.ru",
+   "url": "https://boobl-goom.ru/igrushki-i-igry/nastolnye-igry-i-golovolomki/ot-6-let/",
+   "status": "ok",
+   "reason": "ЧПУ-тег «От 6 лет» в категории настольных игр, H1/title под фасет",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/facet/boobl-goom.ru.html"
+  },
+  {
+   "domain": "igroray.ru",
+   "url": "https://igroray.ru/catalog/nastolnye-igry/filter/vozrast-is-ot_shesti_let/apply/",
+   "status": "ok",
+   "reason": "только SEF-URL умного фильтра Bitrix «Возраст 6+» (21 товар); noindex,nofollow, canonical на родителя, title/H1 родителя",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/facet/igroray.ru.html"
+  },
+  {
+   "domain": "ural.toys",
+   "url": null,
+   "status": "нет аналога",
+   "reason": "в /catalog/nastolnye-igry/ нет возрастного фильтра/тегов (свойство «Возраст» без значений), подборок 6+ в поиске нет",
+   "html": null
+  },
+  {
+   "domain": "markertoys.ru",
+   "url": null,
+   "status": "нет аналога",
+   "reason": "в /catalog/nastolnye_i_pechatnye_igry/ фильтры только цена/бренд/форма/страна, возрастного фильтра нет",
+   "html": null
+  },
+  {
+   "domain": "megamarket.ru",
+   "url": null,
+   "status": "недоступна",
+   "reason": "curl — скелет 1.8 КБ, Playwright → «Упс… запросы похожи на автоматические»; по выдаче есть подборка «для детей 6 лет», точный URL не подтверждён",
+   "html": null
+  },
+  {
+   "domain": "toys-land.ru",
+   "url": "https://www.toys-land.ru/catalog/nastolnye-igry/?filter=1291:8514",
+   "status": "ok",
+   "reason": "только фильтр через GET-параметр (быстрый фильтр «6-7 лет», от 6 лет нет); canonical отсутствует, H1 родителя",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/facet/toys-land.ru.html"
+  }
+ ],
+ "sima": {
+  "url": "https://www.sima-land.ru/nastolnye-igry-dlya-detej-ot-6-let-fps/",
+  "status": "недоступна",
+  "reason": "TLS reset: Playwright net::ERR_CONNECTION_RESET"
+ },
+ "factors": [
+  {
+   "name": "Title с названием фасета (возраст)",
+   "description": "В <title> есть категория + значение фильтра «от 6 лет»",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "boobl-goom.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "<title> содержит «6 лет»/«6+»",
+   "note": "TL дописывает «Фильтр: Возраст игрока: 6-7 лет» автоматически; YM и igroray — title родительской категории"
+  },
+  {
+   "name": "Коммерческий хвост в Title",
+   "description": "«купить», «цены», «интернет-магазин» в title",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+",
+    "boobl-goom.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "<title> содержит купить|цен|магазин",
+   "note": ""
+  },
+  {
+   "name": "Meta description, уникальная под фасет",
+   "description": "Description упоминает фасет «для детей от 6 лет»",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "boobl-goom.ru": "+"
+   },
+   "detect": "meta[name=description] содержит «6 лет»",
+   "note": "YM/igroray/TL — description родительской категории"
+  },
+  {
+   "name": "Динамические данные в Meta description",
+   "description": "Кол-во товаров и/или диапазон цен подставляются в description",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "meta description содержит число товаров/моделей или «от N ₽ до M ₽»",
+   "note": "DM: «от 9 ₽ до 1999 ₽. В наличии 33 товара»; YM: «264 модели»"
+  },
+  {
+   "name": "H1 с названием фасета",
+   "description": "Единственный H1 = «Настольные игры для детей от 6 лет»",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "boobl-goom.ru": "+"
+   },
+   "detect": "h1 содержит «6 лет»",
+   "note": "YM/igroray/TL — H1 родителя («Настольные игры», «Каталог настольных игр», «Настольные детские игры»)"
+  },
+  {
+   "name": "Статический ЧПУ фасета",
+   "description": "Отдельный человекочитаемый URL без GET-параметров",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "URL без ?, slug с «6» (ot-6-let, boardgames_6yrs)",
+   "note": "igroray — SEF умного фильтра Bitrix (/filter/vozrast-is-ot_shesti_let/apply/); YM и TL — GET-параметры glfilter/filter"
+  },
+  {
+   "name": "Self-canonical на фасет",
+   "description": "link rel=canonical указывает на сам фасетный URL",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "boobl-goom.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "link[rel=canonical] href == текущий URL",
+   "note": "YM — canonical на /catalog--nastolnye-igry/…?glfilter=…; igroray — canonical на родителя; TL — canonical нет"
+  },
+  {
+   "name": "Meta robots index,follow",
+   "description": "Явное разрешение индексации фасета",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "boobl-goom.ru": "+"
+   },
+   "detect": "meta[name=robots] content содержит index",
+   "note": "igroray: noindex,nofollow на фильтр-URL"
+  },
+  {
+   "name": "Breadcrumbs (HTML)",
+   "description": "Хлебные крошки на странице",
+   "group": "Техническое",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+",
+    "boobl-goom.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "[class*=breadcrumb], nav с «Главная»",
+   "note": ""
+  },
+  {
+   "name": "Фасет как последний уровень крошек",
+   "description": "Крошки заканчиваются звеном «От 6 лет»/названием фасета",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "boobl-goom.ru": "+"
+   },
+   "detect": "последний элемент крошек содержит «6 лет»",
+   "note": "BG: Главная › Игрушки и игры › Настольные игры и головоломки › От 6 лет; DM — плоско: Главная › фасет"
+  },
+  {
+   "name": "BreadcrumbList JSON-LD",
+   "description": "Микроразметка крошек в JSON-LD",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "script[type=\"application/ld+json\"] @type=BreadcrumbList",
+   "note": ""
+  },
+  {
+   "name": "BreadcrumbList microdata",
+   "description": "Крошки в itemtype schema.org",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "market.yandex.ru": "+",
+    "boobl-goom.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "[itemtype*=\"BreadcrumbList\"]",
+   "note": ""
+  },
+  {
+   "name": "Product + AggregateOffer для листинга",
+   "description": "Листинг размечен как Product с AggregateOffer (lowPrice/highPrice/offerCount)",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "JSON-LD Product.offers @type=AggregateOffer",
+   "note": "Даёт цену «от…до» в сниппете"
+  },
+  {
+   "name": "AggregateRating для листинга",
+   "description": "Сводный рейтинг/кол-во отзывов по категории в разметке",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "JSON-LD aggregateRating на уровне листинга",
+   "note": "DM: 4.9, reviewCount 4308"
+  },
+  {
+   "name": "OfferCatalog",
+   "description": "JSON-LD OfferCatalog с названием/описанием фасета",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "@type=OfferCatalog",
+   "note": ""
+  },
+  {
+   "name": "ItemList товаров",
+   "description": "Список товаров в разметке ItemList/Product",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "market.yandex.ru": "+",
+    "boobl-goom.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "JSON-LD или microdata ItemList + Product/Offer",
+   "note": "YM — JSON-LD ItemList (8 Product); BG/TL — microdata ItemList/Product/Offer"
+  },
+  {
+   "name": "Organization",
+   "description": "Разметка организации",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "igroray.ru": "+",
+    "boobl-goom.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "@type/itemtype Organization",
+   "note": ""
+  },
+  {
+   "name": "WebSite + SearchAction",
+   "description": "Разметка поиска по сайту",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "JSON-LD WebSite.potentialAction SearchAction",
+   "note": ""
+  },
+  {
+   "name": "Open Graph",
+   "description": "og:title/og:description/og:url/og:image",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+",
+    "boobl-goom.ru": "+"
+   },
+   "detect": "meta[property^=\"og:\"] (og:title)",
+   "note": "TL — только og:image с относительным путём"
+  },
+  {
+   "name": "hreflang",
+   "description": "Альтернативные языковые/региональные версии",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "link[hreflang]",
+   "note": "DM: ru-ru + x-default"
+  },
+  {
+   "name": "rel=next для пагинации",
+   "description": "link rel=next на следующую страницу листинга",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "market.yandex.ru": "+"
+   },
+   "detect": "link[rel=next]",
+   "note": ""
+  },
+  {
+   "name": "Lazy-load изображений",
+   "description": "loading=lazy у изображений товаров",
+   "group": "Техническое",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+",
+    "boobl-goom.ru": "+"
+   },
+   "detect": "img[loading=lazy]",
+   "note": ""
+  },
+  {
+   "name": "Alt у изображений товаров",
+   "description": "Заполненный alt у фото в карточках",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+",
+    "boobl-goom.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "img[alt] непустой у карточек",
+   "note": ""
+  },
+  {
+   "name": "Товары в исходном HTML (SSR)",
+   "description": "Листинг товаров отдаётся сервером без JS",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+",
+    "boobl-goom.ru": "+",
+    "toys-land.ru": "+",
+    "market.yandex.ru": "?"
+   },
+   "detect": "названия/ссылки товаров есть в HTML без исполнения JS",
+   "note": "YM — получено только через headless-браузер (curl → капча)"
+  },
+  {
+   "name": "Счётчик товаров в фасете",
+   "description": "Число найденных товаров рядом с H1/в фильтре",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+",
+    "boobl-goom.ru": "+",
+    "toys-land.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "текст «N товар(а/ов)», «Показать N товаров»",
+   "note": "YM — только в description («264 модели»)"
+  },
+  {
+   "name": "SEO-текст на странице",
+   "description": "Текстовый блок о категории/фасете",
+   "group": "Контент",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "блок текста >300 симв. вне карточек, H2/H3 у igroray",
+   "note": "DM — короткий уникальный текст под фасет «Хотите купить настольные игры для детей шести лет?» с числом и ценами; igroray — длинный общий текст категории"
+  },
+  {
+   "name": "FAQ-блок",
+   "description": "Вопросы-ответы о категории",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "igroray.ru": "+"
+   },
+   "detect": "H2 «Часто задаваемые вопросы»",
+   "note": "Без FAQPage-разметки"
+  },
+  {
+   "name": "Блок «Популярные бренды» (фасет+бренд)",
+   "description": "Ссылки на пересечения фасета с брендами",
+   "group": "Навигация",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "текст «Популярные бренды» + a[href*=\"/boardgames_6yrs/brand/\"]",
+   "note": "DM: 8 брендов → /boardgames_6yrs/brand/{id}/"
+  },
+  {
+   "name": "Блок «Популярные категории»",
+   "description": "Ссылки на смежные подкатегории под листингом",
+   "group": "Навигация",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "текст «Популярные категории»",
+   "note": ""
+  },
+  {
+   "name": "Блок отзывов о товарах фасета",
+   "description": "Сводный рейтинг, распределение по звёздам, примеры отзывов",
+   "group": "Доверие",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "текст «Отзывы на …», «N отзывов», «Все отзывы на товары»",
+   "note": "DM: 4,9 / 4308 отзывов + 3 отзыва"
+  },
+  {
+   "name": "Блог/статьи на листинге",
+   "description": "Блок статей/обзоров",
+   "group": "Контент",
+   "impact": "SEO",
+   "marks": {
+    "igroray.ru": "+"
+   },
+   "detect": "H2 «Это интересно», ссылки /journal/",
+   "note": "igroray — нерелевантные статьи о видеоиграх"
+  },
+  {
+   "name": "Блок преимуществ магазина",
+   "description": "УТП: быстро/доступно/возврат/бонусы",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": ".features (BG), H3 «Супер преимущества» (igroray)",
+   "note": ""
+  },
+  {
+   "name": "Облако тегов/подборок",
+   "description": "Набор ссылок на поисковые подборки",
+   "group": "Навигация",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "ряд ссылок-тегов («монополия», «мафия»…, «ходилки», «бродилки»…)",
+   "note": "DM — чипы сверху; igroray — облако внизу"
+  },
+  {
+   "name": "Ссылки на соседние возрастные фасеты",
+   "description": "Ссылки «от 3/5/7/10 лет» на другие возрастные посадочные",
+   "group": "Навигация",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "boobl-goom.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "a с текстом «от N лет» / «N-M лет» на другие URL фасетов",
+   "note": "DM: /games_5years/ и др.; BG: /ot-7-let/; TL: ?filter=1291:8515"
+  },
+  {
+   "name": "Ссылки на подкатегории/типы игр",
+   "description": "Ссылки на логические, стратегические, для компании и т.п.",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+",
+    "boobl-goom.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "ссылки на разделы типов настольных игр в листинге/сайдбаре",
+   "note": ""
+  },
+  {
+   "name": "Быстрые фильтры-чипы над листингом",
+   "description": "Горизонтальные кнопки-ссылки подборок над товарами",
+   "group": "UX",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "boobl-goom.ru": "+",
+    "toys-land.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": ".quick-filter (TL), .c-requests (BG), ряд chip-ссылок (DM)",
+   "note": ""
+  },
+  {
+   "name": "Плашка выбранных фильтров со сбросом",
+   "description": "Показ активного фильтра «Возраст: 6+» с крестиком/сбросом",
+   "group": "UX",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+",
+    "toys-land.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": ".selected-filters (igroray), .quick-filter__reset (TL), «Выбранные фильтры» (YM)",
+   "note": ""
+  },
+  {
+   "name": "Пагинация",
+   "description": "Номера страниц листинга",
+   "group": "Навигация",
+   "impact": "SEO",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": ".pagination с номерами или ?page=2",
+   "note": "DM/igroray/TL — все товары фасета на одной странице"
+  },
+  {
+   "name": "Кнопка «Показать ещё»",
+   "description": "Догрузка товаров без перехода",
+   "group": "UX",
+   "impact": "Продукт",
+   "marks": {
+    "boobl-goom.ru": "+"
+   },
+   "detect": "a.pagination__item--more",
+   "note": ""
+  },
+  {
+   "name": "Сортировка",
+   "description": "Популярность/цена/новизна/скидка",
+   "group": "UX",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+",
+    "boobl-goom.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "блок сортировки «По популярности», «по возрастанию цены»",
+   "note": ""
+  },
+  {
+   "name": "Фильтр по цене",
+   "description": "Слайдер/поля от–до",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+",
+    "boobl-goom.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "блок фильтра «Цена»",
+   "note": ""
+  },
+  {
+   "name": "Фильтр по бренду",
+   "description": "Список брендов-чекбоксов",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+",
+    "boobl-goom.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "блок фильтра «Бренд»",
+   "note": ""
+  },
+  {
+   "name": "Фильтр по возрасту",
+   "description": "Возрастные значения в фильтре",
+   "group": "Интерактив",
+   "impact": "Оба",
+   "marks": {
+    "market.yandex.ru": "+",
+    "igroray.ru": "+",
+    "boobl-goom.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "блок фильтра «Возраст»",
+   "note": "DM возраст только чипами-ссылками"
+  },
+  {
+   "name": "Фильтр по способу получения/наличию",
+   "description": "Самовывоз, наличие в магазинах, статус товара",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+",
+    "boobl-goom.ru": "+"
+   },
+   "detect": "«Способ получения», «Наличие в магазинах города», «Статус товара», «Способ доставки»",
+   "note": ""
+  },
+  {
+   "name": "Фильтр по сроку доставки",
+   "description": "1–2 часа / сегодня-завтра / до N дней",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "«Срок получения»/«Срок доставки»",
+   "note": ""
+  },
+  {
+   "name": "Фильтр по количеству игроков",
+   "description": "Мин./макс. число участников",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+",
+    "igroray.ru": "+",
+    "boobl-goom.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "«Количество игроков»/«число участников»",
+   "note": ""
+  },
+  {
+   "name": "Фильтр по жанру/типу игры",
+   "description": "Семейная, карточная, логическая…",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+",
+    "igroray.ru": "+",
+    "boobl-goom.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "«Жанр»/«Тип товара»/«Тип игры»",
+   "note": ""
+  },
+  {
+   "name": "Фильтр по развиваемым навыкам",
+   "description": "Логика, память, внимание…",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+",
+    "boobl-goom.ru": "+"
+   },
+   "detect": "«Развитие навыка»/«Развивающие функции и навыки»",
+   "note": ""
+  },
+  {
+   "name": "Фильтр по акциям/скидке/рейтингу",
+   "description": "Акция, Хит, Скидка, Рейтинг от 4",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "«Скидка», «Акции», «Хит», «Рейтинг от 4.0»",
+   "note": ""
+  },
+  {
+   "name": "Счётчики у значений фильтра",
+   "description": "Число товаров у каждого значения",
+   "group": "UX",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+",
+    "boobl-goom.ru": "+"
+   },
+   "detect": "число рядом с чекбоксом фильтра",
+   "note": ""
+  },
+  {
+   "name": "Цена в карточке листинга",
+   "description": "Текущая цена товара",
+   "group": "Коммерция",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+",
+    "boobl-goom.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "цена «N ₽» в карточке",
+   "note": ""
+  },
+  {
+   "name": "Старая цена и % скидки",
+   "description": "Зачёркнутая цена и бейдж скидки",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "старая цена/«−N %» в карточке",
+   "note": ""
+  },
+  {
+   "name": "Кнопка «В корзину» в листинге",
+   "description": "Покупка без перехода в карточку",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+",
+    "boobl-goom.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "кнопка «В корзину»/«Купить»",
+   "note": ""
+  },
+  {
+   "name": "Добавление в избранное",
+   "description": "Иконка «В избранное» на карточке",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "?",
+    "igroray.ru": "?",
+    "boobl-goom.ru": "?",
+    "toys-land.ru": "?"
+   },
+   "detect": "«В избранное»/wishlist в карточке",
+   "note": "у остальных — только следы в коде/шапке"
+  },
+  {
+   "name": "Рейтинг и число отзывов в карточке",
+   "description": "Звёзды/оценка и кол-во отзывов",
+   "group": "Доверие",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "boobl-goom.ru": "+"
+   },
+   "detect": "«Рейтинг: 4,9», «Оценок: (N)», «N отзыв»",
+   "note": "BG — только счётчик отзывов у отдельных товаров"
+  },
+  {
+   "name": "Счётчик покупок",
+   "description": "«Купили N раз»",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "«Купили N раз» (.product-card__bottom-count-buying), «N купили»",
+   "note": ""
+  },
+  {
+   "name": "Цена по промокоду / промо-бейдж",
+   "description": "Цена с промокодом, бейдж «ПРОМОКОД»",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "«с промокодом», «-20% по коду», «ПРОМОКОД»",
+   "note": ""
+  },
+  {
+   "name": "Кешбэк/бонусы в карточке",
+   "description": "Начисление бонусов за покупку",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+"
+   },
+   "detect": ".cashback, «кешбэк бонусов»",
+   "note": ""
+  },
+  {
+   "name": "Оплата частями в карточке",
+   "description": "Сплит/рассрочка с ежемесячным платежом",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+"
+   },
+   "detect": ".product-card__split-badge, «в сплит»",
+   "note": ""
+  },
+  {
+   "name": "Цена в зависимости от способа оплаты",
+   "description": "Отдельная цена при оплате наличными/картой партнёра",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "«При оплате наличными», «Цена с картой Яндекс Пэй»",
+   "note": ""
+  },
+  {
+   "name": "Статус наличия в карточке",
+   "description": "«Товар закончился», «Под заказ», «Нет в наличии», «Мало»",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "текст статуса в карточке",
+   "note": ""
+  },
+  {
+   "name": "Подписка на поступление",
+   "description": "Кнопка «Уведомить о появлении»",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "кнопка «Уведомить о появлении»",
+   "note": ""
+  },
+  {
+   "name": "Срок доставки в карточке",
+   "description": "Дата/срок доставки и способ (ПВЗ/курьер)",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+"
+   },
+   "detect": "«Завтра», «21 окт, ПВЗ» в карточке",
+   "note": ""
+  },
+  {
+   "name": "Продавец в карточке",
+   "description": "Название магазина-продавца",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+"
+   },
+   "detect": "имя продавца под ценой",
+   "note": ""
+  },
+  {
+   "name": "Ключевые характеристики в карточке",
+   "description": "Возраст, жанр, число игроков прямо в листинге",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "market.yandex.ru": "+"
+   },
+   "detect": "«Минимальный возраст: 6 лет», «Жанр игры:»",
+   "note": "BG/TL — возраст/назначение только в названии товара"
+  },
+  {
+   "name": "Варианты товара в карточке",
+   "description": "«Ещё N варианта»",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "текст «Ещё N варианта»",
+   "note": ""
+  },
+  {
+   "name": "Бейджи товара (Хит/Акция/Оригинал)",
+   "description": "Маркетинговые метки на карточке",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "«ОРИГИНАЛ», «Хит», «Акция»",
+   "note": ""
+  },
+  {
+   "name": "Блок «Горячие предложения»",
+   "description": "Отдельная полка акционных товаров вне фасета",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+"
+   },
+   "detect": "H2 «Горячие предложения»",
+   "note": "igroray: полка с таймером акции («2 д 04 ч»)"
+  },
+  {
+   "name": "Телефон на странице",
+   "description": "Номер телефона в шапке/футере",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+",
+    "boobl-goom.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "tel:/номер 8 800 или +7 (495)",
+   "note": ""
+  },
+  {
+   "name": "Форма вопроса/обратного звонка",
+   "description": "«Задать вопрос», «Заказать звонок»",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "«Задать вопрос», «Заказать звонок»",
+   "note": ""
+  }
+ ]
+}

@@ -1,0 +1,911 @@
+{
+ "type": "Отдельная страница отзывов о товаре",
+ "intent": "Информационно-коммерческий интент «<товар> отзывы»: пользователь перед покупкой проверяет мнения и оценки, а затем может перейти к покупке. У аналогов это отдельный URL от карточки (detmir /product/index/id/<id>/reviews/, ЯМ /…/<id>/reviews, igroray ?tab=reviews) с рейтингом, распределением оценок, списком отзывов с плюсами/минусами, сортировкой/фильтрами и мини-карточкой товара с ценой и кнопкой покупки.",
+ "urls": [
+  {
+   "domain": "ozon.ru",
+   "url": "https://www.ozon.ru/product/foto-konstruktor-mozabrick-nabor-s-181870872/reviews/",
+   "status": "недоступна",
+   "reason": "антибот: curl 307-цикл, Playwright 403 «Похоже, нет соединения» (2 попытки); отдельный URL /reviews/ существует",
+   "html": null
+  },
+  {
+   "domain": "wildberries.ru",
+   "url": "https://www.wildberries.ru/catalog/6915308/feedbacks",
+   "status": "недоступна",
+   "reason": "антибот 498 (curl и Playwright); отдельный URL /feedbacks существует",
+   "html": null
+  },
+  {
+   "domain": "market.yandex.ru",
+   "url": "https://market.yandex.ru/offers/konstruktor-lego-city-60215-pozharnoe-depo/1787714784/reviews?sku=318550611",
+   "status": "ok",
+   "reason": "curl — капча; Playwright отдал страницу (LEGO City 60215, 15 отзывов/106 оценок)",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/reviews/market.yandex.html"
+  },
+  {
+   "domain": "detmir.ru",
+   "url": "https://www.detmir.ru/product/index/id/6381065/reviews/",
+   "status": "ok",
+   "reason": "curl 200, SSR (конструктор BAUER 200 дет., 96 отзывов)",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/reviews/detmir.html"
+  },
+  {
+   "domain": "aliexpress.ru",
+   "url": "https://aliexpress.ru/item/1005002541566978/reviews",
+   "status": "недоступна",
+   "reason": "антибот x5 punish «Пройдите проверку» (curl и Playwright); формат /item/<id>/reviews подтверждён поиском",
+   "html": null
+  },
+  {
+   "domain": "boobl-goom.ru",
+   "url": null,
+   "status": "нет аналога",
+   "reason": "отзывы только во вкладке карточки /product/<slug>/; /reviews/ и /otzyvy/ → 404",
+   "html": null
+  },
+  {
+   "domain": "igroray.ru",
+   "url": "https://igroray.ru/catalog/nastolnaya-kartochnaya-igra-gvint-gwent-the-witcher-card-game/?tab=reviews",
+   "status": "ok",
+   "reason": "отдельный URL-вкладка ?tab=reviews (свой H1, серверный рендер), но title/description от карточки и canonical на карточку; настольная игра, 2 отзыва",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/reviews/igroray.html"
+  },
+  {
+   "domain": "ural.toys",
+   "url": null,
+   "status": "нет аналога",
+   "reason": "оптовый сайт, в карточках нет отзывов; /reviews/ → 404",
+   "html": null
+  },
+  {
+   "domain": "markertoys.ru",
+   "url": null,
+   "status": "нет аналога",
+   "reason": "оптовый сайт, в карточках товаров нет отзывов",
+   "html": null
+  },
+  {
+   "domain": "megamarket.ru",
+   "url": "https://megamarket.ru/catalog/details/konstruktor-lego-technic-chernyy-gonochnyy-avtomobil-42026-100000076056/otzyvy/",
+   "status": "недоступна",
+   "reason": "антибот servicepipe: curl — JS-заглушка, Playwright «Упс…» (2 попытки); отдельный URL /otzyvy/ существует",
+   "html": null
+  },
+  {
+   "domain": "toys-land.ru",
+   "url": null,
+   "status": "нет аналога",
+   "reason": "отзывы во вкладке карточки (#reviews); /goods/<slug>/reviews/ отдаёт ту же карточку (любой суффикс = soft-200 дубль)",
+   "html": null
+  }
+ ],
+ "sima": {
+  "url": "https://www.sima-land.ru/9518965/otzyv-o-tovare/konstruktor-5-universalnyy-500-detaley/",
+  "status": "недоступна",
+  "reason": "TLS reset: curl (35) Connection reset by peer; Playwright — 502 «upstream request failed»"
+ },
+ "factors": [
+  {
+   "name": "Title со словом «отзывы» и названием товара",
+   "description": "Уникальный title страницы отзывов, отличный от карточки",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "<title> содержит 'отзыв' и название товара",
+   "note": "detmir: «<товар> 96 отзывов покупателей 2026 года: рейтинг покупателей»; ЯМ: «Отзывы — <товар> на Яндекс Маркете»; igroray: title = title карточки"
+  },
+  {
+   "name": "Количество отзывов в Title",
+   "description": "Число отзывов прямо в title",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "regex '\\d+ отзыв' в <title>",
+   "note": ""
+  },
+  {
+   "name": "Год в Title",
+   "description": "Маркер актуальности (год) в title",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "regex '20\\d\\d' в <title>",
+   "note": ""
+  },
+  {
+   "name": "Meta description про отзывы",
+   "description": "Description описывает отзывы о товаре",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "meta[name=description] содержит 'отзыв'",
+   "note": "igroray — description карточки «Купить…»"
+  },
+  {
+   "name": "Рейтинг и число оценок/отзывов в description",
+   "description": "Цифры рейтинга и количества в сниппете",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "market.yandex.ru": "+"
+   },
+   "detect": "meta description содержит рейтинг (\\d\\.\\d) и 'оцен'/'отзыв'",
+   "note": "ЯМ: «⭐️ Рейтинг 4.8 — 106 оценок. ⭐️ 15 отзывов»; detmir — только '⚡ отзывы реальных покупателей'"
+  },
+  {
+   "name": "H1 со словом «отзывы»",
+   "description": "H1 указывает, что это страница отзывов о товаре",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "h1 содержит 'отзыв'",
+   "note": "detmir «<товар>: отзывы»; igroray «Отзывы о товаре <товар>» (visually-hidden); ЯМ — два H1: название товара + «Отзывы и оценки у всех продавцов»"
+  },
+  {
+   "name": "Canonical на саму страницу отзывов",
+   "description": "Self-canonical отдельного URL отзывов",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "link[rel=canonical] href == URL отзывов (без служебных параметров)",
+   "note": "ЯМ отрезает ?sku="
+  },
+  {
+   "name": "Canonical на карточку товара",
+   "description": "URL отзывов канонизирован на карточку",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "igroray.ru": "+"
+   },
+   "detect": "link[rel=canonical] href == URL карточки",
+   "note": "igroray ?tab=reviews → canonical карточки"
+  },
+  {
+   "name": "Страница открыта для индексации",
+   "description": "Нет noindex в meta robots",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "meta[name=robots] отсутствует или без 'noindex'",
+   "note": "detmir отдаёт noindex,nofollow при self-canonical"
+  },
+  {
+   "name": "Open Graph теги",
+   "description": "og:title/description/image/url",
+   "group": "Техническое",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "meta[property^='og:']",
+   "note": "detmir og:url = корень сайта; ЯМ og:type=product; igroray og — от карточки, og:image=логотип"
+  },
+  {
+   "name": "Twitter Card",
+   "description": "Мета twitter:*",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "market.yandex.ru": "+"
+   },
+   "detect": "meta[name^='twitter:']",
+   "note": ""
+  },
+  {
+   "name": "hreflang",
+   "description": "link rel=alternate hreflang",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "link[hreflang]",
+   "note": "detmir только x-default"
+  },
+  {
+   "name": "Хлебные крошки (HTML)",
+   "description": "Видимая цепочка категорий до товара",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "[class*=breadcrumb], [data-testid=breadcrumbsItem], [data-zone-name=categoryPath]",
+   "note": ""
+  },
+  {
+   "name": "Последняя крошка «Отзывы»",
+   "description": "После товара в крошках идёт элемент «Отзывы»",
+   "group": "Навигация",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "последний элемент breadcrumbs = 'Отзывы', предпоследний — ссылка на карточку",
+   "note": "ЯМ и igroray заканчивают крошки товаром"
+  },
+  {
+   "name": "BreadcrumbList JSON-LD",
+   "description": "Микроразметка крошек",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "JSON-LD @type BreadcrumbList",
+   "note": "ЯМ дублирует в microdata"
+  },
+  {
+   "name": "Product JSON-LD",
+   "description": "Разметка товара на странице отзывов",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "JSON-LD @type Product",
+   "note": ""
+  },
+  {
+   "name": "AggregateRating в разметке",
+   "description": "ratingValue/reviewCount (+ratingCount)",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "JSON-LD Product.aggregateRating",
+   "note": "ЯМ даёт reviewCount и ratingCount, best/worstRating; igroray нет"
+  },
+  {
+   "name": "Review в разметке (массив отзывов)",
+   "description": "Отзывы с author/datePublished/description в Product.review",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "JSON-LD Product.review[] @type Review",
+   "note": "detmir 30 отзывов в JSON-LD"
+  },
+  {
+   "name": "positiveNotes/negativeNotes в Review",
+   "description": "Плюсы/минусы отзыва в разметке",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "JSON-LD Review.positiveNotes / negativeNotes",
+   "note": ""
+  },
+  {
+   "name": "Offer в разметке",
+   "description": "Цена/наличие в Product.offers",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "igroray.ru": "+"
+   },
+   "detect": "JSON-LD Product.offers @type Offer",
+   "note": ""
+  },
+  {
+   "name": "Organization/Store в разметке",
+   "description": "Данные магазина: адрес, часы, контакты",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "igroray.ru": "+"
+   },
+   "detect": "JSON-LD @type Organization / Store",
+   "note": ""
+  },
+  {
+   "name": "WebSite + SearchAction",
+   "description": "Разметка поиска по сайту",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "JSON-LD @type WebSite с potentialAction SearchAction",
+   "note": ""
+  },
+  {
+   "name": "Микроразметка microdata",
+   "description": "itemscope/itemprop Product, AggregateRating, Person",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "market.yandex.ru": "+"
+   },
+   "detect": "[itemtype*='schema.org/Product'], itemprop=author",
+   "note": ""
+  },
+  {
+   "name": "Тексты отзывов в исходном HTML (SSR)",
+   "description": "Отзывы отдаются сервером, видны без JS",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "?",
+    "igroray.ru": "+"
+   },
+   "detect": "текст первого отзыва присутствует в ответе curl",
+   "note": "ЯМ без браузера отдаёт капчу — SSR не проверен"
+  },
+  {
+   "name": "Название товара в шапке страницы отзывов",
+   "description": "Товар явно обозначен над отзывами",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "название товара в h1/мини-карточке над списком",
+   "note": ""
+  },
+  {
+   "name": "Средний рейтинг",
+   "description": "Средняя оценка числом",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "число вида 4,7 / 4.8 / '5 /5' рядом со счётчиком",
+   "note": "igroray формат «5 /5»"
+  },
+  {
+   "name": "Счётчик отзывов",
+   "description": "Общее количество отзывов",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "текст 'N отзыв(ов/а)'",
+   "note": ""
+  },
+  {
+   "name": "Число оценок отдельно от отзывов",
+   "description": "Разделение оценок без текста и отзывов",
+   "group": "Контент",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+"
+   },
+   "detect": "текст 'N оценок • M отзывов'",
+   "note": ""
+  },
+  {
+   "name": "Гистограмма распределения по звёздам",
+   "description": "Сколько отзывов на 5/4/3/2/1",
+   "group": "Контент",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "?",
+    "igroray.ru": "+"
+   },
+   "detect": "5 строк 'оценка 5..1' / '5 звёзд…1 звезда' с числами",
+   "note": "ЯМ: блок rating-distribution есть, полосы не отрисованы в снимке"
+  },
+  {
+   "name": "Оценка в каждом отзыве",
+   "description": "Звёзды/балл у отзыва",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "элемент рейтинга внутри карточки отзыва ('Рейтинг: N', svg-звёзды)",
+   "note": ""
+  },
+  {
+   "name": "Имя автора отзыва",
+   "description": "Имя/ник покупателя",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "[data-auto=nickname], .product-detail-comment__name, имя после даты",
+   "note": "ЯМ: «Имя скрыто», «Покупатель на Маркете»"
+  },
+  {
+   "name": "Аватар автора",
+   "description": "Фото/заглушка профиля",
+   "group": "Контент",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "img[data-auto=avatar], img alt^='Аватар пользователя'",
+   "note": ""
+  },
+  {
+   "name": "Дата отзыва",
+   "description": "Дата публикации у каждого отзыва",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "дата вида '09 октября 2023' в карточке отзыва",
+   "note": ""
+  },
+  {
+   "name": "Структура отзыва: достоинства/недостатки/комментарий",
+   "description": "Отзыв разбит на смысловые поля",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "заголовки 'Достоинства', 'Недостатки', 'Комментарий'/'Общие впечатления'",
+   "note": "detmir: Общие впечатления/Достоинства/Недостатки; ЯМ: Достоинства/Недостатки/Комментарий"
+  },
+  {
+   "name": "Фото/видео в отзывах",
+   "description": "Медиа покупателей внутри отзыва",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "?"
+   },
+   "detect": "img[alt^='Фото отзыва'], [data-testid=feedbackImages]",
+   "note": "ЯМ: hasPhoto:true в data-zone-data, изображения не отрисованы"
+  },
+  {
+   "name": "Галерея «Фото и видео покупателей»",
+   "description": "Сводная лента медиа над списком отзывов",
+   "group": "Контент",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "заголовок 'Фото и видео покупателей' + миниатюры [data-testid=miniGalleryThumbnailButton]",
+   "note": ""
+  },
+  {
+   "name": "Оценки без текста в списке",
+   "description": "Показ записей только с оценкой",
+   "group": "Контент",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+"
+   },
+   "detect": "карточки отзыва с именем/датой без текстовых полей",
+   "note": ""
+  },
+  {
+   "name": "Сворачивание длинного отзыва («Читать полностью»)",
+   "description": "Обрезка длинного текста с раскрытием",
+   "group": "UX",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "текст 'Читать полностью' или line-clamp в отзыве",
+   "note": ""
+  },
+  {
+   "name": "Отметка подтверждённого покупателя",
+   "description": "Значок verified у автора",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+"
+   },
+   "detect": ".product-detail-comment__name-verified / иконка-галочка у имени",
+   "note": ""
+  },
+  {
+   "name": "Ответы на отзывы (ветка)",
+   "description": "Кнопка «Ответить» и раскрытие ответов",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+"
+   },
+   "detect": "текст 'Ответить', 'Показать N ответ'",
+   "note": ""
+  },
+  {
+   "name": "Голосование «полезно» у отзыва",
+   "description": "Лайки/счётчик полезности",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+"
+   },
+   "detect": "[data-auto=like-button] + число голосов",
+   "note": ""
+  },
+  {
+   "name": "Пожаловаться на отзыв",
+   "description": "Жалоба на отзыв",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+"
+   },
+   "detect": "[data-auto=more-actions-complaint]",
+   "note": ""
+  },
+  {
+   "name": "Рейтинг магазина на внешних площадках",
+   "description": "Бейджи Я.Карт/площадок с числом отзывов о магазине",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+"
+   },
+   "detect": "iframe yandex.ru/sprav/widget/rating-badge, текст '17 000+ отзывов на площадках'",
+   "note": ""
+  },
+  {
+   "name": "Ссылка на отзывы о магазине",
+   "description": "Переход к отзывам о компании",
+   "group": "Доверие",
+   "impact": "Оба",
+   "marks": {
+    "igroray.ru": "+"
+   },
+   "detect": "a[href*='otzyvy-pokupateley'] / 'Отзывы о нас'",
+   "note": ""
+  },
+  {
+   "name": "Оценить магазин («Поблагодарить/Пожаловаться»)",
+   "description": "Обратная связь о магазине",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+"
+   },
+   "detect": "текст 'Оцените магазин'",
+   "note": ""
+  },
+  {
+   "name": "Сортировка отзывов",
+   "description": "Смена порядка: полезные/новые/по оценке",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "[data-testid=reviewOrderButton], [data-auto=product-reviews-sort], тексты 'Сначала популярные','Новые'",
+   "note": "detmir: популярные/новые/высокая/низкая оценка/с фото; ЯМ: полезные/дата/оценка"
+  },
+  {
+   "name": "Фильтр по количеству звёзд",
+   "description": "Показ отзывов с конкретной оценкой",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "чекбоксы '5 звезд'…'1 звезда'",
+   "note": ""
+  },
+  {
+   "name": "Фильтр «с фото и видео»",
+   "description": "Только отзывы с медиа",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "опция 'С фото и видео'",
+   "note": ""
+  },
+  {
+   "name": "Переключатель «все варианты / этот вариант»",
+   "description": "Отзывы по всем модификациям или текущему SKU",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "[data-auto=control-filter] 'Этот вариант'; ссылки ?tab=variant-reviews",
+   "note": "ЯМ дополнительно «у всех продавцов»"
+  },
+  {
+   "name": "Догрузка «Показать ещё»",
+   "description": "Подгрузка следующей порции отзывов",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "кнопка 'Показать ещё' ([data-testid=showElse], [data-zone-name=pager])",
+   "note": "нет пагинации отдельными URL ни у кого"
+  },
+  {
+   "name": "Кнопка «Оставить отзыв»",
+   "description": "CTA написать отзыв",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "текст 'Оставить отзыв' / NewReviewButton",
+   "note": "igroray: форма требует авторизации (сообщение «Вы не авторизованы»)"
+  },
+  {
+   "name": "Цена товара на странице отзывов",
+   "description": "Текущая цена в мини-карточке",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "цена '\\d ₽' рядом с названием товара в шапке",
+   "note": "ЯМ «от 14 417 ₽»"
+  },
+  {
+   "name": "Старая цена и скидка",
+   "description": "Зачёркнутая цена и % / сумма скидки",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "две цены + '−48 %' / '-1 700 ₽'",
+   "note": ""
+  },
+  {
+   "name": "Кнопка «В корзину»",
+   "description": "Покупка прямо со страницы отзывов",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "?",
+    "igroray.ru": "+"
+   },
+   "detect": "кнопка 'В корзину'",
+   "note": "ЯМ: виджет ProductCartButton в данных, кнопка не отрисована"
+  },
+  {
+   "name": "Купить в 1 клик",
+   "description": "Быстрый заказ",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+"
+   },
+   "detect": "текст 'Купить в 1 клик'",
+   "note": ""
+  },
+  {
+   "name": "Бонусы/кешбэк за покупку",
+   "description": "Начисление бонусов",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+"
+   },
+   "detect": "текст 'бонусов', 'кешбэк'",
+   "note": ""
+  },
+  {
+   "name": "Таймер акции",
+   "description": "Обратный отсчёт до конца скидки",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+"
+   },
+   "detect": "текст вида '13 д 01 ч'",
+   "note": ""
+  },
+  {
+   "name": "Оплата частями (сплит)",
+   "description": "Сумма платежа в рассрочку",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+"
+   },
+   "detect": "текст 'в сплит' / 'Сумма месячной платы'",
+   "note": "igroray — в карточках рекомендаций"
+  },
+  {
+   "name": "Избранное и сравнение",
+   "description": "Добавить в избранное/к сравнению",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+"
+   },
+   "detect": "тексты 'В избранное', 'К сравнению'",
+   "note": ""
+  },
+  {
+   "name": "Счётчик покупок",
+   "description": "«Купили N раз»",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+"
+   },
+   "detect": "текст 'Купили … раз'",
+   "note": "в блоке рекомендаций"
+  },
+  {
+   "name": "Ссылка назад на карточку товара",
+   "description": "«К описанию товара» / «Назад»",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "ссылка на URL карточки с текстом 'К описанию товара'/'Назад'/'Вернуться'",
+   "note": ""
+  },
+  {
+   "name": "Вкладки разделов товара со счётчиками",
+   "description": "Отзывы / Вопросы и ответы как отдельные URL-вкладки",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "igroray.ru": "+"
+   },
+   "detect": "ссылки ?tab=reviews, ?tab=questions с числами",
+   "note": ""
+  },
+  {
+   "name": "Ссылка на категорию товара со счётчиком",
+   "description": "Переход в категорию «Другие … (N)»",
+   "group": "Навигация",
+   "impact": "SEO",
+   "marks": {
+    "igroray.ru": "+"
+   },
+   "detect": "ссылка на категорию с текстом 'Другие …' и числом",
+   "note": ""
+  },
+  {
+   "name": "Ссылка на бренд из отзыва",
+   "description": "«Перейти к бренду» в каждом отзыве",
+   "group": "Навигация",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "текст 'Перейти к бренду' внутри отзыва",
+   "note": ""
+  },
+  {
+   "name": "Ссылка на товар из отзыва",
+   "description": "«Перейти к товару» в каждом отзыве",
+   "group": "Навигация",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "текст 'Перейти к товару' внутри отзыва",
+   "note": ""
+  },
+  {
+   "name": "SEO-перелинковка категорий и брендов",
+   "description": "Облако тегов-ссылок на категории/бренды",
+   "group": "Навигация",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "[data-testid=seoCrossLinksBlock], заголовки 'Категории','Бренды' со ссылками",
+   "note": ""
+  },
+  {
+   "name": "Рекомендации / «Вы интересовались»",
+   "description": "Слайдер товаров",
+   "group": "Навигация",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+"
+   },
+   "detect": "заголовок 'Вы интересовались' + карточки товаров",
+   "note": ""
+  },
+  {
+   "name": "Рекламные блоки",
+   "description": "Баннеры/реклама на странице",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+"
+   },
+   "detect": "метки 'Реклама', erid в ссылках",
+   "note": ""
+  },
+  {
+   "name": "Sticky мини-карточка товара",
+   "description": "Закреплённый блок с ценой и кнопкой",
+   "group": "UX",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "[data-testid=stickyElement] с ценой и 'В корзину'",
+   "note": ""
+  },
+  {
+   "name": "Промо мобильного приложения (QR)",
+   "description": "QR/ссылки на сторы",
+   "group": "UX",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "текст 'Наведите камеру', ссылки App Store/Google Play/RuStore",
+   "note": ""
+  }
+ ]
+}

@@ -1,0 +1,998 @@
+{
+ "type": "Статья журнала/блога",
+ "intent": "Информационно-коммерческий интент: «что подарить ребёнку на Новый год» — пользователь ищет идеи подарков, обычно по возрасту, полу или бюджету, и готов сразу перейти к покупке. Аналоги — редакционные статьи-подборки в блоге или журнале магазина, где текст по разделам перемежается товарами (карточки, карусели, ссылки) и подводит к каталогу.",
+ "urls": [
+  {
+   "domain": "ozon.ru",
+   "url": "https://www.ozon.ru/club/article/chto-podarit-na-noviy-god-detyam-ot-7-do-10-let-idei-novogodnego-podarka-dlya-rebenka-1330222/",
+   "status": "недоступна",
+   "reason": "антибот: curl 307-цикл, Playwright 403 «Похоже, нет соединения» (2 попытки); аналог найден в Ozon Клуб",
+   "html": null
+  },
+  {
+   "domain": "wildberries.ru",
+   "url": "https://wibes.ru/article/podarki-na-noviy-god-dlya-detey-vseh-vozrastov-87714",
+   "status": "ok",
+   "reason": "блог WB Guru (guru.wildberries.ru) переехал на wibes.ru (301); curl 498, взят через Playwright",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/article/wildberries.ru.html"
+  },
+  {
+   "domain": "market.yandex.ru",
+   "url": "https://market.yandex.ru/journal/podarki-detyam-na-novyy-god-2026-vybiraem-s-umom-i-serdcem",
+   "status": "ok",
+   "reason": "Журнал Маркета; curl — капча, взят через Playwright",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/article/market.yandex.ru.html"
+  },
+  {
+   "domain": "detmir.ru",
+   "url": "https://www.detmir.ru/page/blog-chto-podarit-malchiku-na-9-let/",
+   "status": "ok",
+   "reason": "новогодней статьи в блоге нет; близкая подарочная статья «Что подарить мальчику на 9 лет»",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/article/detmir.ru.html"
+  },
+  {
+   "domain": "aliexpress.ru",
+   "url": "https://aliexpress.ru/gid/gifts_for_kids",
+   "status": "ok",
+   "reason": "«Гид по AliExpress» (Tilda), точное совпадение темы",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/article/aliexpress.ru.html"
+  },
+  {
+   "domain": "boobl-goom.ru",
+   "url": "https://boobl-goom.ru/about/articles/zhelannyy-podarok-chego-khotyat-deti-na-novyy-god/",
+   "status": "ok",
+   "reason": "раздел «Статьи», точное совпадение темы",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/article/boobl-goom.ru.html"
+  },
+  {
+   "domain": "igroray.ru",
+   "url": "https://igroray.ru/journal/chto-podarit-rebyenku-chtoby-tochno-ego-vpechatlit/",
+   "status": "ok",
+   "reason": "«Журнал ИгроРай», близкая подарочная статья для детей (есть настольные игры и конструкторы); новогодней детской статьи нет",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/article/igroray.ru.html"
+  },
+  {
+   "domain": "ural.toys",
+   "url": null,
+   "status": "нет аналога",
+   "reason": "оптовый магазин, блога/статей нет (главная, robots, sitemap)",
+   "html": null
+  },
+  {
+   "domain": "markertoys.ru",
+   "url": null,
+   "status": "нет аналога",
+   "reason": "оптовый магазин; есть только раздел /news/ с акциями, блога/статей нет",
+   "html": null
+  },
+  {
+   "domain": "megamarket.ru",
+   "url": null,
+   "status": "нет аналога",
+   "reason": "журнала/блога не найдено; есть только лендинги-подборки /landing/chto-podarit/ (другой тип, к тому же за антиботом)",
+   "html": null
+  },
+  {
+   "domain": "toys-land.ru",
+   "url": "https://www.toys-land.ru/articles/342/",
+   "status": "ok",
+   "reason": "в «Статьях и обзорах» новогодней статьи нет; близкая подарочная статья «Что подарить на Пасху детям»",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/article/toys-land.ru.html"
+  }
+ ],
+ "sima": {
+  "url": "https://www.sima-land.ru/vdokhnovenie/siurpriz-pod-iolkoi-chto-podarit-rebionku-na-novyi-god-1/",
+  "status": "недоступна",
+  "reason": "TLS reset: Playwright net::ERR_CONNECTION_RESET"
+ },
+ "factors": [
+  {
+   "name": "Title",
+   "description": "Уникальный title с ключом «что подарить ребёнку/детям на Новый год»",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "wildberries.ru": "+",
+    "market.yandex.ru": "+",
+    "detmir.ru": "+",
+    "aliexpress.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "<title> не пустой, содержит ключ темы",
+   "note": "igroray — коммерческий шаблон «Купить подарок Ребёнку — Лучшие цены»; toys-land/boobl — заголовок статьи без бренда"
+  },
+  {
+   "name": "Год в Title/H1",
+   "description": "Актуальный год (2026) в title или H1",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "market.yandex.ru": "+"
+   },
+   "detect": "regex 20\\d\\d в <title> или <h1>",
+   "note": "Y: «Новый год 2026» и в title, и в H1; WB/Ali — без года, хотя у WB рядом статьи с годами"
+  },
+  {
+   "name": "Meta description",
+   "description": "Заполненный meta description",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "wildberries.ru": "+",
+    "market.yandex.ru": "+",
+    "detmir.ru": "+",
+    "aliexpress.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "meta[name=description][content] непустой",
+   "note": "boobl — шаблон «… Полезные статьи от интернет-магазина…»; igroray — коммерческий шаблон с телефоном"
+  },
+  {
+   "name": "H1",
+   "description": "Один H1 с темой статьи",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "wildberries.ru": "+",
+    "market.yandex.ru": "+",
+    "detmir.ru": "+",
+    "aliexpress.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "<h1> содержит тему статьи",
+   "note": "igroray — H1 продублирован дважды; WB при подгрузке ленты добавляет H1 следующих статей; Y — служебный H1 cookie-баннера"
+  },
+  {
+   "name": "Иерархия подзаголовков H2/H3",
+   "description": "Разделы статьи размечены h2/h3 (не div/strong)",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "wildberries.ru": "+",
+    "market.yandex.ru": "+",
+    "detmir.ru": "+",
+    "aliexpress.ru": "+",
+    "igroray.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "h2/h3 внутри тела статьи ≥3",
+   "note": "boobl — подзаголовки div.title-4 без h-тегов; WB — только h3; igroray — h2→h3→h4"
+  },
+  {
+   "name": "Якоря на разделах",
+   "description": "id у подзаголовков для ссылок из оглавления",
+   "group": "Техническое",
+   "impact": "Оба",
+   "marks": {
+    "market.yandex.ru": "+",
+    "aliexpress.ru": "+"
+   },
+   "detect": "h2[id] или a[href^=\"#\"] на разделы",
+   "note": "Y: h2#dlya-detey-2-4-let; Ali: #1..#4 (Tilda-якоря)"
+  },
+  {
+   "name": "Canonical",
+   "description": "link rel=canonical на себя",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "wildberries.ru": "+",
+    "market.yandex.ru": "+",
+    "detmir.ru": "+",
+    "aliexpress.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "link[rel=canonical]",
+   "note": "igroray — относительный URL; toys-land — нет canonical"
+  },
+  {
+   "name": "Meta robots index,follow",
+   "description": "Явный meta robots index,follow",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "market.yandex.ru": "+",
+    "detmir.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "meta[name=robots]",
+   "note": "Y добавляет max-image-preview:large"
+  },
+  {
+   "name": "Open Graph",
+   "description": "og:title/description/image/url заполнены",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "wildberries.ru": "+",
+    "market.yandex.ru": "+",
+    "detmir.ru": "+",
+    "aliexpress.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "meta[property^=\"og:\"] (title+image)",
+   "note": "toys-land — только относительный og:image (не учтён); detmir og:url = главная"
+  },
+  {
+   "name": "og:type=article",
+   "description": "Тип OG — article",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "wildberries.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "meta[property=\"og:type\"][content=article]",
+   "note": "detmir, Ali, boobl — website"
+  },
+  {
+   "name": "Twitter Card",
+   "description": "Мета twitter:card",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "wildberries.ru": "+",
+    "market.yandex.ru": "+",
+    "boobl-goom.ru": "+"
+   },
+   "detect": "meta[name=\"twitter:card\"]",
+   "note": ""
+  },
+  {
+   "name": "Хлебные крошки (HTML)",
+   "description": "Видимые крошки Главная → Блог/Журнал → Статья",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "market.yandex.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "nav/ol с классом *breadcrumb* или itemtype BreadcrumbList; текст «Статьи»/«Журнал»",
+   "note": "Y: Журнал → Подборки → статья; detmir, WB, Ali — нет"
+  },
+  {
+   "name": "BreadcrumbList JSON-LD",
+   "description": "Крошки в JSON-LD",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "wildberries.ru": "+",
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "script[type=\"application/ld+json\"] @type BreadcrumbList",
+   "note": ""
+  },
+  {
+   "name": "BreadcrumbList microdata",
+   "description": "Крошки в микроразметке",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "market.yandex.ru": "+",
+    "boobl-goom.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "[itemtype*=\"BreadcrumbList\"]",
+   "note": ""
+  },
+  {
+   "name": "Article/BlogPosting JSON-LD",
+   "description": "Разметка статьи Article или BlogPosting",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "wildberries.ru": "+",
+    "market.yandex.ru": "+",
+    "detmir.ru": "+",
+    "aliexpress.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "JSON-LD @type Article|BlogPosting",
+   "note": "detmir — BlogPosting; Ali — Article скопирован с другой статьи (@id ny_sweater, пустые author/publisher); boobl — пустые description и datePublished"
+  },
+  {
+   "name": "Даты в разметке",
+   "description": "datePublished/dateModified в Article",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "wildberries.ru": "+",
+    "market.yandex.ru": "+",
+    "detmir.ru": "+",
+    "aliexpress.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "JSON-LD datePublished|dateModified",
+   "note": "boobl — только dateModified в нестандартном формате «02.10.2025 15:58:24»"
+  },
+  {
+   "name": "Автор-Person в разметке",
+   "description": "author @type Person с именем",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "wildberries.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "JSON-LD Article.author @type Person",
+   "note": "boobl, igroray — автор Organization; Ali — Person с пустым name"
+  },
+  {
+   "name": "Organization в разметке",
+   "description": "Organization/Store (издатель/магазин)",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "JSON-LD или microdata Organization|Store",
+   "note": "igroray — Store с адресом и часами работы; toys-land — microdata Organization+ContactPoint"
+  },
+  {
+   "name": "WebSite + SearchAction",
+   "description": "Разметка поиска по сайту",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "JSON-LD WebSite с potentialAction SearchAction",
+   "note": ""
+  },
+  {
+   "name": "Product/AggregateOffer/AggregateRating JSON-LD",
+   "description": "Товарная разметка на странице статьи (диапазон цен, рейтинг)",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "JSON-LD Product + AggregateOffer + AggregateRating / OfferCatalog",
+   "note": "detmir: 25 020 предложений, рейтинг 4,8 по 864 599 отзывам — агрегат по категории"
+  },
+  {
+   "name": "Описательные alt у изображений",
+   "description": "У картинок статьи и товаров осмысленный alt",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "market.yandex.ru": "+",
+    "detmir.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "img[alt] непустой и не шаблонный в теле статьи",
+   "note": "toys-land — один alt «Пасха детям» на все фото; WB — «img» и «Изображение товара N»; Ali — alt пустые"
+  },
+  {
+   "name": "Лид/вводный абзац",
+   "description": "Вступление под H1, задающее тему и пользу статьи",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "wildberries.ru": "+",
+    "market.yandex.ru": "+",
+    "detmir.ru": "+",
+    "aliexpress.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "первый p/div после h1 длиной >150 символов",
+   "note": "WB — курсивный лид em; Ali — подзаголовок «Решение…» + описание"
+  },
+  {
+   "name": "Обложка статьи",
+   "description": "Крупное изображение в начале статьи",
+   "group": "Контент",
+   "impact": "Продукт",
+   "marks": {
+    "wildberries.ru": "+",
+    "market.yandex.ru": "+",
+    "detmir.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "toys-land.ru": "+",
+    "aliexpress.ru": "?"
+   },
+   "detect": "img сразу после h1 (до первого h2)",
+   "note": "Ali — Tilda-блок, обложка только в og:image (не подтверждена в HTML)"
+  },
+  {
+   "name": "Разбивка по возрасту",
+   "description": "Разделы по возрастным группам детей",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "market.yandex.ru": "+",
+    "aliexpress.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "h2/h3/p с «лет»/«года» в заголовках разделов",
+   "note": "Y: 2–4/5–8/9–12/13–16; Ali: 0–3/4–7/8–11/11–15; igroray — в тексте (0–3, 3–6, 7–12, 12+)"
+  },
+  {
+   "name": "Разбивка по полу",
+   "description": "Отдельные подборки для девочек и мальчиков",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "market.yandex.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "подзаголовки «Для девочек»/«Для мальчиков»",
+   "note": "Y — в каждой возрастной группе; boobl — два раздела; igroray — критерий в тексте"
+  },
+  {
+   "name": "Разбивка по типу подарка/интересам",
+   "description": "Разделы по категориям (одежда, игрушки, конструкторы, наука…)",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "wildberries.ru": "+",
+    "detmir.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "подзаголовки с типами подарков",
+   "note": "detmir — «для юного инженера/спортсмена/учёного»; WB — одежда/игрушки/полезные/развлечения"
+  },
+  {
+   "name": "Разбивка по бюджету",
+   "description": "Подборки по ценовым диапазонам",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "заголовки «до 2000 рублей», «от 7000 рублей»",
+   "note": ""
+  },
+  {
+   "name": "Блок «Как выбрать»",
+   "description": "Критерии выбора подарка (возраст, безопасность, интересы)",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "заголовок «как выбрать/тонкости выбора/как понять»",
+   "note": "igroray — 8 критериев h4 (возраст, пол, безопасность, обучающие функции…)"
+  },
+  {
+   "name": "Топ-N быстрых идей",
+   "description": "Короткий список лучших идей для торопящихся",
+   "group": "Контент",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "заголовок «Топ-5»/«Топ-10»",
+   "note": ""
+  },
+  {
+   "name": "Нетоварные идеи (впечатления, персонализация)",
+   "description": "Подарки-впечатления, именные подарки",
+   "group": "Контент",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "заголовки «впечатления»/«персонализированные»",
+   "note": ""
+  },
+  {
+   "name": "Что не дарить",
+   "description": "Блок анти-подарков/ошибок",
+   "group": "Контент",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "заголовок «Анти-подарки»/«чего избегать»",
+   "note": ""
+  },
+  {
+   "name": "FAQ-блок",
+   "description": "Вопросы-ответы в конце статьи",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "текст «Часто задаваемые вопросы»; FAQPage JSON-LD",
+   "note": "detmir — только текстом, без FAQPage-разметки"
+  },
+  {
+   "name": "Контекст праздника",
+   "description": "История/традиции праздника перед подборкой",
+   "group": "Контент",
+   "impact": "SEO",
+   "marks": {
+    "toys-land.ru": "+"
+   },
+   "detect": "раздел про историю/традиции праздника",
+   "note": "toys-land: «Пасха для детей — история и традиции»"
+  },
+  {
+   "name": "Заключение с призывом",
+   "description": "Финальный абзац с выводом и CTA",
+   "group": "Контент",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+",
+    "detmir.ru": "+",
+    "aliexpress.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "последний абзац статьи с призывом выбрать/купить",
+   "note": "Y — CTA «выбрать, заказать» + ссылка на Маркет; Ali — «С наступающим… тут»"
+  },
+  {
+   "name": "Подписи к фото товаров",
+   "description": "Подпись/описание под изображением товара",
+   "group": "Контент",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+"
+   },
+   "detect": "figcaption/span под img товара",
+   "note": "Y — описание + «Источник: Яндекс Маркет»"
+  },
+  {
+   "name": "Товарные карточки в тексте",
+   "description": "Карточки товаров с фото и ценой внутри разделов статьи",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "wildberries.ru": "+",
+    "market.yandex.ru": "+",
+    "aliexpress.ru": "+"
+   },
+   "detect": "блоки карточек (img+цена ₽) между абзацами статьи",
+   "note": "WB — сниппет-коллекция «от 940 ₽ · 11 товаров»; Y — полноценные карточки; Ali — сетка 9 карточек с кнопкой-ценой; toys-land — только фото-ссылки на товары без цены"
+  },
+  {
+   "name": "Товарный блок после статьи",
+   "description": "Карусель/сетка товаров по теме после текста",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+",
+    "detmir.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "блок «Товары из статьи»/сетка product-card после статьи",
+   "note": "detmir — каталог ~50 товаров с «Показать ещё»; igroray — 38 товаров с табами по типу; Y — карусель «Товары из статьи»"
+  },
+  {
+   "name": "Цена в карточке",
+   "description": "Цена товара видна в статье",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "wildberries.ru": "+",
+    "market.yandex.ru": "+",
+    "detmir.ru": "+",
+    "aliexpress.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "₽ внутри карточки товара",
+   "note": "igroray — цена наличными и безналом; WB — «от N ₽» на коллекцию"
+  },
+  {
+   "name": "Кнопка «В корзину» из статьи",
+   "description": "Покупка без перехода в карточку",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+",
+    "detmir.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "button «В корзину»/«Купить»/aria-label=\"В корзину\"",
+   "note": "igroray — счётчик количества в карточке"
+  },
+  {
+   "name": "Старая цена/скидка",
+   "description": "Зачёркнутая цена или % скидки",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "старая цена рядом с текущей, бейдж -N%",
+   "note": "detmir — бейдж «%» и «с промокодом»"
+  },
+  {
+   "name": "Рейтинг и отзывы товара",
+   "description": "Оценка и число отзывов в карточке",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+",
+    "detmir.ru": "+"
+   },
+   "detect": "рейтинг X.X + (N) в карточке",
+   "note": ""
+  },
+  {
+   "name": "Счётчик покупок",
+   "description": "«N купили»/«Купили N раз»",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "текст «купили»/«Купили N раз»",
+   "note": ""
+  },
+  {
+   "name": "Наличие/остаток",
+   "description": "Статус наличия («Осталась 1 шт», «Разобрали», «Много», «Под заказ»)",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "текст статуса наличия в карточке",
+   "note": ""
+  },
+  {
+   "name": "Срок доставки в карточке",
+   "description": "Дата/срок доставки товара",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+"
+   },
+   "detect": "текст «Послезавтра», «25 окт, курьер»",
+   "note": ""
+  },
+  {
+   "name": "Избранное",
+   "description": "Кнопка добавления в избранное",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+",
+    "detmir.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "button wishlist/«В избранное»/favorite",
+   "note": ""
+  },
+  {
+   "name": "Рассрочка/Сплит",
+   "description": "Предложение оплаты частями",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "текст «Сплит»/«в сплит»",
+   "note": "Y — отдельный блок про Сплит + цена с картой Пэй; igroray — бейдж ежемесячного платежа"
+  },
+  {
+   "name": "Кешбэк, бонусы, промокоды",
+   "description": "Бонусы за покупку или промо-бейджи в карточках",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "текст «кешбэк»/«с промокодом»/«по коду» в карточке",
+   "note": "igroray — кешбэк в каждой карточке; detmir — «с промокодом», «-30% по коду»"
+  },
+  {
+   "name": "Фильтры/сортировка товарного блока",
+   "description": "Сортировка и фильтры у товаров под статьёй",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "кнопки сортировки (Популярные/Дешёвые) и фильтры (Пол, Возраст, Цена) или табы по типу",
+   "note": "igroray — табы «Видеоигра/Игрушка/Настольная игра…» со счётчиками"
+  },
+  {
+   "name": "Ссылки на товары из текста",
+   "description": "Анкорные ссылки из абзацев на карточки товаров",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "market.yandex.ru": "+",
+    "aliexpress.ru": "+",
+    "boobl-goom.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "a[href*=\"/product/\"|\"/goods/\"|\"/card/\"] внутри p",
+   "note": "Ali — партнёрские ссылки aliclick.shop; toys-land — часть ссылок с пробелом в href (битые)"
+  },
+  {
+   "name": "Ссылки на категории каталога",
+   "description": "Ссылки из текста на разделы каталога",
+   "group": "Навигация",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "boobl-goom.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "a[href*=\"/catalog/\"] внутри тела статьи",
+   "note": "detmir — блок из 14 категорий жирными ссылками; toys-land — на отфильтрованные листинги ?filter="
+  },
+  {
+   "name": "Блок брендов статьи",
+   "description": "Список брендов, участвовавших в подборке",
+   "group": "Коммерция",
+   "impact": "Оба",
+   "marks": {
+    "wildberries.ru": "+"
+   },
+   "detect": "текст «В статье участвовали бренды» + ссылки /brands/",
+   "note": ""
+  },
+  {
+   "name": "УТП магазина в статье",
+   "description": "Блок преимуществ (оригинал, доставка, возврат)",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "блок benefits/features рядом со статьёй",
+   "note": "igroray — над текстом; boobl — после текста"
+  },
+  {
+   "name": "Коммерческий текст об условиях покупки",
+   "description": "Абзацы о доставке, самовывозе, «нашли дешевле», trade-in",
+   "group": "Коммерция",
+   "impact": "Оба",
+   "marks": {
+    "igroray.ru": "+"
+   },
+   "detect": "h3 «Купить … с максимальной выгодой»/ссылки на /delivery/",
+   "note": ""
+  },
+  {
+   "name": "Рекламные баннеры с маркировкой",
+   "description": "Баннеры/блоки «Реклама» с erid",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+",
+    "detmir.ru": "+"
+   },
+   "detect": "текст «Реклама» или erid= в ссылках",
+   "note": ""
+  },
+  {
+   "name": "Дисклеймер о ценах",
+   "description": "Пометка, что цены могут измениться",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "aliexpress.ru": "+"
+   },
+   "detect": "текст «итоговая цена» / «цена на момент публикации»",
+   "note": ""
+  },
+  {
+   "name": "Автор статьи",
+   "description": "Имя автора/редакции на странице",
+   "group": "Доверие",
+   "impact": "Оба",
+   "marks": {
+    "wildberries.ru": "+",
+    "market.yandex.ru": "+",
+    "aliexpress.ru": "+"
+   },
+   "detect": "блок автора рядом с H1 (имя, аватар)",
+   "note": "WB — «От редакции» с аватаром; Ali — имя в строке-рубрике"
+  },
+  {
+   "name": "Био и страница автора",
+   "description": "Описание автора и ссылка на его страницу",
+   "group": "Доверие",
+   "impact": "SEO",
+   "marks": {
+    "wildberries.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "a[href*=\"/author/\"] + текст био",
+   "note": "Y — био + /journal/author/…; WB — только ссылка /author/"
+  },
+  {
+   "name": "Видимая дата публикации/обновления",
+   "description": "Дата публикации или «Обновлено …» на странице",
+   "group": "Доверие",
+   "impact": "Оба",
+   "marks": {
+    "wildberries.ru": "+",
+    "market.yandex.ru": "+",
+    "aliexpress.ru": "+"
+   },
+   "detect": "текст даты ДД.ММ.ГГГГ / «Обновлено» около H1",
+   "note": "Y — «Обновлено 16 декабря»; detmir, boobl, igroray — дата только в разметке"
+  },
+  {
+   "name": "Время чтения",
+   "description": "Оценка времени чтения",
+   "group": "UX",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+",
+    "aliexpress.ru": "+"
+   },
+   "detect": "текст «N мин чтения»/«N минут»",
+   "note": ""
+  },
+  {
+   "name": "Счётчик просмотров",
+   "description": "Число просмотров статьи",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "wildberries.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "текст «N просмотров»/иконка-глаз со счётчиком",
+   "note": ""
+  },
+  {
+   "name": "Оглавление",
+   "description": "Содержание статьи в начале",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "market.yandex.ru": "+",
+    "aliexpress.ru": "+",
+    "detmir.ru": "+"
+   },
+   "detect": "блок «Содержание» со ссылками/кнопками на разделы",
+   "note": "Y — липкое в сайдбаре; Ali — якорные ссылки; detmir — текстовый список без ссылок"
+  },
+  {
+   "name": "Рубрикатор блога",
+   "description": "Меню категорий журнала/гида на странице статьи",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "market.yandex.ru": "+",
+    "aliexpress.ru": "+"
+   },
+   "detect": "меню ссылок /journal/category/ или /gid/<раздел>",
+   "note": "Y — Гид/Как выбрать/Подборки/Рейтинги; Ali — разделы гида"
+  },
+  {
+   "name": "Теги статьи",
+   "description": "Теги/рубрики со ссылками",
+   "group": "Навигация",
+   "impact": "SEO",
+   "marks": {
+    "market.yandex.ru": "+",
+    "igroray.ru": "+",
+    "aliexpress.ru": "?"
+   },
+   "detect": "ссылки /journal/tag/ или блок тегов",
+   "note": "Ali — рубрики «Подарки • Идеи» текстом без ссылок"
+  },
+  {
+   "name": "Похожие статьи",
+   "description": "Блок «Читайте также»/«Похожие материалы»",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "wildberries.ru": "+",
+    "market.yandex.ru": "+",
+    "detmir.ru": "+",
+    "aliexpress.ru": "+"
+   },
+   "detect": "заголовок «Читайте также»/«Похожие материалы» + ссылки на статьи",
+   "note": "Y — ещё «Сейчас читают»; WB — с числом просмотров"
+  },
+  {
+   "name": "Ссылка на список статей",
+   "description": "Переход к ленте блога («Все статьи», «К списку статей»)",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "aliexpress.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "ссылка на индекс блога рядом со статьёй",
+   "note": "Ali — «← На главную» гида"
+  },
+  {
+   "name": "Бесконечная лента статей",
+   "description": "Подгрузка следующих статей при прокрутке",
+   "group": "UX",
+   "impact": "Продукт",
+   "marks": {
+    "wildberries.ru": "+"
+   },
+   "detect": "после статьи идут следующие H1 статей",
+   "note": ""
+  },
+  {
+   "name": "Поделиться",
+   "description": "Кнопка шеринга статьи",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "wildberries.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "aria-label/текст «Поделиться»",
+   "note": ""
+  },
+  {
+   "name": "Лайки/реакции",
+   "description": "Реакции на статью",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "?",
+    "wildberries.ru": "?"
+   },
+   "detect": "aria-label=\"Лайк\"/кнопки реакций у статьи",
+   "note": "Y — aria-label «Лайк» найден, но может относиться к видео-ленте; WB — безымянные кнопки под статьёй"
+  },
+  {
+   "name": "Подписка на статьи/рассылку",
+   "description": "Подписка на новые статьи или скидки",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "toys-land.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "ссылка «Подписаться на новые статьи» / форма подписки",
+   "note": "igroray — общая email-подписка в подвале"
+  },
+  {
+   "name": "Форма вопроса/обратного звонка",
+   "description": "Форма «Задать вопрос»/«Заказать звонок» на странице статьи",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "form с полями email/телефон/вопрос",
+   "note": ""
+  }
+ ]
+}

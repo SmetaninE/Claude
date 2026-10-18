@@ -1,0 +1,450 @@
+{
+ "Title = заголовок новости": {
+  "strength": 5,
+  "intent": 5,
+  "why": "Уникальный title — основа индексации новости и попадания в новостные/свежие колдунщики.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Бренд в Title": {
+  "strength": 2,
+  "intent": 4,
+  "why": "Брендовый суффикс повышает узнаваемость в выдаче, особенно по запросам «sima-land новости».",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Meta description": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Управляемый сниппет и CTR.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Meta keywords": {
+  "strength": 0,
+  "intent": 1,
+  "why": "Поисковики не учитывают.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "H1 = заголовок новости": {
+  "strength": 4,
+  "intent": 5,
+  "why": "Явная тема документа.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "H2-подзаголовки в тексте": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Структура длинной новости, для коротких не нужно.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Canonical": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Защищает от дублей (пагинация ленты, UTM из рассылок).",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Meta robots": {
+  "strength": 1,
+  "intent": 3,
+  "why": "Важен только max-image-preview для Discover/крупных превью.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Open Graph article": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Новости распространяются через соцсети и мессенджеры, превью нужно для шеринга СМИ.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "article:published_time / modified_time": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Сигнал свежести для поисковика.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Twitter Card": {
+  "strength": 1,
+  "intent": 2,
+  "why": "В РФ малоактуально.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Breadcrumbs (HTML)": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Навигация в ленту и раздел «О компании», перелинковка.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "BreadcrumbList JSON-LD": {
+  "strength": 2,
+  "intent": 4,
+  "why": "Крошки в сниппете.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "BreadcrumbList microdata": {
+  "strength": 2,
+  "intent": 4,
+  "why": "Альтернатива JSON-LD.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Article/NewsArticle JSON-LD": {
+  "strength": 4,
+  "intent": 5,
+  "why": "Даёт поисковику дату, автора и издателя. Ключ для новостных фич Google, это дифференциатор.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "WebPage JSON-LD + primaryImageOfPage": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Указывает главное изображение и даты, слабее NewsArticle.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "WebSite + SearchAction JSON-LD": {
+  "strength": 1,
+  "intent": 1,
+  "why": "Работает только для главной.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Organization разметка": {
+  "strength": 2,
+  "intent": 4,
+  "why": "Связывает новость с издателем-компанией.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Машиночитаемая дата <time datetime>": {
+  "strength": 2,
+  "intent": 4,
+  "why": "Точная дата для поисковика.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "ЧПУ-URL новости": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Ключи в URL и понятность ссылки. У sima-land URL числовой (/7375/).",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "RSS-лента": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Быстрая индексация и агрегаторы (Дзен-новости, СМИ).",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Адаптивность (meta viewport)": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Мобильная индексация (mobile-first).",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Языковая версия (EN)": {
+  "strength": 1,
+  "intent": 1,
+  "why": "Нужна только международной компании.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Видимая дата публикации": {
+  "strength": 4,
+  "intent": 5,
+  "why": "Без даты новость — не новость: актуальность для читателя и поисковика.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Дейтлайн пресс-релиза (дата, город)": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Формат, удобный для перепечатки СМИ.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Лид/анонс под заголовком": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Сразу отвечает «о чём новость», источник для сниппета.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Цитата представителя компании": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Экспертность и цитируемость, СМИ берут цитаты. Для рейтинга поставщиков особенно уместно.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Конкретные цифры и факты": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Ценность и цитируемость для СМИ, доверие.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Бойлерплейт «о компании»": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Контекст о компании для журналистов и для E-E-A-T.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Главное изображение новости": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Превью в выдаче и Дзене, визуальная привлекательность.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Подпись/авторство фото": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Правовая чистота, слабый сигнал.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Списки в тексте": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Читаемость. Рейтинг поставщиков удобнее подать списком/таблицей.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Время чтения": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Мелкий UX-элемент.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Рубрика/тег новости": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Перелинковка и тематическая группировка.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Прикреплённый файл для скачивания": {
+  "strength": 2,
+  "intent": 2,
+  "why": "Даёт поставщикам и СМИ полный документ (например, полный рейтинг).",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Ссылки из текста на каталог/разделы сайта": {
+  "strength": 4,
+  "intent": 4,
+  "why": "Переводит информационный трафик в коммерческий и передаёт вес. Для рейтинга поставщиков игрушек — ссылки на бренды/серии.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Внешние ссылки на партнёра": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Слабый сигнал, полезен для отношений с партнёрами.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "CTA целевого действия": {
+  "strength": 3,
+  "intent": 3,
+  "why": "Конверсия читателя (стать поставщиком/покупателем).",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Сквозное меню каталога": {
+  "strength": 2,
+  "intent": 2,
+  "why": "Выход в магазин, но на новость не работает.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Корзина и личный кабинет": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Сквозной элемент магазина, к интенту новости не относится.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Способы оплаты/доставки": {
+  "strength": 1,
+  "intent": 1,
+  "why": "Не относится к интенту новости.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Блок преимуществ компании в цифрах": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Доверие к компании у партнёров и СМИ.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Ссылка на интернет-магазин с корп. сайта": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Нужна только при отдельном корпоративном домене.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Ссылка «Назад к списку новостей»": {
+  "strength": 2,
+  "intent": 4,
+  "why": "Навигация внутри раздела новостей.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Блок последних/похожих новостей": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Углубление просмотра и перелинковка ленты, ускоряет индексацию свежих новостей.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Меню раздела «О компании/Пресс-центр»": {
+  "strength": 2,
+  "intent": 4,
+  "why": "Контекст корпоративного раздела.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Рубрикатор новостей/журнала": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Навигация по рубрикам.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Ссылки на B2B-разделы": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Аудитория новостей о поставщиках — B2B, им нужен вход «Поставщикам/Оптовикам».",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Кнопка «Наверх»": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Мелкий UX.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Индикатор прогресса чтения": {
+  "strength": 1,
+  "intent": 1,
+  "why": "Мелкий UX.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Медиабанк / айдентика для СМИ": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Упрощает работу журналистов, повышает охват публикаций.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Контакты для СМИ": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Канал для журналистов, без него пресс-релиз хуже подхватывают.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Подписка на новости/пресс-релизы": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Возвращает партнёров и СМИ.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Кнопки «Поделиться»": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Распространение новости.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Ссылки на соцсети компании": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Доверие и дополнительный канал распространения.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Телефоны/контакты на странице": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Доверие, контакт для партнёров.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Обратная связь / заказ звонка": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Слабо связано с новостью.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Ссылки на отзывы/гарантии/сертификаты": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Не по интенту.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Ссылки на мобильное приложение": {
+  "strength": 1,
+  "intent": 1,
+  "why": "Не по интенту.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Выбор региона": {
+  "strength": 1,
+  "intent": 1,
+  "why": "Не по интенту.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Галерея фото со скачиванием": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Медиаконтент для СМИ.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Рекламный слот": {
+  "strength": 0,
+  "intent": 1,
+  "why": "Отвлекает и не нужен на корпоративной новости.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Cookie-уведомление": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Юридическое требование.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ },
+ "Политика персональных данных": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Юридическое требование и косвенное доверие.",
+  "sima": "?",
+  "sima_note": "sima-land не проверена (TLS reset)"
+ }
+}

@@ -1,0 +1,1007 @@
+{
+ "type": "Категория без фасетов (корневой раздел «Игрушки»)",
+ "intent": "Коммерческий широкий интент «игрушки купить / детские игрушки цены»: пользователь выбирает направление внутри большого раздела. Страница — либо хаб подкатегорий (boobl-goom, markertoys), либо листинг всех товаров раздела с сортировкой, фасетами и навигацией по подкатегориям/подборкам (detmir, Маркет, toys-land, ural.toys, igroray).",
+ "urls": [
+  {
+   "domain": "ozon.ru",
+   "url": "https://www.ozon.ru/category/igrushki-7108/",
+   "status": "недоступна",
+   "reason": "антибот: curl 307, Playwright 403 «Похоже, нет соединения»",
+   "html": null
+  },
+  {
+   "domain": "wildberries.ru",
+   "url": "https://www.wildberries.ru/catalog/igrushki",
+   "status": "недоступна",
+   "reason": "антибот 498 (curl и Playwright)",
+   "html": null
+  },
+  {
+   "domain": "market.yandex.ru",
+   "url": "https://market.yandex.ru/category/detskiye-igrushki",
+   "status": "ok",
+   "reason": "curl — капча; Playwright отдал SSR-листинг. Страница типа category (isFakeCategoryPage), без фильтров",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/category/market.yandex.ru.html"
+  },
+  {
+   "domain": "detmir.ru",
+   "url": "https://www.detmir.ru/catalog/index/name/igry_i_igrushki/",
+   "status": "ok",
+   "reason": "корневая «Игрушки», листинг 97 120 товаров",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/category/detmir.ru.html"
+  },
+  {
+   "domain": "aliexpress.ru",
+   "url": "https://aliexpress.ru/category/202000220/toys-hobbies.html",
+   "status": "недоступна",
+   "reason": "JS-скелет: и curl (2 КБ), и Playwright отдали только шапку/футер без контента",
+   "html": null
+  },
+  {
+   "domain": "boobl-goom.ru",
+   "url": "https://boobl-goom.ru/igrushki-i-igry/",
+   "status": "ok",
+   "reason": "корневой раздел «Игрушки и игры» — хаб подкатегорий без листинга товаров",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/category/boobl-goom.ru.html"
+  },
+  {
+   "domain": "igroray.ru",
+   "url": "https://igroray.ru/catalog/vse-nastolnye-igry/",
+   "status": "ok",
+   "reason": "аналог: раздел «Все настольные игры» без применённых фильтров",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/category/igroray.ru.html"
+  },
+  {
+   "domain": "ural.toys",
+   "url": "https://ural.toys/catalog/",
+   "status": "ok",
+   "reason": "весь сайт — игрушки (опт), корневой каталог с деревом и листингом",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/category/ural.toys.html"
+  },
+  {
+   "domain": "markertoys.ru",
+   "url": "https://www.markertoys.ru/catalog/",
+   "status": "ok",
+   "reason": "весь сайт — игрушки (опт), корневой каталог-хаб без листинга",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/category/markertoys.ru.html"
+  },
+  {
+   "domain": "megamarket.ru",
+   "url": "https://megamarket.ru/catalog/igrushki/",
+   "status": "недоступна",
+   "reason": "антибот: curl 1.8 КБ скелет, Playwright 403 «Упс…»",
+   "html": null
+  },
+  {
+   "domain": "toys-land.ru",
+   "url": "https://www.toys-land.ru/catalog/igry-i-igrushki/",
+   "status": "ok",
+   "reason": "корневой раздел «Игры и игрушки», листинг 1155 товаров",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/category/toys-land.ru.html"
+  }
+ ],
+ "sima": {
+  "url": "https://www.sima-land.ru/igrushki/",
+  "status": "недоступна",
+  "reason": "TLS reset: Playwright net::ERR_CONNECTION_RESET"
+ },
+ "factors": [
+  {
+   "name": "Title с коммерческими словами",
+   "description": "Title содержит название раздела + «купить»/«цены»/«интернет-магазин»",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "detmir.ru": "+",
+    "igroray.ru": "+",
+    "markertoys.ru": "+",
+    "market.yandex.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "<title> содержит /купить|цен[аы]/i и название раздела",
+   "note": "У ural.toys Title «Каталог товаров Урал Тойз» без коммерции"
+  },
+  {
+   "name": "Meta description",
+   "description": "Заполненный уникальный meta description раздела",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "detmir.ru": "+",
+    "igroray.ru": "+",
+    "markertoys.ru": "+",
+    "market.yandex.ru": "+",
+    "toys-land.ru": "+",
+    "ural.toys": "+"
+   },
+   "detect": "meta[name=description] непустой (>70 симв.)",
+   "note": ""
+  },
+  {
+   "name": "Цифры в meta description",
+   "description": "В description — диапазон цен и/или число товаров",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "meta description содержит /\\d[\\d\\s]* товар|от \\d+ ₽/",
+   "note": "detmir: «от 5 ₽ до 159 999 ₽, 97 120 товаров»; Маркет: «576 товаров»"
+  },
+  {
+   "name": "Телефон/УТП доставки в meta description",
+   "description": "Телефон или условия доставки/самовывоза в description",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "markertoys.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "meta description содержит /8 \\(\\d{3}\\)|доставк|самовывоз/i",
+   "note": ""
+  },
+  {
+   "name": "H1",
+   "description": "Один H1 с названием раздела",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "detmir.ru": "+",
+    "igroray.ru": "+",
+    "markertoys.ru": "+",
+    "market.yandex.ru": "+",
+    "toys-land.ru": "+",
+    "ural.toys": "+"
+   },
+   "detect": "Ровно один видимый h1 с текстом раздела",
+   "note": "Маркет: доп. H1 в cookie-баннере; igroray: H1 «Все настольные игры — Цены, Скидки»"
+  },
+  {
+   "name": "Счётчик товаров у H1",
+   "description": "Рядом с заголовком указано число товаров раздела",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "Текст /\\d[\\d\\s]* товар/ в пределах блока с h1",
+   "note": "detmir «97 120 товаров», toys-land «(1155 товаров)», igroray «367»"
+  },
+  {
+   "name": "Canonical",
+   "description": "link rel=canonical на чистый URL раздела",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "detmir.ru": "+",
+    "igroray.ru": "+",
+    "market.yandex.ru": "+",
+    "ural.toys": "+"
+   },
+   "detect": "link[rel=canonical][href] = URL без параметров",
+   "note": "markertoys и toys-land — без canonical"
+  },
+  {
+   "name": "Meta robots index,follow",
+   "description": "Явный meta robots index,follow",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "detmir.ru": "+",
+    "igroray.ru": "+",
+    "markertoys.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "meta[name=robots] content содержит index",
+   "note": ""
+  },
+  {
+   "name": "Hreflang",
+   "description": "Альтернативные региональные версии (ru-ru, ru-by, ru-kz)",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "link[rel=alternate][hreflang]",
+   "note": ""
+  },
+  {
+   "name": "Open Graph",
+   "description": "og:title/og:description/og:image/og:url",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "detmir.ru": "+",
+    "igroray.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "meta[property=og:title] и og:image",
+   "note": "toys-land: только og:image"
+  },
+  {
+   "name": "Breadcrumbs (HTML)",
+   "description": "Видимые хлебные крошки",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "detmir.ru": "+",
+    "igroray.ru": "+",
+    "markertoys.ru": "+",
+    "market.yandex.ru": "+",
+    "toys-land.ru": "+",
+    "ural.toys": "+"
+   },
+   "detect": "Блок крошек: ссылки «Главная › …» перед h1",
+   "note": "Маркет: дополнительно цепочки крошек похожих категорий внизу"
+  },
+  {
+   "name": "BreadcrumbList JSON-LD",
+   "description": "Крошки в JSON-LD",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+",
+    "markertoys.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "script[type='application/ld+json'] с @type BreadcrumbList",
+   "note": ""
+  },
+  {
+   "name": "BreadcrumbList microdata",
+   "description": "Крошки в микроразметке itemtype BreadcrumbList",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "market.yandex.ru": "+",
+    "toys-land.ru": "+",
+    "ural.toys": "+"
+   },
+   "detect": "[itemtype*='schema.org/BreadcrumbList']",
+   "note": ""
+  },
+  {
+   "name": "Product + AggregateOffer для раздела",
+   "description": "Раздел размечен как Product с AggregateOffer (low/highPrice, offerCount)",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "JSON-LD @type Product с offers.@type AggregateOffer",
+   "note": "detmir — с offerCount 97120; igroray — без рейтинга"
+  },
+  {
+   "name": "AggregateRating раздела",
+   "description": "Сводный рейтинг/кол-во отзывов по категории в разметке",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "JSON-LD aggregateRating на уровне категории",
+   "note": "detmir: 4.8, 864 599 отзывов"
+  },
+  {
+   "name": "FAQPage JSON-LD",
+   "description": "Вопросы-ответы раздела в разметке FAQPage",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "JSON-LD @type FAQPage",
+   "note": ""
+  },
+  {
+   "name": "ItemList разметка",
+   "description": "Список (товаров или подкатегорий) размечен ItemList",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "market.yandex.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "JSON-LD или microdata @type ItemList",
+   "note": "Маркет: ItemList из Product в JSON-LD; toys-land microdata; boobl-goom — ItemList подкатегорий"
+  },
+  {
+   "name": "Product/Offer у карточек листинга",
+   "description": "Каждая карточка товара размечена Product+Offer",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "market.yandex.ru": "+",
+    "toys-land.ru": "+",
+    "ural.toys": "+"
+   },
+   "detect": "[itemtype*='schema.org/Product'] внутри карточек или Product в ItemList JSON-LD",
+   "note": ""
+  },
+  {
+   "name": "Organization",
+   "description": "Разметка организации (лого, контакты, адрес)",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "@type Organization (JSON-LD или microdata)",
+   "note": ""
+  },
+  {
+   "name": "WebSite + SearchAction",
+   "description": "Разметка поиска по сайту для sitelinks searchbox",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "igroray.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "JSON-LD @type WebSite с potentialAction SearchAction",
+   "note": ""
+  },
+  {
+   "name": "Store/LocalBusiness",
+   "description": "Магазин с адресом и часами работы в разметке",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "igroray.ru": "+"
+   },
+   "detect": "JSON-LD @type Store|LocalBusiness с openingHoursSpecification",
+   "note": ""
+  },
+  {
+   "name": "rel=next/prev",
+   "description": "Связь страниц пагинации через link rel",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "market.yandex.ru": "+"
+   },
+   "detect": "link[rel=next]",
+   "note": ""
+  },
+  {
+   "name": "Пагинация ссылками",
+   "description": "Номера страниц — ссылки a[href] (?page=N / PAGEN)",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "igroray.ru": "+",
+    "market.yandex.ru": "+",
+    "toys-land.ru": "+",
+    "ural.toys": "+"
+   },
+   "detect": "a[href*='page=2'] или a[href*='PAGEN_1=2']",
+   "note": "detmir: пагинация кнопками без href (data-testid=pager_item)"
+  },
+  {
+   "name": "Товары в исходном HTML (SSR)",
+   "description": "Карточки листинга присутствуют в HTML без выполнения JS",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+",
+    "market.yandex.ru": "+",
+    "toys-land.ru": "+",
+    "ural.toys": "+"
+   },
+   "detect": "В сыром HTML ≥20 названий товаров с ценой «₽»",
+   "note": "boobl-goom и markertoys — страница-хаб без листинга"
+  },
+  {
+   "name": "Alt у изображений",
+   "description": "≥80% изображений имеют alt (названия товаров/категорий)",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "доля img[alt] непустых ≥0.8",
+   "note": "boobl-goom 22/50, ural 188/273, Маркет 41/55"
+  },
+  {
+   "name": "SEO-текст раздела",
+   "description": "Описательный текст о категории/магазине",
+   "group": "Контент",
+   "impact": "SEO",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "markertoys.ru": "+"
+   },
+   "detect": "Блок текста ≥500 симв. вне карточек (class*=seo|description|text) внизу страницы",
+   "note": "boobl-goom — про виды игрушек; igroray — коммерческий; markertoys — о компании"
+  },
+  {
+   "name": "FAQ-блок",
+   "description": "Видимые вопросы и ответы по категории",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "Текст «Часто задаваемые вопросы» или h3 с «?» и ответом",
+   "note": "igroray: один вопрос «Дополнительная скидка — как получить?»"
+  },
+  {
+   "name": "Отзывы по категории",
+   "description": "Сводный рейтинг + последние отзывы на товары раздела",
+   "group": "Доверие",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "Блок «Отзывы на <раздел>» с рейтингом и ссылкой «Все отзывы»",
+   "note": ""
+  },
+  {
+   "name": "Блок популярных брендов",
+   "description": "Ссылки на бренды раздела",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "markertoys.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "Заголовок «Популярные бренды|Бренды|Торговые марки» + список ссылок",
+   "note": "markertoys — «Новые поступления торговых марок»"
+  },
+  {
+   "name": "Подборки / теговые ссылки",
+   "description": "Ссылки на тематические подборки/лендинги (бренд+тип, персонажи)",
+   "group": "Навигация",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "Блок «Подборки|Популярные запросы» или облако ссылок-тегов",
+   "note": "detmir — чипсы над листингом («LEGO DUPLO», «Куклы ЛОЛ», «Показать все 15»); toys-land — облако внизу"
+  },
+  {
+   "name": "Навигация по подкатегориям",
+   "description": "Список/чипсы дочерних категорий на странице",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "detmir.ru": "+",
+    "igroray.ru": "+",
+    "markertoys.ru": "+",
+    "market.yandex.ru": "+",
+    "toys-land.ru": "+",
+    "ural.toys": "+"
+   },
+   "detect": "Ссылки на дочерние URL раздела в блоке над/рядом с листингом",
+   "note": "igroray — соседние разделы; ural/markertoys — дерево; boobl/markertoys/ural — ещё ссылки 3-го уровня («Все N категорий»)"
+  },
+  {
+   "name": "Плитки подкатегорий с картинками",
+   "description": "Подкатегории в виде карточек с изображением",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "markertoys.ru": "+",
+    "ural.toys": "+"
+   },
+   "detect": "Ссылки на подкатегории, содержащие img",
+   "note": ""
+  },
+  {
+   "name": "Перелинковка на смежные категории внизу",
+   "description": "Блок ссылок на соседние/связанные категории под листингом",
+   "group": "Навигация",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "Блок «Категории» или цепочки крошек похожих категорий после листинга",
+   "note": ""
+  },
+  {
+   "name": "Промо-баннеры раздела",
+   "description": "Баннеры/слайдер акций и брендов в категории",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "detmir.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "Слайдер/баннер (class*=banner|slider|swiper) в контенте раздела",
+   "note": "Маркет — рекламный баннер бренда в выдаче"
+  },
+  {
+   "name": "Блок спецпредложений",
+   "description": "Хиты/новинки/акции отдельными блоками или ссылками",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+",
+    "markertoys.ru": "+",
+    "ural.toys": "+"
+   },
+   "detect": "Текст «Горячие предложения|Хиты продаж|Новинки|товары по акции|Распродажа»",
+   "note": "ural — новинки/хиты/акции у каждой подкатегории"
+  },
+  {
+   "name": "Блок преимуществ",
+   "description": "УТП и цифры о магазине (возврат, магазины, стаж, ассортимент)",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "markertoys.ru": "+"
+   },
+   "detect": "Блок «Преимущества» / иконки-УТП (features); цифры «16 лет», «30 000+ наименований»",
+   "note": ""
+  },
+  {
+   "name": "Виджет рейтинга магазина",
+   "description": "Бейдж рейтинга на Яндексе/площадках, «Оцените магазин»",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+"
+   },
+   "detect": "iframe yandex.ru/sprav/widget/rating-badge или «отзывов на площадках»",
+   "note": ""
+  },
+  {
+   "name": "Листинг товаров",
+   "description": "Сетка карточек товаров на странице раздела",
+   "group": "Коммерция",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+",
+    "market.yandex.ru": "+",
+    "toys-land.ru": "+",
+    "ural.toys": "+"
+   },
+   "detect": "≥20 карточек с ценой и ссылкой на товар",
+   "note": "boobl-goom и markertoys — хаб без товаров"
+  },
+  {
+   "name": "Сортировка",
+   "description": "Выбор порядка (популярность, цена, новизна)",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+",
+    "market.yandex.ru": "+",
+    "toys-land.ru": "+",
+    "ural.toys": "+"
+   },
+   "detect": "Текст «Сортир|По популярности|Сначала дешев»",
+   "note": ""
+  },
+  {
+   "name": "Фильтры в HTML",
+   "description": "Панель фасетов доступна без применения",
+   "group": "Интерактив",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+",
+    "market.yandex.ru": "+",
+    "toys-land.ru": "+",
+    "ural.toys": "?"
+   },
+   "detect": "Блок фильтров: заголовки «Цена», «Бренд» + чекбоксы",
+   "note": "ural — шаблон Vue ({{ }}), значения грузятся JS"
+  },
+  {
+   "name": "Фильтр по цене",
+   "description": "Диапазон цены",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+",
+    "market.yandex.ru": "+",
+    "toys-land.ru": "+",
+    "ural.toys": "?"
+   },
+   "detect": "Блок «Цена, ₽» с полями от/до",
+   "note": ""
+  },
+  {
+   "name": "Фильтр по бренду",
+   "description": "Список брендов в фильтре",
+   "group": "Интерактив",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+",
+    "market.yandex.ru": "+",
+    "toys-land.ru": "+",
+    "ural.toys": "?"
+   },
+   "detect": "Фильтр «Бренд» со списком",
+   "note": ""
+  },
+  {
+   "name": "Фильтр по возрасту/полу",
+   "description": "Возраст ребёнка и пол в фасетах",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "Фильтр «Возраст»/«Рекомендованный возраст», «Пол»",
+   "note": ""
+  },
+  {
+   "name": "Фильтр по сроку доставки",
+   "description": "Фасет «получить сегодня/за 1–2 часа»",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "Текст «Срок доставки|Срок получения|за 1-2 часа»",
+   "note": ""
+  },
+  {
+   "name": "Выбор кол-ва на странице",
+   "description": "Переключатель числа товаров на странице",
+   "group": "UX",
+   "impact": "Продукт",
+   "marks": {
+    "toys-land.ru": "+",
+    "ural.toys": "+"
+   },
+   "detect": "«Товаров на странице: 30 60 120»",
+   "note": ""
+  },
+  {
+   "name": "Переключатель вида",
+   "description": "Плитка/список",
+   "group": "UX",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "«Списком/Картинками» или toggle вида",
+   "note": ""
+  },
+  {
+   "name": "Кнопка «Показать ещё»",
+   "description": "Подгрузка следующей порции товаров",
+   "group": "UX",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "toys-land.ru": "+",
+    "ural.toys": "+"
+   },
+   "detect": "Кнопка «Показать ещё|Показать еще» под листингом",
+   "note": ""
+  },
+  {
+   "name": "Нумерованная пагинация",
+   "description": "Номера страниц под листингом",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+",
+    "market.yandex.ru": "+",
+    "toys-land.ru": "+",
+    "ural.toys": "+"
+   },
+   "detect": "Элементы 1 2 3 … N под листингом",
+   "note": ""
+  },
+  {
+   "name": "Старая цена/скидка в карточке",
+   "description": "Зачёркнутая цена или сумма скидки",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+",
+    "market.yandex.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "Две цены в карточке, s/del или class*=old",
+   "note": ""
+  },
+  {
+   "name": "Бейдж % скидки",
+   "description": "Процент скидки на карточке",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "Текст «−NN %» в карточке",
+   "note": ""
+  },
+  {
+   "name": "Рейтинг в карточке",
+   "description": "Звёзды/оценка товара в листинге",
+   "group": "Доверие",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "«Рейтинг: 4,9» / «Рейтинг товара» в карточке",
+   "note": ""
+  },
+  {
+   "name": "Кол-во отзывов в карточке",
+   "description": "Число отзывов/оценок товара",
+   "group": "Доверие",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "Число отзывов рядом с рейтингом / «N отзыв»",
+   "note": ""
+  },
+  {
+   "name": "Счётчик покупок",
+   "description": "«Купили N раз» в карточке",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "Текст «купили|Купили N раз»",
+   "note": ""
+  },
+  {
+   "name": "Кнопка «В корзину»",
+   "description": "Покупка прямо из листинга",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+",
+    "market.yandex.ru": "+",
+    "toys-land.ru": "+",
+    "ural.toys": "+"
+   },
+   "detect": "Кнопка «В корзину|Купить» в каждой карточке",
+   "note": ""
+  },
+  {
+   "name": "Избранное в карточке",
+   "description": "Добавление в избранное/отложенные из листинга",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+",
+    "market.yandex.ru": "+",
+    "toys-land.ru": "+",
+    "ural.toys": "+"
+   },
+   "detect": "Кнопка «В избранное|Отложить»/иконка сердца",
+   "note": ""
+  },
+  {
+   "name": "Сравнение в карточке",
+   "description": "Добавление к сравнению",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+",
+    "toys-land.ru": "+",
+    "market.yandex.ru": "?"
+   },
+   "detect": "Кнопка/ссылка «Сравнить»",
+   "note": ""
+  },
+  {
+   "name": "Наличие в карточке",
+   "description": "Статус/остаток (мало/много/под заказ/>10)",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+",
+    "market.yandex.ru": "+",
+    "ural.toys": "+"
+   },
+   "detect": "«В наличии|Под заказ|Мало|Наличие:|Осталось N шт»",
+   "note": ""
+  },
+  {
+   "name": "Артикул и бренд в карточке",
+   "description": "SKU и строка «Бренд:» в карточке листинга",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "toys-land.ru": "+",
+    "ural.toys": "+"
+   },
+   "detect": "Текст «Артикул:» и «Бренд:» в карточке",
+   "note": ""
+  },
+  {
+   "name": "Бейджи на карточке",
+   "description": "Хит/Акция/Новинка/Оригинал",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "Метки «Хит|Акция|Новинка|ОРИГИНАЛ» на карточках",
+   "note": ""
+  },
+  {
+   "name": "Цена с промокодом",
+   "description": "Цена с учётом промокода/подсказка «-20% по коду»",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "Текст «с промокодом|по коду|ПРОМОКОД»",
+   "note": ""
+  },
+  {
+   "name": "Рассрочка/сплит",
+   "description": "Платёж частями в карточке или УТП",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+",
+    "detmir.ru": "?",
+    "market.yandex.ru": "?"
+   },
+   "detect": "Текст «сплит|рассрочк|частями|Долями»",
+   "note": "igroray — сумма платежа в сплит в каждой карточке"
+  },
+  {
+   "name": "Кешбэк/бонусы",
+   "description": "Начисление бонусов за товар/бонусная карта",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+",
+    "detmir.ru": "+"
+   },
+   "detect": "Текст «кешбэк бонусов|Бонусная карта»",
+   "note": ""
+  },
+  {
+   "name": "Срок доставки в карточке",
+   "description": "Дата/способ получения у товара",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+"
+   },
+   "detect": "«Завтра|Послезавтра|ПВЗ» в карточке",
+   "note": ""
+  },
+  {
+   "name": "Цена после авторизации / опт",
+   "description": "Цена видна после входа, кратность коробки",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "ural.toys": "+"
+   },
+   "detect": "«Авторизуйтесь, чтобы увидеть цену», «Кол-во в коробке»",
+   "note": "markertoys — ссылка «Скачать прайс-лист» (опт без цены в каталоге)"
+  },
+  {
+   "name": "Телефон в шапке",
+   "description": "Номер телефона в шапке",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+",
+    "ural.toys": "+"
+   },
+   "detect": "Ссылка tel: или номер в header",
+   "note": ""
+  },
+  {
+   "name": "Обратный звонок",
+   "description": "Форма «Заказать звонок/Позвоните мне»",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "Кнопка «Заказать звонок|Позвоните мне»",
+   "note": ""
+  },
+  {
+   "name": "Адрес и часы работы",
+   "description": "Адрес магазина/склада и режим работы",
+   "group": "Доверие",
+   "impact": "Оба",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+",
+    "ural.toys": "+"
+   },
+   "detect": "Текст адреса (ул./переулок) и часов работы",
+   "note": ""
+  },
+  {
+   "name": "Выбор региона",
+   "description": "Город/адрес доставки в шапке",
+   "group": "UX",
+   "impact": "Продукт",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "detmir.ru": "+",
+    "igroray.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "Текст «Ваш регион|Сменить город|Укажите адрес»",
+   "note": ""
+  },
+  {
+   "name": "Связь с руководством / пожелания по ассортименту",
+   "description": "Форма «Написать директору» или «Оставить пожелание по ассортименту»",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "markertoys.ru": "+",
+    "ural.toys": "+"
+   },
+   "detect": "Текст «Написать директору|Задать вопрос руководителю|пожелание по ассортименту»",
+   "note": "ural — ещё и блок «Ваш менеджер» с контактами"
+  }
+ ]
+}

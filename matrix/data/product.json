@@ -1,0 +1,1063 @@
+{
+ "type": "Карточка товара",
+ "intent": "Транзакционный интент: пользователь ищет конкретную детскую настольную/карточную игру, чтобы оценить её (правила, комплектация, возраст, число игроков, отзывы) и купить. Страница — карточка товара интернет-магазина/маркетплейса (у ural.toys и markertoys — оптовая карточка с ценой после авторизации).",
+ "urls": [
+  {
+   "domain": "ozon.ru",
+   "url": "https://www.ozon.ru/product/neskuchnye-igry-obuchayushchaya-igra-memo-ves-mir-135487006/",
+   "status": "недоступна",
+   "reason": "curl 307 цикл редиректов; Playwright 403 «Похоже, нет соединения» (антибот)",
+   "html": null
+  },
+  {
+   "domain": "wildberries.ru",
+   "url": "https://www.wildberries.ru/catalog/3825112/detail.aspx",
+   "status": "частично (JS)",
+   "reason": "curl 498; Playwright отрисовал карточку, описание/отзывы/похожие грузятся JS",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/product/wildberries.ru.html"
+  },
+  {
+   "domain": "market.yandex.ru",
+   "url": "https://market.yandex.ru/card/neskuchnyye-igry-igra-kartochnigra-kanobu-kamen---nozhnitsy---bumaga-8105-rossiya/103687938148",
+   "status": "недоступна",
+   "reason": "капча showcaptcha («Вы не робот?») и в curl, и в Playwright",
+   "html": null
+  },
+  {
+   "domain": "detmir.ru",
+   "url": "https://www.detmir.ru/product/index/id/5078027/",
+   "status": "ok",
+   "reason": "Мемо «Мир насекомых», 5+, карточная; SSR",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/product/detmir.ru.html"
+  },
+  {
+   "domain": "aliexpress.ru",
+   "url": "https://aliexpress.ru/item/1_517239424.html",
+   "status": "недоступна",
+   "reason": "антибот punish «Пройдите проверку» (curl и Playwright)",
+   "html": null
+  },
+  {
+   "domain": "boobl-goom.ru",
+   "url": "https://boobl-goom.ru/product/igra-nastolnaya-yunyy-svintus-bolshoe-priklyuchenie/",
+   "status": "ok",
+   "reason": "Юный Свинтус, карточная, 4+",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/product/boobl-goom.ru.html"
+  },
+  {
+   "domain": "igroray.ru",
+   "url": "https://igroray.ru/catalog/nastolnaya-igra-zvezda-tri-kota-pokhod-k-mayaku-detskaya-zv-8769/",
+   "status": "ok",
+   "reason": "Детская настольная «Три кота», 4+ (детской карточной не найдено)",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/product/igroray.ru.html"
+  },
+  {
+   "domain": "ural.toys",
+   "url": "https://ural.toys/catalog/nastolno-pechatnye-igry/425241-kartochnaya-igra-quot-poveliteli-drakonov-quot-104-kartochki/",
+   "status": "ok",
+   "reason": "Оптовая карточка, карточная игра 5+",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/product/ural.toys.html"
+  },
+  {
+   "domain": "markertoys.ru",
+   "url": "https://www.markertoys.ru/catalog/nastolnye_i_pechatnye_igry/igry_nastolnye_dlya_vsey_semi/igra_kartochnaya_chyertova_dyuzhina_8921_51/",
+   "status": "ok",
+   "reason": "Оптовая карточка, карточная игра 5+",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/product/markertoys.ru.html"
+  },
+  {
+   "domain": "megamarket.ru",
+   "url": "https://megamarket.ru/catalog/details/nastolnaya-igra-bondibon-domino-rozhki-da-nozhki-100025795912/",
+   "status": "недоступна",
+   "reason": "curl — JS-заглушка (1.9 КБ); Playwright 403 «Упс…»",
+   "html": null
+  },
+  {
+   "domain": "toys-land.ru",
+   "url": "https://www.toys-land.ru/goods/detskaya-nastolnaya-igra-dinozavry/",
+   "status": "ok",
+   "reason": "Djeco «Динозавры», карточная 5+",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/dl/product/toys-land.ru.html"
+  }
+ ],
+ "sima": {
+  "url": "https://www.sima-land.ru/2699914/nastolnaya-igra-chey-kot-bolshe-36-kart-5-plus/",
+  "status": "недоступна",
+  "reason": "TLS reset: Playwright net::ERR_CONNECTION_RESET"
+ },
+ "factors": [
+  {
+   "name": "Title",
+   "description": "Тег <title> с названием товара",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "wildberries.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "ural.toys": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "<title> непустой, содержит название товара",
+   "note": "Шаблон «название + купить по цене N ₽ в интернет-магазине X»"
+  },
+  {
+   "name": "Цена в Title",
+   "description": "В <title> указана цена товара",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "wildberries.ru": "+",
+    "boobl-goom.ru": "+",
+    "ural.toys": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "regex в <title>: \\d+[\\s.,]?\\d*\\s?(₽|руб)",
+   "note": "ural.toys «оптом от N рублей»"
+  },
+  {
+   "name": "Артикул/код в Title",
+   "description": "В <title> есть артикул/код товара",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "wildberries.ru": "+",
+    "igroray.ru": "+",
+    "ural.toys": "+",
+    "markertoys.ru": "+"
+   },
+   "detect": "артикул товара встречается в <title>",
+   "note": ""
+  },
+  {
+   "name": "Город/регион в Title или H1",
+   "description": "Привязка к городу в Title/H1",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "«в Москве|в Екатеринбурге|в <город>» в <title> или <h1>",
+   "note": "markertoys — город в H1 (поддомены по городам)"
+  },
+  {
+   "name": "Meta description",
+   "description": "Мета-описание с названием и УТП",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "wildberries.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "ural.toys": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "<meta name=\"description\"> непустой",
+   "note": "Часто с ценой, телефоном, эмодзи (✅, ⚡️, 📞)"
+  },
+  {
+   "name": "H1",
+   "description": "Единственный H1 с названием товара",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "ural.toys": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+",
+    "wildberries.ru": "?"
+   },
+   "detect": "ровно один <h1> с названием товара",
+   "note": "WB — в отрисованном DOM h1 не найден, название в h2"
+  },
+  {
+   "name": "Canonical",
+   "description": "link rel=canonical на себя",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "ural.toys": "+",
+    "markertoys.ru": "+"
+   },
+   "detect": "<link rel=\"canonical\" href=\"...\"> равен URL карточки",
+   "note": ""
+  },
+  {
+   "name": "Meta robots index,follow",
+   "description": "Явный meta robots",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "markertoys.ru": "+"
+   },
+   "detect": "<meta name=\"robots\" content=\"index, follow\">",
+   "note": ""
+  },
+  {
+   "name": "Open Graph",
+   "description": "og:title/og:description/og:image",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "wildberries.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "ural.toys": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "<meta property=\"og:image\"> и og:title",
+   "note": "toys-land — только og:image (относительный)"
+  },
+  {
+   "name": "Breadcrumbs (HTML)",
+   "description": "Хлебные крошки в разметке",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "wildberries.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "ural.toys": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "элемент с class*=\"breadcrumb\" или nav[aria-label*=bread]",
+   "note": ""
+  },
+  {
+   "name": "BreadcrumbList JSON-LD",
+   "description": "Крошки в JSON-LD",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+",
+    "markertoys.ru": "+"
+   },
+   "detect": "script[type=\"application/ld+json\"] с @type BreadcrumbList",
+   "note": ""
+  },
+  {
+   "name": "BreadcrumbList микроразметка",
+   "description": "Крошки в microdata",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "wildberries.ru": "+",
+    "boobl-goom.ru": "+",
+    "ural.toys": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "[itemtype*=\"schema.org/BreadcrumbList\"]",
+   "note": ""
+  },
+  {
+   "name": "Product (schema.org)",
+   "description": "Разметка Product (JSON-LD или microdata)",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "ural.toys": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "@type Product в JSON-LD или [itemtype*=\"schema.org/Product\"]",
+   "note": "igroray — JSON-LD; остальные — microdata; markertoys/ural — без offers"
+  },
+  {
+   "name": "Offer (цена/наличие в разметке)",
+   "description": "Offer с price, priceCurrency, availability",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "Offer: price + priceCurrency (+availability) в JSON-LD или itemprop=\"offers\"",
+   "note": "igroray availability=BackOrder"
+  },
+  {
+   "name": "Brand в разметке",
+   "description": "brand в Product",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "ural.toys": "+"
+   },
+   "detect": "Product.brand или itemprop=\"brand\"",
+   "note": ""
+  },
+  {
+   "name": "Organization (schema.org)",
+   "description": "Разметка организации",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "@type Organization в JSON-LD или microdata",
+   "note": "igroray — Organization+Store+PostalAddress+OpeningHours"
+  },
+  {
+   "name": "WebSite + SearchAction",
+   "description": "Разметка поиска по сайту",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "igroray.ru": "+"
+   },
+   "detect": "JSON-LD WebSite с potentialAction SearchAction",
+   "note": ""
+  },
+  {
+   "name": "FAQPage JSON-LD",
+   "description": "Разметка FAQ по товару",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "JSON-LD @type FAQPage",
+   "note": "Шаблонные вопросы: цена, доставка, кэшбэк, рассрочка"
+  },
+  {
+   "name": "AggregateRating/Review в разметке",
+   "description": "Рейтинг и отзывы в schema.org",
+   "group": "Техническое",
+   "impact": "SEO",
+   "marks": {},
+   "detect": "AggregateRating или Review в JSON-LD/microdata",
+   "note": "Ни у одного доступного аналога нет (даже при наличии отзывов у detmir/WB)"
+  },
+  {
+   "name": "Фотогалерея товара",
+   "description": "Несколько фото с листанием/увеличением",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "wildberries.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "ural.toys": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "карусель/слайдер изображений товара (swiper/gallery) >1 img",
+   "note": "detmir 14 фото, WB 19"
+  },
+  {
+   "name": "Видео в карточке",
+   "description": "Видеообзор товара в галерее",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "boobl-goom.ru": "+"
+   },
+   "detect": "<video>/iframe youtube|rutube или слайд class*=\"video\" в галерее",
+   "note": ""
+  },
+  {
+   "name": "Описание товара",
+   "description": "Развёрнутый текст описания",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "ural.toys": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+",
+    "wildberries.ru": "?"
+   },
+   "detect": "блок «Описание» с текстом >300 символов",
+   "note": "WB — описание подгружается JS по кнопке"
+  },
+  {
+   "name": "Правила/суть игры",
+   "description": "Как играть, цель игры, условия победы",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "ural.toys": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "текст «Правила игры|Ход игры|Цель игры|побеждает|выигрывает»",
+   "note": "igroray — отдельный подзаголовок «Как выиграть? Условия победы»"
+  },
+  {
+   "name": "Комплектация",
+   "description": "Состав набора (кол-во карточек, правила)",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "wildberries.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "ural.toys": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "«Комплектация|В комплекте|В наборе|состав игры» + число карточек",
+   "note": ""
+  },
+  {
+   "name": "Развиваемые навыки",
+   "description": "Что развивает игра",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "wildberries.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "markertoys.ru": "+"
+   },
+   "detect": "«развивает|развитие|Тренируемые навыки|Развитие навыка»",
+   "note": "WB — отдельная характеристика «Тренируемые навыки»"
+  },
+  {
+   "name": "Структурированное описание с подзаголовками",
+   "description": "Описание разбито на H3-разделы",
+   "group": "Контент",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "<h3> внутри блока описания",
+   "note": "igroray: Особенности / Комплектация / Как выиграть"
+  },
+  {
+   "name": "Таблица характеристик",
+   "description": "Список «параметр: значение»",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "wildberries.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "ural.toys": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "блок «Характеристики»/dl/table с парами ключ-значение",
+   "note": ""
+  },
+  {
+   "name": "Рекомендованный возраст",
+   "description": "Возраст 5+ / от N лет",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "wildberries.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "ural.toys": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "«Возраст|Рекомендованный возраст|от N лет|N+»",
+   "note": "ural — только в тексте описания"
+  },
+  {
+   "name": "Количество игроков",
+   "description": "Мин./макс. число игроков",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "wildberries.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "ural.toys": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "«игроков|Количество игроков|Число игроков»",
+   "note": ""
+  },
+  {
+   "name": "Время партии",
+   "description": "Длительность игры",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "«Время игры|Продолжительность партии|минут»",
+   "note": ""
+  },
+  {
+   "name": "Размеры и вес упаковки",
+   "description": "Габариты/вес коробки",
+   "group": "Контент",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "ural.toys": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "«Размер упаковки|Длина упаковки|Вес»",
+   "note": ""
+  },
+  {
+   "name": "Страна производства",
+   "description": "Страна производителя",
+   "group": "Контент",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "wildberries.ru": "+",
+    "boobl-goom.ru": "+",
+    "ural.toys": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "«Страна производства|Страна производитель|Страна:»",
+   "note": ""
+  },
+  {
+   "name": "Бренд со ссылкой",
+   "description": "Бренд товара со ссылкой на бренд-страницу",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "wildberries.ru": "+",
+    "boobl-goom.ru": "+",
+    "ural.toys": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+",
+    "igroray.ru": "?"
+   },
+   "detect": "ссылка на /brand/ или «Все товары бренда|В каталог бренда»",
+   "note": ""
+  },
+  {
+   "name": "Артикул/код товара",
+   "description": "Видимый артикул или код",
+   "group": "Контент",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "wildberries.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "ural.toys": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "«Артикул|Код товара|Код:»",
+   "note": "ural/markertoys — также штрихкод EAN; ural — копирование артикула"
+  },
+  {
+   "name": "FAQ по товару (видимый)",
+   "description": "Блок вопросов-ответов о покупке",
+   "group": "Контент",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "H2 «Часто задаваемые вопросы» + H3-вопросы",
+   "note": ""
+  },
+  {
+   "name": "Цена",
+   "description": "Видимая розничная цена",
+   "group": "Коммерция",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "wildberries.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "цена «N ₽» рядом с кнопкой покупки",
+   "note": "ural/markertoys — цена после авторизации"
+  },
+  {
+   "name": "Старая цена / % скидки",
+   "description": "Зачёркнутая цена и процент скидки",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "wildberries.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "<del>/<s>/class*=\"old\" цена или «-N%»",
+   "note": "toys-land — «Закажи онлайн — скидка 10%»"
+  },
+  {
+   "name": "Цена по промокоду/способу оплаты",
+   "description": "Отдельная цена с промокодом, кошельком или при оплате наличными",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "wildberries.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "«по коду|с промокодом|с WB Кошельком|При оплате наличными»",
+   "note": ""
+  },
+  {
+   "name": "Кнопка «В корзину»",
+   "description": "Добавление в корзину",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "wildberries.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "ural.toys": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "кнопка «В корзину|Купить»",
+   "note": ""
+  },
+  {
+   "name": "Кнопка «Купить сейчас»",
+   "description": "Быстрый переход к оформлению",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "wildberries.ru": "+"
+   },
+   "detect": "«Купить сейчас|Купить в 1 клик»",
+   "note": ""
+  },
+  {
+   "name": "Статус наличия",
+   "description": "В наличии / нет / под заказ",
+   "group": "Коммерция",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "«В наличии|Есть в наличии|Нет в наличии|Под заказ»",
+   "note": ""
+  },
+  {
+   "name": "Уведомить о поступлении",
+   "description": "Подписка на появление товара",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "«Уведомить о появлении|Сообщить о поступлении»",
+   "note": ""
+  },
+  {
+   "name": "Блок доставки",
+   "description": "Способы/стоимость доставки в карточке",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "wildberries.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "«Доставка|Курьером|Способы доставки» в зоне покупки",
+   "note": ""
+  },
+  {
+   "name": "Дата/срок доставки",
+   "description": "Конкретная дата или «сегодня»",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "wildberries.ru": "+",
+    "boobl-goom.ru": "+"
+   },
+   "detect": "дата доставки («22 октября», «Сегодня»)",
+   "note": ""
+  },
+  {
+   "name": "Самовывоз из магазина",
+   "description": "Самовывоз/наличие в магазинах",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "«Самовывоз|забрать из магазина»",
+   "note": ""
+  },
+  {
+   "name": "Способы оплаты",
+   "description": "Список вариантов оплаты в карточке",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "«Как оплатить|Способы оплаты|СБП|Оплата картой»",
+   "note": ""
+  },
+  {
+   "name": "Рассрочка/оплата частями",
+   "description": "Сплит, долями, рассрочка",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "«частями|рассрочк|сплит|Долями»",
+   "note": ""
+  },
+  {
+   "name": "Бонусы/кэшбэк",
+   "description": "Начисляемые бонусы за покупку",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "«бонус|кэшбэк|кешбэк»",
+   "note": ""
+  },
+  {
+   "name": "Минимальная сумма/количество заказа",
+   "description": "Порог заказа",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "ural.toys": "+",
+    "markertoys.ru": "+"
+   },
+   "detect": "«Минимальная сумма заказа|Min заказ»",
+   "note": ""
+  },
+  {
+   "name": "Оптовые параметры",
+   "description": "Кол-во в коробке/кратность, цена после авторизации",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "ural.toys": "+",
+    "markertoys.ru": "+"
+   },
+   "detect": "«Количество в коробке|В коробке: N шт» / «Авторизуйтесь, чтобы увидеть цену|Узнать цену»",
+   "note": "Оптовые сайты"
+  },
+  {
+   "name": "Гарантия",
+   "description": "Срок гарантии от магазина",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+"
+   },
+   "detect": "«Гарантия|Срок гарантии»",
+   "note": ""
+  },
+  {
+   "name": "Условия возврата",
+   "description": "Срок возврата в карточке",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "wildberries.ru": "+",
+    "boobl-goom.ru": "+"
+   },
+   "detect": "«N дней на возврат|Возврат в течение»",
+   "note": ""
+  },
+  {
+   "name": "Продавец",
+   "description": "Название/реквизиты продавца",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "wildberries.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "«Продавец» + название/ИНН",
+   "note": "WB — с рейтингом продавца"
+  },
+  {
+   "name": "Выбор вариантов товара",
+   "description": "Переключение вариаций (цвет/серия)",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "wildberries.ru": "+"
+   },
+   "detect": "«Цвет:» + миниатюры вариантов",
+   "note": "WB — 19 вариантов серии"
+  },
+  {
+   "name": "Рейтинг товара",
+   "description": "Средняя оценка и число оценок у H1",
+   "group": "Доверие",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "wildberries.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "звёзды/число рядом с заголовком + «N отзывов|оценок»",
+   "note": "igroray — «0 (0 отзывов)»"
+  },
+  {
+   "name": "Отзывы покупателей",
+   "description": "Блок отзывов на странице",
+   "group": "Доверие",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "toys-land.ru": "+",
+    "wildberries.ru": "?"
+   },
+   "detect": "H2/блок «Отзывы» с карточками отзывов",
+   "note": "detmir — карусель отзывов; WB — грузится JS; у boobl/igroray/toys-land пусто"
+  },
+  {
+   "name": "Форма отзыва",
+   "description": "Оставить отзыв с оценкой",
+   "group": "Интерактив",
+   "impact": "Оба",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "«Оставить отзыв» + форма/модалка",
+   "note": "toys-land — достоинства/недостатки/оценка"
+  },
+  {
+   "name": "Вопросы о товаре",
+   "description": "Задать вопрос / список вопросов",
+   "group": "Доверие",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "wildberries.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "«Задать вопрос|N вопросов»",
+   "note": "boobl — общая форма вопроса по email"
+  },
+  {
+   "name": "Маркировка «Честный знак»",
+   "description": "Значок обязательной маркировки",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "markertoys.ru": "+"
+   },
+   "detect": "«Честный знак»",
+   "note": ""
+  },
+  {
+   "name": "Преимущества магазина",
+   "description": "УТП-блок (оригинал, быстро, возврат)",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "блок УТП «Только оригинальные|Быстро|Безопасно»",
+   "note": ""
+  },
+  {
+   "name": "Контакты для консультации",
+   "description": "Телефон/менеджер в карточке или шапке",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "ural.toys": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "телефон tel: в шапке/карточке; «Ваш менеджер» / «Заказать звонок|Запросить звонок|Telegram»",
+   "note": "ural — персональный менеджер; igroray/toys-land — обратный звонок"
+  },
+  {
+   "name": "Похожие товары",
+   "description": "Блок аналогов",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "igroray.ru": "+",
+    "ural.toys": "+",
+    "markertoys.ru": "+",
+    "wildberries.ru": "?"
+   },
+   "detect": "H2 «Похожие товары|Вас может заинтересовать» / «Вам может понравиться»",
+   "note": "WB — кнопка «Похожие», лента JS; detmir — ещё «Вам может понравиться»"
+  },
+  {
+   "name": "Недавно просмотренные",
+   "description": "«Вы смотрели»",
+   "group": "Навигация",
+   "impact": "Продукт",
+   "marks": {
+    "wildberries.ru": "+",
+    "igroray.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "«Вы недавно смотрели|Вы смотрели|Вы интересовались»",
+   "note": ""
+  },
+  {
+   "name": "Ссылка на категорию товара",
+   "description": "Переход ко всем товарам категории",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "detmir.ru": "+",
+    "wildberries.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "ural.toys": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "«Все товары категории|Посмотреть другие|Товар входит в разделы» или ссылки на категорию вне крошек",
+   "note": ""
+  },
+  {
+   "name": "Перелинковка популярных категорий/тегов",
+   "description": "Блок ссылок на категории/бренды",
+   "group": "Навигация",
+   "impact": "SEO",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "«Популярные категории» + список ссылок",
+   "note": ""
+  },
+  {
+   "name": "Избранное",
+   "description": "Добавить в избранное",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "ural.toys": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+",
+    "wildberries.ru": "?"
+   },
+   "detect": "кнопка «В избранное»/иконка сердца",
+   "note": ""
+  },
+  {
+   "name": "Сравнение",
+   "description": "Добавить к сравнению",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "«К сравнению|список сравнения»",
+   "note": ""
+  },
+  {
+   "name": "Поделиться",
+   "description": "Шаринг в соцсети/копирование ссылки",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "wildberries.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "«Поделиться»",
+   "note": ""
+  },
+  {
+   "name": "Свернуть/развернуть описание",
+   "description": "Описание скрыто под «Показать полностью»",
+   "group": "UX",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+",
+    "boobl-goom.ru": "+",
+    "igroray.ru": "+"
+   },
+   "detect": "«Показать полностью|Раскрыть|Читать полное описание»",
+   "note": ""
+  },
+  {
+   "name": "Выбор города",
+   "description": "Регион влияет на доставку/наличие",
+   "group": "UX",
+   "impact": "Продукт",
+   "marks": {
+    "wildberries.ru": "+",
+    "boobl-goom.ru": "+",
+    "ural.toys": "+",
+    "markertoys.ru": "+"
+   },
+   "detect": "«Ваш город|Вы здесь:» + город",
+   "note": ""
+  }
+ ]
+}
