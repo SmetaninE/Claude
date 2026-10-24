@@ -3,490 +3,574 @@
   "strength": 5,
   "intent": 5,
   "why": "Без значения фасета в title страница не ранжируется по «настольные игры для детей от 6 лет».",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "«Настольные игры для детей от 6 лет — купить оптом и в розницу…»"
  },
  "Коммерческий хвост в Title": {
   "strength": 3,
   "intent": 5,
   "why": "Попадание в коммерческие модификаторы «купить/цены».",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "«купить оптом и в розницу в интернет-магазине»"
  },
  "Meta description, уникальная под фасет": {
   "strength": 3,
   "intent": 4,
   "why": "Уникальный сниппет вместо дубля родительской категории.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "description начинается с «Настольные игры для детей от 6 лет»"
  },
  "Динамические данные в Meta description": {
   "strength": 2,
   "intent": 3,
   "why": "Цены и количество товаров повышают CTR.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "±",
+  "sima_note": "«в наличии 122 SKU» есть, цены нет (цена «от 78 руб.» только в og:description)"
  },
  "H1 с названием фасета": {
   "strength": 4,
   "intent": 5,
   "why": "Подтверждает тему посадочной. У GET-фасетов H1 остаётся родительским, и страница не отвечает запросу.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "H1 «Настольные игры для детей от 6 лет»"
  },
  "Статический ЧПУ фасета": {
   "strength": 4,
   "intent": 5,
   "why": "Отдельная индексируемая посадочная, ключ в URL.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "/nastolnye-igry-dlya-detej-ot-6-let-fps/"
  },
  "Self-canonical на фасет": {
   "strength": 5,
   "intent": 5,
   "why": "Canonical на родителя (igroray) выкидывает фасет из индекса. Критично для посадочной.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "canonical = сам URL фасета"
  },
  "Meta robots index,follow": {
   "strength": 3,
   "intent": 5,
   "why": "Явная индексируемость фасета, ведь многие сайты закрывают фильтры noindex.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "meta robots отсутствует"
  },
  "Breadcrumbs (HTML)": {
   "strength": 4,
   "intent": 5,
   "why": "Иерархия «Игры → Настольные → От 6 лет», перелинковка вверх.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "Каталог › Игрушки › Настольные игры › От 6 лет"
  },
  "Фасет как последний уровень крошек": {
   "strength": 2,
   "intent": 4,
   "why": "Показывает фасет как самостоятельный уровень структуры.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "последнее звено «От 6 лет»"
  },
  "BreadcrumbList JSON-LD": {
   "strength": 3,
   "intent": 4,
   "why": "Крошки в сниппете.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "JSON-LD только CollectionPage/ItemList; крошки — в microdata"
  },
  "BreadcrumbList microdata": {
   "strength": 3,
   "intent": 4,
   "why": "Альтернатива JSON-LD.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "itemtype BreadcrumbList/ListItem"
  },
  "Product + AggregateOffer для листинга": {
   "strength": 3,
   "intent": 4,
   "why": "Диапазон цен в сниппете Google.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "нет Product/AggregateOffer, диапазона цен в разметке нет"
  },
  "AggregateRating для листинга": {
   "strength": 3,
   "intent": 3,
   "why": "Звёзды в сниппете, спорно по правилам.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "сводный рейтинг (5 / 89 отзывов) виден, но в разметке нет AggregateRating"
  },
  "OfferCatalog": {
   "strength": 1,
   "intent": 2,
   "why": "Слабый сигнал.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "нет"
  },
  "ItemList товаров": {
   "strength": 2,
   "intent": 4,
   "why": "Список товаров для поисковика.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "JSON-LD CollectionPage.mainEntity ItemList + microdata ItemList/Offer"
  },
  "Organization": {
   "strength": 1,
   "intent": 2,
   "why": "Сквозной элемент.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "нет"
  },
  "WebSite + SearchAction": {
   "strength": 1,
   "intent": 1,
   "why": "Только для главной.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "нет"
  },
  "Open Graph": {
   "strength": 2,
   "intent": 3,
   "why": "Шеринг подборки.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "og:title/description/url/image, в description «122 шт. по цене от 78 руб.»"
  },
  "hreflang": {
   "strength": 1,
   "intent": 1,
   "why": "Только мультирегиональным сайтам.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "нет"
  },
  "rel=next для пагинации": {
   "strength": 1,
   "intent": 2,
   "why": "Слабый сигнал.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "link rel=next/prev нет, хотя пагинация /p2/…/p7/ есть"
  },
  "Lazy-load изображений": {
   "strength": 2,
   "intent": 3,
   "why": "Скорость листинга.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "у img нет loading=lazy (фото товаров с прямым src)"
  },
  "Alt у изображений товаров": {
   "strength": 2,
   "intent": 3,
   "why": "Поиск по картинкам.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "alt = название товара у item-image (пустые только у бейджей)"
  },
  "Товары в исходном HTML (SSR)": {
   "strength": 5,
   "intent": 5,
   "why": "Без SSR у посадочной нет контента для индексации.",
   "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima_note": "выгрузка — outerHTML из браузера, SSR не подтвердить"
  },
  "Счётчик товаров в фасете": {
   "strength": 2,
   "intent": 4,
   "why": "Показывает полноту подборки, отсекает пустые фасеты.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "±",
+  "sima_note": "122 только в фильтре «Любая/От 6 лет» и в description, у H1 счётчика нет"
  },
  "SEO-текст на странице": {
   "strength": 3,
   "intent": 4,
   "why": "Уникальный текст о выборе игры для 6-летки: релевантность и отличие от дубля категории.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "текстового блока нет"
  },
  "FAQ-блок": {
   "strength": 3,
   "intent": 3,
   "why": "Закрывает вопросы выбора («какую игру выбрать ребёнку 6 лет»), это дифференциатор.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "нет"
  },
  "Блок «Популярные бренды» (фасет+бренд)": {
   "strength": 3,
   "intent": 3,
   "why": "Перелинковка на пересечения фасетов.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "±",
+  "sima_note": "ссылки на ТМ ведут на «настольные игры + бренд», а не «от 6 лет + бренд»"
  },
  "Блок «Популярные категории»": {
   "strength": 2,
   "intent": 3,
   "why": "Перелинковка на смежные разделы.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "нет"
  },
  "Блок отзывов о товарах фасета": {
   "strength": 3,
   "intent": 3,
   "why": "Уникальный UGC и социальное доказательство на листинге.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "«Отзывы»: 5 / 89 отзывов, 2 примера, кнопка «Все отзывы о товарах»"
  },
  "Блог/статьи на листинге": {
   "strength": 2,
   "intent": 2,
   "why": "Переход к экспертному контенту.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "нет (журнал только в футере)"
  },
  "Блок преимуществ магазина": {
   "strength": 2,
   "intent": 3,
   "why": "УТП.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "нет"
  },
  "Облако тегов/подборок": {
   "strength": 3,
   "intent": 4,
   "why": "Перелинковка между посадочными фасетами.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "нижний блок ЧПУ-фасетов: возраст/страна/«Новый год»/~30 ТМ (*-fps)"
  },
  "Ссылки на соседние возрастные фасеты": {
   "strength": 4,
   "intent": 5,
   "why": "Пользователь ошибся возрастом и переходит дальше. Перелинковка кластера возрастных посадочных.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "от 3/4/5 лет (-fps) в нижнем блоке"
  },
  "Ссылки на подкатегории/типы игр": {
   "strength": 4,
   "intent": 5,
   "why": "Сужение по типу игры и перелинковка.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "жанры только чекбоксами фильтра, ссылок на типы игр нет"
  },
  "Быстрые фильтры-чипы над листингом": {
   "strength": 3,
   "intent": 4,
   "why": "Быстрое сужение выбора и ссылки на посадочные.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "над товарами только чип выбранного «От 6 лет»"
  },
  "Плашка выбранных фильтров со сбросом": {
   "strength": 2,
   "intent": 3,
   "why": "Понятно, что фильтр применён.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "«Выбран 1 фильтр» + чип «От 6 лет»"
  },
  "Пагинация": {
   "strength": 2,
   "intent": 4,
   "why": "Доступ к товарам за первой страницей.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "страницы 1–7, ЧПУ /p2/…"
  },
  "Кнопка «Показать ещё»": {
   "strength": 1,
   "intent": 3,
   "why": "Удобство на мобильных.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "нет"
  },
  "Сортировка": {
   "strength": 3,
   "intent": 5,
   "why": "Выбор по цене и популярности.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "выпадающий список «Популярные» (sortType)"
  },
  "Фильтр по цене": {
   "strength": 3,
   "intent": 5,
   "why": "Самый частый уточняющий фильтр.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "от–до + диапазоны со счётчиками"
  },
  "Фильтр по бренду": {
   "strength": 3,
   "intent": 4,
   "why": "Брендовый выбор.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "«Бренды», «Наши», «Ещё 42»"
  },
  "Фильтр по возрасту": {
   "strength": 3,
   "intent": 5,
   "why": "Позволяет сменить возраст прямо на странице.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "«Возраст»: от 1 года…от 6 лет, «Ещё 9»"
  },
  "Фильтр по способу получения/наличию": {
   "strength": 2,
   "intent": 3,
   "why": "Срочные покупки.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "нет (только скидка/новинки/уценка)"
  },
  "Фильтр по сроку доставки": {
   "strength": 2,
   "intent": 3,
   "why": "Подарок к дате.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "нет"
  },
  "Фильтр по количеству игроков": {
   "strength": 3,
   "intent": 5,
   "why": "Специфичный для настолок параметр выбора.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "±",
+  "sima_note": "есть, но значения сырые («1-99», «1-5», «5», «Ещё 48»)"
  },
  "Фильтр по жанру/типу игры": {
   "strength": 3,
   "intent": 5,
   "why": "Ключевой критерий выбора настольной игры.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "«Жанр игры»: семейная, логическая, карточная…"
  },
  "Фильтр по развиваемым навыкам": {
   "strength": 3,
   "intent": 4,
   "why": "Мотив родителя — польза, это сильный дифференциатор.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "нет"
  },
  "Фильтр по акциям/скидке/рейтингу": {
   "strength": 2,
   "intent": 3,
   "why": "Выгода и качество.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "±",
+  "sima_note": "«Со скидкой», «Новинки», «Уценённый»; по рейтингу нет"
  },
  "Счётчики у значений фильтра": {
   "strength": 1,
   "intent": 3,
   "why": "Избавляет от пустых выборок.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "числа у значений (Китай 66, От 6 лет 122…)"
  },
  "Цена в карточке листинга": {
   "strength": 4,
   "intent": 5,
   "why": "Коммерческий ответ.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "цена «Опт» и «розница»"
  },
  "Старая цена и % скидки": {
   "strength": 3,
   "intent": 4,
   "why": "Мотивация выгодой.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "зачёркнутая цена и «-23%»"
  },
  "Кнопка «В корзину» в листинге": {
   "strength": 4,
   "intent": 5,
   "why": "Короткий путь к покупке.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "add-to-cart в каждой карточке"
  },
  "Добавление в избранное": {
   "strength": 2,
   "intent": 3,
   "why": "Отложенный выбор.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "«Добавить в избранное» на карточке"
  },
  "Рейтинг и число отзывов в карточке": {
   "strength": 3,
   "intent": 4,
   "why": "Социальное доказательство в листинге.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "«4.7 · 61 отзыв»"
  },
  "Счётчик покупок": {
   "strength": 2,
   "intent": 3,
   "why": "Социальное доказательство.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "нет"
  },
  "Цена по промокоду / промо-бейдж": {
   "strength": 2,
   "intent": 2,
   "why": "Дополнительная выгода.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "нет"
  },
  "Кешбэк/бонусы в карточке": {
   "strength": 1,
   "intent": 2,
   "why": "Лояльность.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "нет"
  },
  "Оплата частями в карточке": {
   "strength": 1,
   "intent": 1,
   "why": "Для недорогих игр не актуально.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "нет"
  },
  "Цена в зависимости от способа оплаты": {
   "strength": 1,
   "intent": 2,
   "why": "Усложняет восприятие цены.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "нет (есть опт/розница — отдельный фактор)"
  },
  "Статус наличия в карточке": {
   "strength": 2,
   "intent": 3,
   "why": "Ожидание доступности.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "«Осталось 3 шт.»"
  },
  "Подписка на поступление": {
   "strength": 1,
   "intent": 2,
   "why": "Сохранение спроса.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "нет"
  },
  "Срок доставки в карточке": {
   "strength": 3,
   "intent": 3,
   "why": "Подарок к дате.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "«Завтра»"
  },
  "Продавец в карточке": {
   "strength": 1,
   "intent": 2,
   "why": "Только маркетплейсы.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "нет (метка «Сима-ленд» = собственная ТМ)"
  },
  "Ключевые характеристики в карточке": {
   "strength": 4,
   "intent": 5,
   "why": "Возраст, жанр и число игроков в листинге — выбор без перехода в карточку, это дифференциатор.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "возраст/игроки только в названии товара"
  },
  "Варианты товара в карточке": {
   "strength": 1,
   "intent": 2,
   "why": "Мелкий UX.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "нет"
  },
  "Бейджи товара (Хит/Акция/Оригинал)": {
   "strength": 2,
   "intent": 3,
   "why": "Подсветка хитов.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "+",
+  "sima_note": "«Хит», «Суперцена», «New», «Топы маркетплейсов», «Честный ЗНАК»"
  },
  "Блок «Горячие предложения»": {
   "strength": 1,
   "intent": 2,
   "why": "Отвлекает от фасета.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "нет"
  },
  "Телефон на странице": {
   "strength": 2,
   "intent": 3,
   "why": "Доверие, коммерческий фактор.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "номер 8-800 только в meta description, на странице нет"
  },
  "Форма вопроса/обратного звонка": {
   "strength": 2,
   "intent": 2,
   "why": "Канал связи.",
-  "sima": "?",
-  "sima_note": "sima-land не проверена (TLS reset)"
+  "sima": "–",
+  "sima_note": "нет, только «Чат поддержки»"
+ },
+ "Оптовая и розничная цена в карточке": {
+  "strength": 3,
+  "intent": 4,
+  "why": "Обе цены сразу закрывают сценарий оптовика без перехода в карточку. Уникальное преимущество sima-land.",
+  "sima": "+",
+  "sima_note": "«249 ₽ Опт / 329 ₽ розница»"
+ },
+ "Минимальная партия: фильтр и кратность": {
+  "strength": 3,
+  "intent": 3,
+  "why": "Важно для оптовой ЦА, рознице не мешает.",
+  "sima": "+",
+  "sima_note": "фильтр «Минимальная партия, единиц», в карточке «от 3 наборов»"
+ },
+ "Быстрый просмотр товара": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Ускоряет сравнение без ухода с листинга.",
+  "sima": "+",
+  "sima_note": "«Быстрый просмотр» на каждой карточке"
+ },
+ "Артикул в карточке листинга": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Удобно оптовикам, на SEO не влияет.",
+  "sima": "+",
+  "sima_note": "«Арт: 1076720»"
+ },
+ "Фильтр по стране-производителю": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Нишевый фильтр.",
+  "sima": "+",
+  "sima_note": "«Страна производитель» со счётчиками"
+ },
+ "Фильтр по маркировке/сертификации": {
+  "strength": 2,
+  "intent": 2,
+  "why": "Сигнал безопасности детских товаров, используется редко.",
+  "sima": "+",
+  "sima_note": "«Система маркировки» (Честный знак), «Сертификат» (ЕАС)"
+ },
+ "CollectionPage JSON-LD": {
+  "strength": 1,
+  "intent": 3,
+  "why": "Указывает тип страницы-коллекции, слабый сигнал.",
+  "sima": "+",
+  "sima_note": "JSON-LD CollectionPage + mainEntity ItemList"
+ },
+ "Review microdata на листинге": {
+  "strength": 2,
+  "intent": 3,
+  "why": "Отзывы в разметке листинга, на расширенный сниппет влияет ограниченно.",
+  "sima": "+",
+  "sima_note": "itemtype Review/Rating/Person в блоке отзывов"
+ },
+ "Отдельная страница отзывов фасета": {
+  "strength": 3,
+  "intent": 3,
+  "why": "Отдельная индексируемая страница под запросы «… отзывы» по подборке.",
+  "sima": "+",
+  "sima_note": "/nastolnye-igry-dlya-detej-ot-6-let-fps/reviews/ + reviews соседних фасетов"
+ },
+ "Выбор количества товаров на странице": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Мелкий UX, полезен оптовикам.",
+  "sima": "+",
+  "sima_note": "«Показывать по 20»"
+ },
+ "Форма «Нет нужного фильтра? Сообщите нам»": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Сбор обратной связи о фильтрах.",
+  "sima": "+",
+  "sima_note": "под фильтрами «Нет нужного фильтра? Сообщите нам»"
+ },
+ "Фильтр по продавцу/оригинальности": {
+  "strength": 1,
+  "intent": 2,
+  "why": "Нужен маркетплейсам, у моно-магазина вторичен.",
+  "sima": "–",
+  "sima_note": "нет (sima — единственный продавец)"
  }
 }

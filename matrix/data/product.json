@@ -5,9 +5,9 @@
   {
    "domain": "ozon.ru",
    "url": "https://www.ozon.ru/product/neskuchnye-igry-obuchayushchaya-igra-memo-ves-mir-135487006/",
-   "status": "недоступна",
-   "reason": "curl 307 цикл редиректов; Playwright 403 «Похоже, нет соединения» (антибот)",
-   "html": null
+   "status": "ok (ручная выгрузка)",
+   "reason": "ручная выгрузка: Мемо «Весь мир» (Нескучные игры), полная карточка — галерея с видео, описание, характеристики, 17 297 отзывов, JSON-LD Product+Offer+AggregateRating",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/upload/product_ozon.ru.html"
   },
   {
    "domain": "wildberries.ru",
@@ -19,9 +19,9 @@
   {
    "domain": "market.yandex.ru",
    "url": "https://market.yandex.ru/card/neskuchnyye-igry-igra-kartochnigra-kanobu-kamen---nozhnitsy---bumaga-8105-rossiya/103687938148",
-   "status": "недоступна",
-   "reason": "капча showcaptcha («Вы не робот?») и в curl, и в Playwright",
-   "html": null
+   "status": "частично (ручная выгрузка): товар «Разобрали в магазине» — урезанная карточка без описания, характеристик и отзывов",
+   "reason": "ручная выгрузка: Канобу (Нескучные игры) — H1, 1 фото, крошки + BreadcrumbList, 8 предложений других магазинов, рекомендации и подборки",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/upload/product_market.yandex.ru.html"
   },
   {
    "domain": "detmir.ru",
@@ -33,9 +33,9 @@
   {
    "domain": "aliexpress.ru",
    "url": "https://aliexpress.ru/item/1_517239424.html",
-   "status": "недоступна",
-   "reason": "антибот punish «Пройдите проверку» (curl и Playwright)",
-   "html": null
+   "status": "частично (ручная выгрузка): другой товар-аналог, блок характеристик не отрисован (только якорь), отзывов у товара нет",
+   "reason": "ручная выгрузка: «Кошки говорят Гав!» (аналог, настольная для детей 7+); описание с правилами/компонентами, цена, доставка, продавец; без schema.org",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/upload/product_aliexpress.ru.html"
   },
   {
    "domain": "boobl-goom.ru",
@@ -68,9 +68,9 @@
   {
    "domain": "megamarket.ru",
    "url": "https://megamarket.ru/catalog/details/nastolnaya-igra-bondibon-domino-rozhki-da-nozhki-100025795912/",
-   "status": "недоступна",
-   "reason": "curl — JS-заглушка (1.9 КБ); Playwright 403 «Упс…»",
-   "html": null
+   "status": "частично (ручная выгрузка): товар закончился — нет цены, кнопки покупки и доставки; описание шаблонное",
+   "reason": "ручная выгрузка: Bondibon «Домино. Рожки да ножки» — 4 фото, характеристики, microdata Product/Offer (OutOfStock, price 0.00), пустые отзывы/вопросы, рекомендации",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/upload/product_megamarket.ru.html"
   },
   {
    "domain": "toys-land.ru",
@@ -82,8 +82,9 @@
  ],
  "sima": {
   "url": "https://www.sima-land.ru/2699914/nastolnaya-igra-chey-kot-bolshe-36-kart-5-plus/",
-  "status": "недоступна",
-  "reason": "TLS reset: Playwright net::ERR_CONNECTION_RESET"
+  "status": "ok (ручная выгрузка)",
+  "reason": "ручная выгрузка: полная карточка — галерея с видео, описание, характеристики, 490 отзывов, 10 вопросов, microdata Product/Offer/AggregateRating",
+  "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/upload/sima_product.html"
  },
  "factors": [
   {
@@ -98,7 +99,11 @@
     "igroray.ru": "+",
     "ural.toys": "+",
     "markertoys.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+",
+    "market.yandex.ru": "+",
+    "aliexpress.ru": "+",
+    "megamarket.ru": "+"
    },
    "detect": "<title> непустой, содержит название товара",
    "note": "Шаблон «название + купить по цене N ₽ в интернет-магазине X»"
@@ -128,7 +133,9 @@
     "wildberries.ru": "+",
     "igroray.ru": "+",
     "ural.toys": "+",
-    "markertoys.ru": "+"
+    "markertoys.ru": "+",
+    "ozon.ru": "+",
+    "megamarket.ru": "+"
    },
    "detect": "артикул товара встречается в <title>",
    "note": ""
@@ -157,7 +164,11 @@
     "igroray.ru": "+",
     "ural.toys": "+",
     "markertoys.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+",
+    "market.yandex.ru": "+",
+    "aliexpress.ru": "+",
+    "megamarket.ru": "+"
    },
    "detect": "<meta name=\"description\"> непустой",
    "note": "Часто с ценой, телефоном, эмодзи (✅, ⚡️, 📞)"
@@ -174,7 +185,11 @@
     "ural.toys": "+",
     "markertoys.ru": "+",
     "toys-land.ru": "+",
-    "wildberries.ru": "?"
+    "wildberries.ru": "?",
+    "ozon.ru": "+",
+    "market.yandex.ru": "+",
+    "aliexpress.ru": "+",
+    "megamarket.ru": "+"
    },
    "detect": "ровно один <h1> с названием товара",
    "note": "WB — в отрисованном DOM h1 не найден, название в h2"
@@ -189,7 +204,11 @@
     "boobl-goom.ru": "+",
     "igroray.ru": "+",
     "ural.toys": "+",
-    "markertoys.ru": "+"
+    "markertoys.ru": "+",
+    "ozon.ru": "+",
+    "market.yandex.ru": "+",
+    "aliexpress.ru": "+",
+    "megamarket.ru": "+"
    },
    "detect": "<link rel=\"canonical\" href=\"...\"> равен URL карточки",
    "note": ""
@@ -203,7 +222,8 @@
     "detmir.ru": "+",
     "boobl-goom.ru": "+",
     "igroray.ru": "+",
-    "markertoys.ru": "+"
+    "markertoys.ru": "+",
+    "market.yandex.ru": "+"
    },
    "detect": "<meta name=\"robots\" content=\"index, follow\">",
    "note": ""
@@ -219,7 +239,11 @@
     "boobl-goom.ru": "+",
     "igroray.ru": "+",
     "ural.toys": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+",
+    "market.yandex.ru": "+",
+    "aliexpress.ru": "+",
+    "megamarket.ru": "+"
    },
    "detect": "<meta property=\"og:image\"> и og:title",
    "note": "toys-land — только og:image (относительный)"
@@ -236,7 +260,10 @@
     "igroray.ru": "+",
     "ural.toys": "+",
     "markertoys.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+",
+    "market.yandex.ru": "+",
+    "aliexpress.ru": "+"
    },
    "detect": "элемент с class*=\"breadcrumb\" или nav[aria-label*=bread]",
    "note": ""
@@ -249,7 +276,8 @@
    "marks": {
     "detmir.ru": "+",
     "igroray.ru": "+",
-    "markertoys.ru": "+"
+    "markertoys.ru": "+",
+    "market.yandex.ru": "+"
    },
    "detect": "script[type=\"application/ld+json\"] с @type BreadcrumbList",
    "note": ""
@@ -263,7 +291,8 @@
     "wildberries.ru": "+",
     "boobl-goom.ru": "+",
     "ural.toys": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "market.yandex.ru": "+"
    },
    "detect": "[itemtype*=\"schema.org/BreadcrumbList\"]",
    "note": ""
@@ -278,7 +307,9 @@
     "igroray.ru": "+",
     "ural.toys": "+",
     "markertoys.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+",
+    "megamarket.ru": "+"
    },
    "detect": "@type Product в JSON-LD или [itemtype*=\"schema.org/Product\"]",
    "note": "igroray — JSON-LD; остальные — microdata; markertoys/ural — без offers"
@@ -291,10 +322,12 @@
    "marks": {
     "boobl-goom.ru": "+",
     "igroray.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+",
+    "megamarket.ru": "+"
    },
    "detect": "Offer: price + priceCurrency (+availability) в JSON-LD или itemprop=\"offers\"",
-   "note": "igroray availability=BackOrder"
+   "note": "igroray availability=BackOrder; megamarket — OutOfStock, price 0.00; ozon — JSON-LD InStock"
   },
   {
    "name": "Brand в разметке",
@@ -304,7 +337,9 @@
    "marks": {
     "boobl-goom.ru": "+",
     "igroray.ru": "+",
-    "ural.toys": "+"
+    "ural.toys": "+",
+    "ozon.ru": "+",
+    "megamarket.ru": "+"
    },
    "detect": "Product.brand или itemprop=\"brand\"",
    "note": ""
@@ -329,7 +364,8 @@
    "group": "Техническое",
    "impact": "SEO",
    "marks": {
-    "igroray.ru": "+"
+    "igroray.ru": "+",
+    "market.yandex.ru": "+"
    },
    "detect": "JSON-LD WebSite с potentialAction SearchAction",
    "note": ""
@@ -350,9 +386,11 @@
    "description": "Рейтинг и отзывы в schema.org",
    "group": "Техническое",
    "impact": "SEO",
-   "marks": {},
+   "marks": {
+    "ozon.ru": "+"
+   },
    "detect": "AggregateRating или Review в JSON-LD/microdata",
-   "note": "Ни у одного доступного аналога нет (даже при наличии отзывов у detmir/WB)"
+   "note": "ozon — JSON-LD AggregateRating 4.9/17297 (без Review); у detmir/WB/boobl/igroray/ural/markertoys/toys-land, ЯМ, Ali, ММ нет; sima — microdata AggregateRating + Review с невалидным типом ReviewFeature"
   },
   {
    "name": "Фотогалерея товара",
@@ -366,7 +404,10 @@
     "igroray.ru": "+",
     "ural.toys": "+",
     "markertoys.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+",
+    "aliexpress.ru": "+",
+    "megamarket.ru": "+"
    },
    "detect": "карусель/слайдер изображений товара (swiper/gallery) >1 img",
    "note": "detmir 14 фото, WB 19"
@@ -377,7 +418,8 @@
    "group": "Контент",
    "impact": "Оба",
    "marks": {
-    "boobl-goom.ru": "+"
+    "boobl-goom.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "<video>/iframe youtube|rutube или слайд class*=\"video\" в галерее",
    "note": ""
@@ -394,7 +436,9 @@
     "ural.toys": "+",
     "markertoys.ru": "+",
     "toys-land.ru": "+",
-    "wildberries.ru": "?"
+    "wildberries.ru": "?",
+    "ozon.ru": "+",
+    "aliexpress.ru": "+"
    },
    "detect": "блок «Описание» с текстом >300 символов",
    "note": "WB — описание подгружается JS по кнопке"
@@ -410,7 +454,9 @@
     "igroray.ru": "+",
     "ural.toys": "+",
     "markertoys.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+",
+    "aliexpress.ru": "+"
    },
    "detect": "текст «Правила игры|Ход игры|Цель игры|побеждает|выигрывает»",
    "note": "igroray — отдельный подзаголовок «Как выиграть? Условия победы»"
@@ -427,7 +473,8 @@
     "igroray.ru": "+",
     "ural.toys": "+",
     "markertoys.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "aliexpress.ru": "+"
    },
    "detect": "«Комплектация|В комплекте|В наборе|состав игры» + число карточек",
    "note": ""
@@ -442,7 +489,9 @@
     "wildberries.ru": "+",
     "boobl-goom.ru": "+",
     "igroray.ru": "+",
-    "markertoys.ru": "+"
+    "markertoys.ru": "+",
+    "ozon.ru": "+",
+    "aliexpress.ru": "+"
    },
    "detect": "«развивает|развитие|Тренируемые навыки|Развитие навыка»",
    "note": "WB — отдельная характеристика «Тренируемые навыки»"
@@ -471,7 +520,9 @@
     "igroray.ru": "+",
     "ural.toys": "+",
     "markertoys.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+",
+    "megamarket.ru": "+"
    },
    "detect": "блок «Характеристики»/dl/table с парами ключ-значение",
    "note": ""
@@ -488,7 +539,8 @@
     "igroray.ru": "+",
     "ural.toys": "+",
     "markertoys.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "aliexpress.ru": "+"
    },
    "detect": "«Возраст|Рекомендованный возраст|от N лет|N+»",
    "note": "ural — только в тексте описания"
@@ -504,7 +556,9 @@
     "boobl-goom.ru": "+",
     "igroray.ru": "+",
     "ural.toys": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+",
+    "aliexpress.ru": "+"
    },
    "detect": "«игроков|Количество игроков|Число игроков»",
    "note": ""
@@ -516,7 +570,9 @@
    "impact": "Оба",
    "marks": {
     "boobl-goom.ru": "+",
-    "igroray.ru": "+"
+    "igroray.ru": "+",
+    "ozon.ru": "+",
+    "aliexpress.ru": "+"
    },
    "detect": "«Время игры|Продолжительность партии|минут»",
    "note": ""
@@ -546,7 +602,8 @@
     "boobl-goom.ru": "+",
     "ural.toys": "+",
     "markertoys.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "«Страна производства|Страна производитель|Страна:»",
    "note": ""
@@ -563,7 +620,9 @@
     "ural.toys": "+",
     "markertoys.ru": "+",
     "toys-land.ru": "+",
-    "igroray.ru": "?"
+    "igroray.ru": "?",
+    "ozon.ru": "+",
+    "megamarket.ru": "+"
    },
    "detect": "ссылка на /brand/ или «Все товары бренда|В каталог бренда»",
    "note": ""
@@ -580,7 +639,10 @@
     "igroray.ru": "+",
     "ural.toys": "+",
     "markertoys.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+",
+    "aliexpress.ru": "+",
+    "megamarket.ru": "+"
    },
    "detect": "«Артикул|Код товара|Код:»",
    "note": "ural/markertoys — также штрихкод EAN; ural — копирование артикула"
@@ -606,7 +668,9 @@
     "wildberries.ru": "+",
     "boobl-goom.ru": "+",
     "igroray.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+",
+    "aliexpress.ru": "+"
    },
    "detect": "цена «N ₽» рядом с кнопкой покупки",
    "note": "ural/markertoys — цена после авторизации"
@@ -619,7 +683,9 @@
    "marks": {
     "detmir.ru": "+",
     "wildberries.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+",
+    "aliexpress.ru": "+"
    },
    "detect": "<del>/<s>/class*=\"old\" цена или «-N%»",
    "note": "toys-land — «Закажи онлайн — скидка 10%»"
@@ -632,7 +698,9 @@
    "marks": {
     "detmir.ru": "+",
     "wildberries.ru": "+",
-    "igroray.ru": "+"
+    "igroray.ru": "+",
+    "ozon.ru": "+",
+    "market.yandex.ru": "+"
    },
    "detect": "«по коду|с промокодом|с WB Кошельком|При оплате наличными»",
    "note": ""
@@ -649,10 +717,13 @@
     "igroray.ru": "+",
     "ural.toys": "+",
     "markertoys.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+",
+    "market.yandex.ru": "+",
+    "aliexpress.ru": "+"
    },
    "detect": "кнопка «В корзину|Купить»",
-   "note": ""
+   "note": "market.yandex — только у предложений других магазинов (товар разобран)"
   },
   {
    "name": "Кнопка «Купить сейчас»",
@@ -660,7 +731,9 @@
    "group": "Коммерция",
    "impact": "Продукт",
    "marks": {
-    "wildberries.ru": "+"
+    "wildberries.ru": "+",
+    "ozon.ru": "+",
+    "aliexpress.ru": "+"
    },
    "detect": "«Купить сейчас|Купить в 1 клик»",
    "note": ""
@@ -675,10 +748,14 @@
     "boobl-goom.ru": "+",
     "igroray.ru": "+",
     "markertoys.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+",
+    "market.yandex.ru": "+",
+    "aliexpress.ru": "+",
+    "megamarket.ru": "+"
    },
    "detect": "«В наличии|Есть в наличии|Нет в наличии|Под заказ»",
-   "note": ""
+   "note": "ozon «73 единицы осталось», ali «Осталось 99+ шт.», ЯМ «Разобрали в магазине», ММ «Товар закончился»"
   },
   {
    "name": "Уведомить о поступлении",
@@ -701,7 +778,9 @@
     "boobl-goom.ru": "+",
     "igroray.ru": "+",
     "markertoys.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+",
+    "aliexpress.ru": "+"
    },
    "detect": "«Доставка|Курьером|Способы доставки» в зоне покупки",
    "note": ""
@@ -713,7 +792,10 @@
    "impact": "Продукт",
    "marks": {
     "wildberries.ru": "+",
-    "boobl-goom.ru": "+"
+    "boobl-goom.ru": "+",
+    "ozon.ru": "+",
+    "market.yandex.ru": "+",
+    "aliexpress.ru": "+"
    },
    "detect": "дата доставки («22 октября», «Сегодня»)",
    "note": ""
@@ -751,7 +833,8 @@
     "detmir.ru": "+",
     "boobl-goom.ru": "+",
     "igroray.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "«частями|рассрочк|сплит|Долями»",
    "note": ""
@@ -811,7 +894,8 @@
    "impact": "Продукт",
    "marks": {
     "wildberries.ru": "+",
-    "boobl-goom.ru": "+"
+    "boobl-goom.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "«N дней на возврат|Возврат в течение»",
    "note": ""
@@ -824,7 +908,10 @@
    "marks": {
     "detmir.ru": "+",
     "wildberries.ru": "+",
-    "igroray.ru": "+"
+    "igroray.ru": "+",
+    "ozon.ru": "+",
+    "market.yandex.ru": "+",
+    "aliexpress.ru": "+"
    },
    "detect": "«Продавец» + название/ИНН",
    "note": "WB — с рейтингом продавца"
@@ -835,7 +922,8 @@
    "group": "Коммерция",
    "impact": "Продукт",
    "marks": {
-    "wildberries.ru": "+"
+    "wildberries.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "«Цвет:» + миниатюры вариантов",
    "note": "WB — 19 вариантов серии"
@@ -848,7 +936,8 @@
    "marks": {
     "detmir.ru": "+",
     "wildberries.ru": "+",
-    "igroray.ru": "+"
+    "igroray.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "звёзды/число рядом с заголовком + «N отзывов|оценок»",
    "note": "igroray — «0 (0 отзывов)»"
@@ -863,7 +952,10 @@
     "boobl-goom.ru": "+",
     "igroray.ru": "+",
     "toys-land.ru": "+",
-    "wildberries.ru": "?"
+    "wildberries.ru": "?",
+    "ozon.ru": "+",
+    "aliexpress.ru": "+",
+    "megamarket.ru": "+"
    },
    "detect": "H2/блок «Отзывы» с карточками отзывов",
    "note": "detmir — карусель отзывов; WB — грузится JS; у boobl/igroray/toys-land пусто"
@@ -876,7 +968,8 @@
    "marks": {
     "boobl-goom.ru": "+",
     "igroray.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "megamarket.ru": "+"
    },
    "detect": "«Оставить отзыв» + форма/модалка",
    "note": "toys-land — достоинства/недостатки/оценка"
@@ -890,7 +983,10 @@
     "detmir.ru": "+",
     "wildberries.ru": "+",
     "boobl-goom.ru": "+",
-    "igroray.ru": "+"
+    "igroray.ru": "+",
+    "ozon.ru": "+",
+    "aliexpress.ru": "+",
+    "megamarket.ru": "+"
    },
    "detect": "«Задать вопрос|N вопросов»",
    "note": "boobl — общая форма вопроса по email"
@@ -928,7 +1024,8 @@
     "igroray.ru": "+",
     "ural.toys": "+",
     "markertoys.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "aliexpress.ru": "+"
    },
    "detect": "телефон tel: в шапке/карточке; «Ваш менеджер» / «Заказать звонок|Запросить звонок|Telegram»",
    "note": "ural — персональный менеджер; igroray/toys-land — обратный звонок"
@@ -943,7 +1040,11 @@
     "igroray.ru": "+",
     "ural.toys": "+",
     "markertoys.ru": "+",
-    "wildberries.ru": "?"
+    "wildberries.ru": "?",
+    "ozon.ru": "+",
+    "market.yandex.ru": "+",
+    "aliexpress.ru": "+",
+    "megamarket.ru": "+"
    },
    "detect": "H2 «Похожие товары|Вас может заинтересовать» / «Вам может понравиться»",
    "note": "WB — кнопка «Похожие», лента JS; detmir — ещё «Вам может понравиться»"
@@ -956,7 +1057,8 @@
    "marks": {
     "wildberries.ru": "+",
     "igroray.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "megamarket.ru": "+"
    },
    "detect": "«Вы недавно смотрели|Вы смотрели|Вы интересовались»",
    "note": ""
@@ -973,7 +1075,8 @@
     "igroray.ru": "+",
     "ural.toys": "+",
     "markertoys.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "megamarket.ru": "+"
    },
    "detect": "«Все товары категории|Посмотреть другие|Товар входит в разделы» или ссылки на категорию вне крошек",
    "note": ""
@@ -984,7 +1087,9 @@
    "group": "Навигация",
    "impact": "SEO",
    "marks": {
-    "detmir.ru": "+"
+    "detmir.ru": "+",
+    "ozon.ru": "+",
+    "market.yandex.ru": "+"
    },
    "detect": "«Популярные категории» + список ссылок",
    "note": ""
@@ -1001,7 +1106,10 @@
     "ural.toys": "+",
     "markertoys.ru": "+",
     "toys-land.ru": "+",
-    "wildberries.ru": "?"
+    "wildberries.ru": "?",
+    "ozon.ru": "+",
+    "aliexpress.ru": "+",
+    "megamarket.ru": "+"
    },
    "detect": "кнопка «В избранное»/иконка сердца",
    "note": ""
@@ -1013,7 +1121,9 @@
    "impact": "Продукт",
    "marks": {
     "igroray.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+",
+    "megamarket.ru": "+"
    },
    "detect": "«К сравнению|список сравнения»",
    "note": ""
@@ -1027,7 +1137,10 @@
     "wildberries.ru": "+",
     "boobl-goom.ru": "+",
     "igroray.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+",
+    "market.yandex.ru": "+",
+    "aliexpress.ru": "+"
    },
    "detect": "«Поделиться»",
    "note": ""
@@ -1054,10 +1167,128 @@
     "wildberries.ru": "+",
     "boobl-goom.ru": "+",
     "ural.toys": "+",
-    "markertoys.ru": "+"
+    "markertoys.ru": "+",
+    "ozon.ru": "+",
+    "market.yandex.ru": "+",
+    "aliexpress.ru": "+"
    },
    "detect": "«Ваш город|Вы здесь:» + город",
    "note": ""
+  },
+  {
+   "name": "Фото покупателей в карточке",
+   "description": "Блок/счётчик фотографий из отзывов покупателей рядом с галереей",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "ozon.ru": "+"
+   },
+   "detect": "«Фото покупателей|Фотографии покупателей|Фото и видео покупателей» + миниатюры",
+   "note": "sima — «7 фото покупателей»; ozon — «Фото и видео покупателей +1975»"
+  },
+  {
+   "name": "Ответы магазина на отзывы и вопросы",
+   "description": "Официальные ответы магазина/продавца под отзывами и вопросами",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {},
+   "detect": "«Ответ магазина|Ответ продавца|Ответ <название магазина>» под отзывом",
+   "note": "sima — «Ответ Сима-ленд» с перелинковкой на подборку; вопросы — срок ответа «в течение 2 дней»"
+  },
+  {
+   "name": "Сертификат соответствия в карточке",
+   "description": "Тип и номер сертификата/декларации ЕАЭС в характеристиках",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {},
+   "detect": "«Сертификат|Номер сертификата|Декларация» + ЕАЭС в характеристиках",
+   "note": "У конкурентов «Сертификаты» только как раздел сайта/подарочные"
+  },
+  {
+   "name": "Гистограмма распределения оценок",
+   "description": "Распределение отзывов по звёздам (5…1) в блоке отзывов",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {
+    "ozon.ru": "+"
+   },
+   "detect": "ряды 5/4/3/2/1 с % или количеством в блоке отзывов",
+   "note": "ozon — «5 звёзд 16385, 4 звезды 707…»"
+  },
+  {
+   "name": "Лучший отзыв в первом экране",
+   "description": "Выдержка лучшего отзыва рядом с краткими характеристиками, до блока отзывов",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {},
+   "detect": "«Лучший отзыв|Полезный отзыв» в верхней части карточки",
+   "note": ""
+  },
+  {
+   "name": "Счётчик просмотров товара",
+   "description": "Социальное доказательство «Сегодня этот товар посмотрели N человек»",
+   "group": "Доверие",
+   "impact": "Продукт",
+   "marks": {},
+   "detect": "«посмотрел|смотрят сейчас» рядом с ценой",
+   "note": "У ЯМ/Ali «N купили» только в карточках рекомендаций"
+  },
+  {
+   "name": "Бейджи/метки товара",
+   "description": "Маркетинговые метки у заголовка: Распродажа, Суперцена, Хит, собственная разработка",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "ozon.ru": "+",
+    "wildberries.ru": "+"
+   },
+   "detect": "метки «Распродажа|Суперцена|Хит|Новинка» у H1/цены основного товара",
+   "note": "ozon — «Распродажа», «Постоплата»; WB — «РАСПРОДАЖА»"
+  },
+  {
+   "name": "Серия товара со ссылкой",
+   "description": "Ссылка на все товары той же серии",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "ozon.ru": "+"
+   },
+   "detect": "«Серия» со ссылкой /series/ или «Все товары из серии»",
+   "note": ""
+  },
+  {
+   "name": "Кнопка «Хочу дешевле»/«Нашли дешевле»",
+   "description": "Запрос лучшей цены/скидки прямо из ценового блока",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "igroray.ru": "+"
+   },
+   "detect": "«Хочу дешевле|Нашли дешевле»",
+   "note": "igroray — «Нашли дешевле?» со ссылкой на конкурента"
+  },
+  {
+   "name": "С этим товаром покупают (кросс-селл)",
+   "description": "Лента сопутствующих товаров «Покупают вместе/Часто покупают», отдельная от похожих",
+   "group": "Навигация",
+   "impact": "Продукт",
+   "marks": {
+    "ozon.ru": "+",
+    "market.yandex.ru": "+"
+   },
+   "detect": "H2/заголовок «Покупают вместе|Часто покупают|С этим товаром покупают»",
+   "note": "sima — только общая лента «Также рекомендуем»"
+  },
+  {
+   "name": "Предложения других продавцов",
+   "description": "Список других продавцов/магазинов этого же товара с ценами и сроками",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "market.yandex.ru": "+"
+   },
+   "detect": "«В других магазинах|N предложений от|Другие продавцы»",
+   "note": "ЯМ — «8 предложений от 253 ₽» с ценой по Яндекс Пэй и датой доставки"
   }
  ]
 }

@@ -5,15 +5,15 @@
   {
    "domain": "ozon.ru",
    "url": "https://corp.ozon.ru/ru/sth/ozon-rasshiryaet-finansovuyu-podderzhku-dlya-punktov-vydachi-ab678825",
-   "status": "недоступна",
-   "reason": "Аналог есть на корп. поддомене corp.ozon.ru, но curl 307 (антибот), Playwright 403 «Упс…»; WebFetch не резолвит хост",
-   "html": null
+   "status": "ok (ручная выгрузка)",
+   "reason": "Пресс-релиз на corp.ozon.ru (раздел «Новости» /media), canonical совпадает с url; текст, цитата, «Читать также», шеринг — всё в HTML",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/upload/news_ozon.ru.html"
   },
   {
    "domain": "wildberries.ru",
    "url": "https://www.wildberries.ru/presscenter/articles",
    "status": "недоступна",
-   "reason": "Пресс-центр есть (/presscenter/articles), но curl и Playwright получают 498 (антибот); отдельную новость получить не удалось",
+   "reason": "Пресс-центр есть (/presscenter/articles), но curl и Playwright получают 498 (антибот); отдельную новость получить не удалось; ручная выгрузка — пустая страница поиска («По Вашему запросу ничего не найдено»), отклонена",
    "html": null
   },
   {
@@ -82,8 +82,9 @@
  ],
  "sima": {
   "url": "https://www.sima-land.ru/o-kompanii/novosti-kompanii/7375/",
-  "status": "недоступна",
-  "reason": "TLS reset: Playwright net::ERR_CONNECTION_RESET"
+  "status": "ok (ручная выгрузка)",
+  "reason": "Ручная выгрузка HTML страницы новости (canonical совпадает с url)",
+  "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/upload/sima_news.html"
  },
  "factors": [
   {
@@ -95,10 +96,11 @@
     "detmir.ru": "+",
     "market.yandex.ru": "+",
     "markertoys.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "<title> содержит текст H1",
-   "note": "D,M — с суффиксом бренда/сайта; Y,T — только заголовок"
+   "note": "D,M — с суффиксом бренда/сайта; Y,T — только заголовок; O — с суффиксом «— корпоративный сайт компании Ozon»"
   },
   {
    "name": "Бренд в Title",
@@ -107,10 +109,11 @@
    "impact": "SEO",
    "marks": {
     "detmir.ru": "+",
-    "markertoys.ru": "+"
+    "markertoys.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "<title> содержит название компании после разделителя (-, –, |)",
-   "note": "D: «- Детский мир - Корпоративный сайт»; M: «– интернет-магазин Маркер Игрушка»"
+   "note": "D: «- Детский мир - Корпоративный сайт»; M: «– интернет-магазин Маркер Игрушка»; O: «— корпоративный сайт компании Ozon»"
   },
   {
    "name": "Meta description",
@@ -120,7 +123,8 @@
    "marks": {
     "market.yandex.ru": "+",
     "markertoys.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "meta[name=description][content] непустой",
    "note": "Y — уникальный лид; M — шаблон «Интернет-магазин …: <заголовок>»; T — дублирует title; у D отсутствует (есть только og:description)"
@@ -145,7 +149,8 @@
     "detmir.ru": "+",
     "market.yandex.ru": "+",
     "markertoys.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "ровно один <h1>, текст = заголовок новости",
    "note": ""
@@ -168,7 +173,8 @@
    "impact": "SEO",
    "marks": {
     "detmir.ru": "+",
-    "market.yandex.ru": "+"
+    "market.yandex.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "link[rel=canonical][href] = URL страницы",
    "note": ""
@@ -196,7 +202,7 @@
     "market.yandex.ru": "+"
    },
    "detect": "meta[property^=og:], og:type=article, og:image",
-   "note": "Y дополнительно og:image:alt, og:updated_time"
+   "note": "Y дополнительно og:image:alt, og:updated_time; O — og:title/description/image/url есть, но og:type=website"
   },
   {
    "name": "article:published_time / modified_time",
@@ -265,10 +271,11 @@
    "group": "Техническое",
    "impact": "SEO",
    "marks": {
-    "market.yandex.ru": "+"
+    "market.yandex.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "JSON-LD @type Article|NewsArticle|BlogPosting",
-   "note": "Только Y (Article); D — WebPage без Article"
+   "note": "Только Y (Article); D — WebPage без Article; O — Article (headline, datePublished, dateModified, mainEntityOfPage), без image/publisher"
   },
   {
    "name": "WebPage JSON-LD + primaryImageOfPage",
@@ -311,10 +318,11 @@
    "group": "Техническое",
    "impact": "SEO",
    "marks": {
-    "market.yandex.ru": "+"
+    "market.yandex.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "<time datetime=…> рядом с H1",
-   "note": "D,M,T — дата обычным текстом"
+   "note": "D,M,T — дата обычным текстом; O — <time datetime> в футере статьи"
   },
   {
    "name": "ЧПУ-URL новости",
@@ -324,10 +332,11 @@
    "marks": {
     "detmir.ru": "+",
     "market.yandex.ru": "+",
-    "markertoys.ru": "+"
+    "markertoys.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "URL вида /news/<slug-транслит>/",
-   "note": "T — /news/<id>/<дата>/; у D и Y раздел на поддомене corp./partner."
+   "note": "T — /news/<id>/<дата>/; у D и Y раздел на поддомене corp./partner.; O — /ru/sth/<slug>-<hash>"
   },
   {
    "name": "RSS-лента",
@@ -349,7 +358,8 @@
     "detmir.ru": "+",
     "market.yandex.ru": "+",
     "markertoys.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "meta[name=viewport]",
    "note": ""
@@ -360,10 +370,11 @@
    "group": "Техническое",
    "impact": "Продукт",
    "marks": {
-    "detmir.ru": "+"
+    "detmir.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "ссылка «English version» / href=/en",
-   "note": "hreflang не используется"
+   "note": "hreflang не используется; O — переключатель ENG в шапке"
   },
   {
    "name": "Видимая дата публикации",
@@ -374,10 +385,11 @@
     "detmir.ru": "+",
     "market.yandex.ru": "+",
     "markertoys.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "текст даты (дд.мм.гггг / «8 октября 2026») возле H1",
-   "note": "D — в дейтлайне первой строки; T — над H1"
+   "note": "D — в дейтлайне первой строки; T — над H1; O — дата «23.07.26» под текстом, не у H1"
   },
   {
    "name": "Дейтлайн пресс-релиза (дата, город)",
@@ -397,10 +409,11 @@
    "impact": "Оба",
    "marks": {
     "detmir.ru": "+",
-    "market.yandex.ru": "+"
+    "market.yandex.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "выделенный (em/strong/отдельный блок) первый абзац после H1",
-   "note": "D — курсивом в тексте; Y — подзаголовок в header статьи (= description)"
+   "note": "D — курсивом в тексте; Y — подзаголовок в header статьи (= description); O — первый абзац курсивом"
   },
   {
    "name": "Цитата представителя компании",
@@ -408,10 +421,11 @@
    "group": "Контент",
    "impact": "Оба",
    "marks": {
-    "detmir.ru": "+"
+    "detmir.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "текст в кавычках «…» + «— отметил/сказал» + ФИО (strong)",
-   "note": ""
+   "note": "O — «…», — комментирует <ФИО жирным>, должность"
   },
   {
    "name": "Конкретные цифры и факты",
@@ -420,7 +434,8 @@
    "impact": "Оба",
    "marks": {
     "detmir.ru": "+",
-    "market.yandex.ru": "+"
+    "market.yandex.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "числа с единицами в теле новости",
    "note": "D — 540 заявок, ТОП-100, 21 500 заявок, 89 субъектов"
@@ -444,10 +459,11 @@
    "marks": {
     "markertoys.ru": "+",
     "detmir.ru": "?",
-    "market.yandex.ru": "?"
+    "market.yandex.ru": "?",
+    "ozon.ru": "?"
    },
    "detect": "img в начале статьи (hero) с alt",
-   "note": "M — img 940x350 с alt=title, ссылка на полный размер; D,Y — изображение только в og:image/JSON-LD, в HTML не выводится"
+   "note": "M — img 940x350 с alt=title, ссылка на полный размер; D,Y — изображение только в og:image/JSON-LD, в HTML не выводится; O — обложка только в og:image"
   },
   {
    "name": "Подпись/авторство фото",
@@ -618,10 +634,11 @@
    "marks": {
     "detmir.ru": "+",
     "market.yandex.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "блок со списком ссылок на другие новости и датами",
-   "note": "D — сайдбар 4 пресс-релиза; Y — «Будет интересно» с картинками, датами, временем чтения; T — виджет «Новости» в сайдбаре"
+   "note": "D — сайдбар 4 пресс-релиза; Y — «Будет интересно» с картинками, датами, временем чтения; T — виджет «Новости» в сайдбаре; O — «Читать также»: 2 новости с фото и датами"
   },
   {
    "name": "Меню раздела «О компании/Пресс-центр»",
@@ -631,10 +648,11 @@
    "marks": {
     "detmir.ru": "+",
     "markertoys.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "меню со ссылками О компании/История/Награды/Контакты/Новости",
-   "note": "D — полноценное меню пресс-центра; M — в футере «Компания»; T — подменю «О нас/Партнеры/Статьи/Новости»"
+   "note": "D — полноценное меню пресс-центра; M — в футере «Компания»; T — подменю «О нас/Партнеры/Статьи/Новости»; O — О компании/Новости/Инвесторам/Устойчивое развитие/Контакты"
   },
   {
    "name": "Рубрикатор новостей/журнала",
@@ -668,10 +686,11 @@
    "impact": "Продукт",
    "marks": {
     "market.yandex.ru": "+",
-    "markertoys.ru": "+"
+    "markertoys.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "кнопка «Наверх»/#top/scrollToTop",
-   "note": ""
+   "note": "O — виджет postSideButton (в JS-состоянии)"
   },
   {
    "name": "Индикатор прогресса чтения",
@@ -724,10 +743,11 @@
    "group": "Интерактив",
    "impact": "Оба",
    "marks": {
-    "markertoys.ru": "+"
+    "markertoys.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "блок .ya-share2 / «Поделиться»",
-   "note": ""
+   "note": "O — VK, Telegram, WhatsApp + копирование ссылки"
   },
   {
    "name": "Ссылки на соцсети компании",
@@ -846,6 +866,63 @@
    },
    "detect": "ссылка на политику обработки персональных данных",
    "note": ""
+  },
+  {
+   "name": "Поиск по сайту",
+   "description": "Поле/кнопка поиска в шапке страницы новости",
+   "group": "UX",
+   "impact": "Продукт",
+   "marks": {
+    "ozon.ru": "+",
+    "markertoys.ru": "+",
+    "toys-land.ru": "+",
+    "detmir.ru": "?"
+   },
+   "detect": "input[type=search] / input[name=q] / кнопка поиска в шапке",
+   "note": "O — поиск по корп. сайту (модалка); D — только SearchAction в JSON-LD, поля в HTML нет; S — поиск по каталогу"
+  },
+  {
+   "name": "Комментарии к новости",
+   "description": "Блок комментариев посетителей с формой (с модерацией)",
+   "group": "Интерактив",
+   "impact": "Оба",
+   "marks": {},
+   "detect": "блок .news-comments / форма «Оставить комментарий»",
+   "note": "Только S — «Комментарии (0)», форма для авторизованных, правила модерации"
+  },
+  {
+   "name": "Ссылка на вакансии/карьеру",
+   "description": "Переход на HR-сайт/раздел вакансий",
+   "group": "Навигация",
+   "impact": "Продукт",
+   "marks": {
+    "detmir.ru": "+"
+   },
+   "detect": "ссылка «Вакансии»/«Карьера» (job., rabota., hh.ru)",
+   "note": "D — job.detmir.ru; S — rabota.sima-land.ru в шапке, подменю и футере"
+  },
+  {
+   "name": "Ссылка на журнал/блог компании",
+   "description": "Переход в контентный раздел (журнал, статьи, обзоры)",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "toys-land.ru": "+"
+   },
+   "detect": "ссылка «Журнал»/«Блог»/«Статьи» на внутренний раздел",
+   "note": "S — «Журнал Вдохновение» в футере и ссылка из текста; T — «Статьи и обзоры»; Y — страница сама в журнале"
+  },
+  {
+   "name": "Онлайн-чат поддержки",
+   "description": "Чат с поддержкой/консультантом прямо со страницы",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {
+    "markertoys.ru": "+",
+    "toys-land.ru": "+"
+   },
+   "detect": "кнопка «Чат поддержки» / виджет jivo и т.п.",
+   "note": "M,T — JivoSite; S — собственный «Чат поддержки»"
   }
  ]
 }

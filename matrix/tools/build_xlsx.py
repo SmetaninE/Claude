@@ -66,7 +66,7 @@ def build(out):
             cov_txt = f'{k}/{n} ({round(100 * k / n) if n else 0}%)' + (f', ещё {q} «?»' if q else '')
             rows.append(dict(f=f, k=k, cov=cov_txt, c=c, s=s2['strength'], i=s2['intent'], tot=tot,
                              pr=prio(tot, k, s2['strength'], n), sima=s2.get('sima', '?'),
-                             com='; '.join(x for x in [s2['why'], f.get('note', ''), s2.get('sima_note', '')] if x)))
+                             com='; '.join(x for x in [('ПРЕИМУЩЕСТВО sima-land: нет ни у одного конкурента' if k == 0 and q == 0 and s2.get('sima') == '+' else ''), s2['why'], f.get('note', ''), ('sima-land: ' + s2['sima_note'] if s2.get('sima_note') else '')] if x)))
         rows.sort(key=lambda r: (-r['tot'], -r['s'], r['f']['name']))
         ws = wb.create_sheet(f'{label} — матрица')
         cols = ['Фактор', 'Описание', 'Группа', 'Тип влияния'] + live + \
@@ -90,6 +90,8 @@ def build(out):
                 scell.fill = PatternFill('solid', fgColor='F8CBAD')
             elif r['sima'] == '±':
                 scell.fill = PatternFill('solid', fgColor='FFE699')
+            elif r['sima'] == '+' and r['k'] == 0:
+                scell.fill = PatternFill('solid', fgColor='00B050'); scell.font = Font(bold=True, color='FFFFFF')
             elif r['sima'] == '+':
                 scell.fill = PatternFill('solid', fgColor='C6EFCE')
             for c_ in ws[ri]: c_.border = BORDER; c_.alignment = Alignment(wrap_text=c_.column in (2, len(cols)), vertical='top', horizontal=c_.alignment.horizontal)
@@ -103,6 +105,7 @@ def build(out):
         checked = [r for r in rows if r['sima'] in '+–±']
         have = sum(1 for r in checked if r['sima'] == '+') + 0.5 * sum(1 for r in checked if r['sima'] == '±')
         pct = round(100 * have / len(checked)) if checked else None
+        adv = [r for r in rows if r['k'] == 0 and r['sima'] == '+']
         imp = [r for r in rows if r['pr'] in ('Обязательный', 'Важный') or (r['pr'] == 'Дифференциатор' and r['tot'] >= 8)]
         gaps = [r for r in imp if r['sima'] in ('–', '±')]
         unk = [r for r in imp if r['sima'] == '?']
@@ -121,10 +124,16 @@ def build(out):
             if r['sima'] == '–' and r['pr'] in ('Обязательный', 'Дифференциатор') and r['tot'] >= 12:
                 g.cell(row=ri, column=4).fill = MISS_FILL; g.cell(row=ri, column=1).font = Font(bold=True, color='C00000')
             for c_ in g[ri]: c_.border = BORDER; c_.alignment = Alignment(wrap_text=c_.column == 7, vertical='top')
+        if adv:
+            g.append([]); g.append(['Преимущества sima-land (есть только на sima-land, у конкурентов не найдено)']); g.cell(g.max_row, 1).font = Font(bold=True)
+            for r in adv:
+                g.append([r['f']['name'], r['pr'], r['tot'], '+', r['f']['group'], r['cov'], r['com']])
+                g.cell(g.max_row, 4).fill = PatternFill('solid', fgColor='00B050')
+                for c_ in g[g.max_row]: c_.border = BORDER; c_.alignment = Alignment(wrap_text=c_.column == 7, vertical='top')
         g.freeze_panes = g.cell(row=hr + 1, column=1)
-        g.auto_filter.ref = f'A{hr}:G{g.max_row}'
+        g.auto_filter.ref = f'A{hr}:G{hr + len(gaps) + len(unk)}'
         for col, w in zip('ABCDEFG', [42, 16, 8, 9, 14, 16, 90]): g.column_dimensions[col].width = w
-        summary.append(dict(type=label, n=len(rows), must=sum(r['pr'] == 'Обязательный' for r in rows), pct=pct,
+        summary.append(dict(adv=[r['f']['name'] for r in adv], type=label, n=len(rows), must=sum(r['pr'] == 'Обязательный' for r in rows), pct=pct,
                             gaps=[r['f']['name'] for r in gaps if r['pr'] == 'Обязательный' or r['tot'] >= 12][:6],
                             gaps_imp=[r['f']['name'] for r in gaps], live=n))
     autosize(src, maxw=90); src.auto_filter.ref = src.dimensions

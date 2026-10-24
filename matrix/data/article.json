@@ -5,9 +5,9 @@
   {
    "domain": "ozon.ru",
    "url": "https://www.ozon.ru/club/article/chto-podarit-na-noviy-god-detyam-ot-7-do-10-let-idei-novogodnego-podarka-dlya-rebenka-1330222/",
-   "status": "недоступна",
-   "reason": "антибот: curl 307-цикл, Playwright 403 «Похоже, нет соединения» (2 попытки); аналог найден в Ozon Клуб",
-   "html": null
+   "status": "ok (ручная выгрузка)",
+   "reason": "ручная выгрузка из браузера; canonical совпадает с url; Ozon Клуб, статья 7–10 лет (из серии по возрастам), 02.10.2025",
+   "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/upload/article_ozon.ru.html"
   },
   {
    "domain": "wildberries.ru",
@@ -82,8 +82,9 @@
  ],
  "sima": {
   "url": "https://www.sima-land.ru/vdokhnovenie/siurpriz-pod-iolkoi-chto-podarit-rebionku-na-novyi-god-1/",
-  "status": "недоступна",
-  "reason": "TLS reset: Playwright net::ERR_CONNECTION_RESET"
+  "status": "ok (ручная выгрузка)",
+  "reason": "ручная выгрузка; canonical = сам URL с -1 (самоканонический); ссылок на версию без -1 нет, суффикс -1 у всех статей журнала (похоже на системный слаг), но дата «14 октября» без года, description «2025» при title «2026», 85 163 просмотра — вероятно, прошлогодняя статья с обновлённым title",
+  "html": "/tmp/claude-0/-home-user-Claude/3dfb43a1-6ae1-535a-8559-41919fdc9813/scratchpad/upload/sima_article.html"
  },
  "factors": [
   {
@@ -98,7 +99,8 @@
     "aliexpress.ru": "+",
     "boobl-goom.ru": "+",
     "igroray.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "<title> не пустой, содержит ключ темы",
    "note": "igroray — коммерческий шаблон «Купить подарок Ребёнку — Лучшие цены»; toys-land/boobl — заголовок статьи без бренда"
@@ -109,7 +111,8 @@
    "group": "Техническое",
    "impact": "SEO",
    "marks": {
-    "market.yandex.ru": "+"
+    "market.yandex.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "regex 20\\d\\d в <title> или <h1>",
    "note": "Y: «Новый год 2026» и в title, и в H1; WB/Ali — без года, хотя у WB рядом статьи с годами"
@@ -126,7 +129,8 @@
     "aliexpress.ru": "+",
     "boobl-goom.ru": "+",
     "igroray.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "meta[name=description][content] непустой",
    "note": "boobl — шаблон «… Полезные статьи от интернет-магазина…»; igroray — коммерческий шаблон с телефоном"
@@ -143,7 +147,8 @@
     "aliexpress.ru": "+",
     "boobl-goom.ru": "+",
     "igroray.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "<h1> содержит тему статьи",
    "note": "igroray — H1 продублирован дважды; WB при подгрузке ленты добавляет H1 следующих статей; Y — служебный H1 cookie-баннера"
@@ -159,7 +164,8 @@
     "detmir.ru": "+",
     "aliexpress.ru": "+",
     "igroray.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "h2/h3 внутри тела статьи ≥3",
    "note": "boobl — подзаголовки div.title-4 без h-тегов; WB — только h3; igroray — h2→h3→h4"
@@ -171,7 +177,8 @@
    "impact": "Оба",
    "marks": {
     "market.yandex.ru": "+",
-    "aliexpress.ru": "+"
+    "aliexpress.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "h2[id] или a[href^=\"#\"] на разделы",
    "note": "Y: h2#dlya-detey-2-4-let; Ali: #1..#4 (Tilda-якоря)"
@@ -187,7 +194,8 @@
     "detmir.ru": "+",
     "aliexpress.ru": "+",
     "boobl-goom.ru": "+",
-    "igroray.ru": "+"
+    "igroray.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "link[rel=canonical]",
    "note": "igroray — относительный URL; toys-land — нет canonical"
@@ -201,10 +209,11 @@
     "market.yandex.ru": "+",
     "detmir.ru": "+",
     "boobl-goom.ru": "+",
-    "igroray.ru": "+"
+    "igroray.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "meta[name=robots]",
-   "note": "Y добавляет max-image-preview:large"
+   "note": "Y добавляет max-image-preview:large; ozon — content=\"all\""
   },
   {
    "name": "Open Graph",
@@ -217,7 +226,8 @@
     "detmir.ru": "+",
     "aliexpress.ru": "+",
     "boobl-goom.ru": "+",
-    "igroray.ru": "+"
+    "igroray.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "meta[property^=\"og:\"] (title+image)",
    "note": "toys-land — только относительный og:image (не учтён); detmir og:url = главная"
@@ -230,7 +240,8 @@
    "marks": {
     "wildberries.ru": "+",
     "market.yandex.ru": "+",
-    "igroray.ru": "+"
+    "igroray.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "meta[property=\"og:type\"][content=article]",
    "note": "detmir, Ali, boobl — website"
@@ -270,10 +281,11 @@
    "marks": {
     "wildberries.ru": "+",
     "market.yandex.ru": "+",
-    "igroray.ru": "+"
+    "igroray.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "script[type=\"application/ld+json\"] @type BreadcrumbList",
-   "note": ""
+   "note": "ozon — только JSON-LD, 2-й элемент с пустым name; видимых крошек нет"
   },
   {
    "name": "BreadcrumbList microdata",
@@ -299,7 +311,8 @@
     "detmir.ru": "+",
     "aliexpress.ru": "+",
     "boobl-goom.ru": "+",
-    "igroray.ru": "+"
+    "igroray.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "JSON-LD @type Article|BlogPosting",
    "note": "detmir — BlogPosting; Ali — Article скопирован с другой статьи (@id ny_sweater, пустые author/publisher); boobl — пустые description и datePublished"
@@ -315,7 +328,8 @@
     "detmir.ru": "+",
     "aliexpress.ru": "+",
     "boobl-goom.ru": "+",
-    "igroray.ru": "+"
+    "igroray.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "JSON-LD datePublished|dateModified",
    "note": "boobl — только dateModified в нестандартном формате «02.10.2025 15:58:24»"
@@ -327,7 +341,8 @@
    "impact": "SEO",
    "marks": {
     "wildberries.ru": "+",
-    "market.yandex.ru": "+"
+    "market.yandex.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "JSON-LD Article.author @type Person",
    "note": "boobl, igroray — автор Organization; Ali — Person с пустым name"
@@ -340,10 +355,11 @@
    "marks": {
     "boobl-goom.ru": "+",
     "igroray.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "JSON-LD или microdata Organization|Store",
-   "note": "igroray — Store с адресом и часами работы; toys-land — microdata Organization+ContactPoint"
+   "note": "igroray — Store с адресом и часами работы; toys-land — microdata Organization+ContactPoint; ozon — publisher Organization в Article"
   },
   {
    "name": "WebSite + SearchAction",
@@ -394,7 +410,8 @@
     "aliexpress.ru": "+",
     "boobl-goom.ru": "+",
     "igroray.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "первый p/div после h1 длиной >150 символов",
    "note": "WB — курсивный лид em; Ali — подзаголовок «Решение…» + описание"
@@ -411,7 +428,8 @@
     "boobl-goom.ru": "+",
     "igroray.ru": "+",
     "toys-land.ru": "+",
-    "aliexpress.ru": "?"
+    "aliexpress.ru": "?",
+    "ozon.ru": "+"
    },
    "detect": "img сразу после h1 (до первого h2)",
    "note": "Ali — Tilda-блок, обложка только в og:image (не подтверждена в HTML)"
@@ -424,7 +442,8 @@
    "marks": {
     "market.yandex.ru": "+",
     "aliexpress.ru": "+",
-    "igroray.ru": "+"
+    "igroray.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "h2/h3/p с «лет»/«года» в заголовках разделов",
    "note": "Y: 2–4/5–8/9–12/13–16; Ali: 0–3/4–7/8–11/11–15; igroray — в тексте (0–3, 3–6, 7–12, 12+)"
@@ -486,10 +505,11 @@
    "group": "Контент",
    "impact": "Продукт",
    "marks": {
-    "detmir.ru": "+"
+    "detmir.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "заголовок «Топ-5»/«Топ-10»",
-   "note": ""
+   "note": "ozon — список ~20 «универсальных» идей в начале статьи (без заголовка Топ-N)"
   },
   {
    "name": "Нетоварные идеи (впечатления, персонализация)",
@@ -569,7 +589,8 @@
    "marks": {
     "wildberries.ru": "+",
     "market.yandex.ru": "+",
-    "aliexpress.ru": "+"
+    "aliexpress.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "блоки карточек (img+цена ₽) между абзацами статьи",
    "note": "WB — сниппет-коллекция «от 940 ₽ · 11 товаров»; Y — полноценные карточки; Ali — сетка 9 карточек с кнопкой-ценой; toys-land — только фото-ссылки на товары без цены"
@@ -597,7 +618,8 @@
     "market.yandex.ru": "+",
     "detmir.ru": "+",
     "aliexpress.ru": "+",
-    "igroray.ru": "+"
+    "igroray.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "₽ внутри карточки товара",
    "note": "igroray — цена наличными и безналом; WB — «от N ₽» на коллекцию"
@@ -610,10 +632,11 @@
    "marks": {
     "market.yandex.ru": "+",
     "detmir.ru": "+",
-    "igroray.ru": "+"
+    "igroray.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "button «В корзину»/«Купить»/aria-label=\"В корзину\"",
-   "note": "igroray — счётчик количества в карточке"
+   "note": "igroray — счётчик количества в карточке; ozon — кнопка «Заказать» в каждой карточке карусели (34 шт.)"
   },
   {
    "name": "Старая цена/скидка",
@@ -622,7 +645,8 @@
    "impact": "Продукт",
    "marks": {
     "detmir.ru": "+",
-    "igroray.ru": "+"
+    "igroray.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "старая цена рядом с текущей, бейдж -N%",
    "note": "detmir — бейдж «%» и «с промокодом»"
@@ -634,7 +658,8 @@
    "impact": "Продукт",
    "marks": {
     "market.yandex.ru": "+",
-    "detmir.ru": "+"
+    "detmir.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "рейтинг X.X + (N) в карточке",
    "note": ""
@@ -745,10 +770,11 @@
    "marks": {
     "detmir.ru": "+",
     "boobl-goom.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "a[href*=\"/catalog/\"] внутри тела статьи",
-   "note": "detmir — блок из 14 категорий жирными ссылками; toys-land — на отфильтрованные листинги ?filter="
+   "note": "detmir — блок из 14 категорий жирными ссылками; toys-land — на отфильтрованные листинги ?filter=; ozon — «Все товары»/«все номиналы» у каруселей → /category/"
   },
   {
    "name": "Блок брендов статьи",
@@ -815,7 +841,8 @@
    "marks": {
     "wildberries.ru": "+",
     "market.yandex.ru": "+",
-    "aliexpress.ru": "+"
+    "aliexpress.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "блок автора рядом с H1 (имя, аватар)",
    "note": "WB — «От редакции» с аватаром; Ali — имя в строке-рубрике"
@@ -827,7 +854,8 @@
    "impact": "SEO",
    "marks": {
     "wildberries.ru": "+",
-    "market.yandex.ru": "+"
+    "market.yandex.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "a[href*=\"/author/\"] + текст био",
    "note": "Y — био + /journal/author/…; WB — только ссылка /author/"
@@ -840,7 +868,8 @@
    "marks": {
     "wildberries.ru": "+",
     "market.yandex.ru": "+",
-    "aliexpress.ru": "+"
+    "aliexpress.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "текст даты ДД.ММ.ГГГГ / «Обновлено» около H1",
    "note": "Y — «Обновлено 16 декабря»; detmir, boobl, igroray — дата только в разметке"
@@ -877,7 +906,8 @@
    "marks": {
     "market.yandex.ru": "+",
     "aliexpress.ru": "+",
-    "detmir.ru": "+"
+    "detmir.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "блок «Содержание» со ссылками/кнопками на разделы",
    "note": "Y — липкое в сайдбаре; Ali — якорные ссылки; detmir — текстовый список без ссылок"
@@ -889,7 +919,8 @@
    "impact": "Оба",
    "marks": {
     "market.yandex.ru": "+",
-    "aliexpress.ru": "+"
+    "aliexpress.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "меню ссылок /journal/category/ или /gid/<раздел>",
    "note": "Y — Гид/Как выбрать/Подборки/Рейтинги; Ali — разделы гида"
@@ -902,7 +933,8 @@
    "marks": {
     "market.yandex.ru": "+",
     "igroray.ru": "+",
-    "aliexpress.ru": "?"
+    "aliexpress.ru": "?",
+    "ozon.ru": "+"
    },
    "detect": "ссылки /journal/tag/ или блок тегов",
    "note": "Ali — рубрики «Подарки • Идеи» текстом без ссылок"
@@ -916,7 +948,8 @@
     "wildberries.ru": "+",
     "market.yandex.ru": "+",
     "detmir.ru": "+",
-    "aliexpress.ru": "+"
+    "aliexpress.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "заголовок «Читайте также»/«Похожие материалы» + ссылки на статьи",
    "note": "Y — ещё «Сейчас читают»; WB — с числом просмотров"
@@ -929,7 +962,8 @@
    "marks": {
     "detmir.ru": "+",
     "aliexpress.ru": "+",
-    "toys-land.ru": "+"
+    "toys-land.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "ссылка на индекс блога рядом со статьёй",
    "note": "Ali — «← На главную» гида"
@@ -952,10 +986,11 @@
    "impact": "Продукт",
    "marks": {
     "wildberries.ru": "+",
-    "market.yandex.ru": "+"
+    "market.yandex.ru": "+",
+    "ozon.ru": "+"
    },
    "detect": "aria-label/текст «Поделиться»",
-   "note": ""
+   "note": "ozon — VK и Telegram вверху и внизу"
   },
   {
    "name": "Лайки/реакции",
@@ -964,10 +999,11 @@
    "impact": "Продукт",
    "marks": {
     "market.yandex.ru": "?",
-    "wildberries.ru": "?"
+    "wildberries.ru": "?",
+    "ozon.ru": "+"
    },
    "detect": "aria-label=\"Лайк\"/кнопки реакций у статьи",
-   "note": "Y — aria-label «Лайк» найден, но может относиться к видео-ленте; WB — безымянные кнопки под статьёй"
+   "note": "Y — aria-label «Лайк» найден, но может относиться к видео-ленте; WB — безымянные кнопки под статьёй; ozon — 3 эмодзи-реакции 😍😐🙁 со счётчиками"
   },
   {
    "name": "Подписка на статьи/рассылку",
@@ -993,6 +1029,46 @@
    },
    "detect": "form с полями email/телефон/вопрос",
    "note": ""
+  },
+  {
+   "name": "Подарочная карта/сертификат в статье",
+   "description": "Блок или CTA подарочной карты/сертификата магазина как универсального подарка",
+   "group": "Коммерция",
+   "impact": "Продукт",
+   "marks": {
+    "ozon.ru": "+"
+   },
+   "detect": "текст «подарочная карта/сертификат» + ссылка/карточки внутри тела статьи",
+   "note": "ozon — отдельный H2 и карусель сертификатов с ценой и «Заказать»; sima — CTA «Подарить карту» в разделе 15+; у остальных — только в меню/футере, detmir — упоминание в тексте без ссылки"
+  },
+  {
+   "name": "Сервис подбора подарка",
+   "description": "Ссылка на интерактивный подборщик/генератор/квиз подарков",
+   "group": "Интерактив",
+   "impact": "Продукт",
+   "marks": {},
+   "detect": "ссылка на генератор/квиз подбора подарка в тексте",
+   "note": "только sima — generator-podarkov.sima-land.ru из раздела 15+"
+  },
+  {
+   "name": "Врезки-советы",
+   "description": "Выделенные блоки «Подсказка/Совет» внутри текста",
+   "group": "Контент",
+   "impact": "Продукт",
+   "marks": {},
+   "detect": "блок с заголовком «Подсказка»/«Совет»/blockquote/aside в теле статьи",
+   "note": "только sima — 2 блока «Подсказка»; у конкурентов callout-блоков в теле не найдено"
+  },
+  {
+   "name": "Ссылки на статьи журнала из текста",
+   "description": "Контекстные ссылки/врезки на другие статьи журнала внутри тела статьи",
+   "group": "Навигация",
+   "impact": "Оба",
+   "marks": {
+    "ozon.ru": "+"
+   },
+   "detect": "a[href*=\"/journal/|/club/article/|/vdokhnovenie/\"] внутри тела статьи (не блок «Похожие» после)",
+   "note": "ozon — врезки «За идеями!», «Ещё идеи» и «Читайте также» на статьи серии по возрастам; sima — «в нашей статье» в заключении; detmir — только список после текста"
   }
  ]
 }
